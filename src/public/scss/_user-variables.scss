@@ -1,0 +1,22 @@
+// 
+// user-variables.scss
+// Use this to overwrite Bootstrap and Landkit variables
+//
+
+// Example of a variable override to change Landkit's background color
+// Remove the "//" to comment it in and see it in action!
+// $font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+
+$primary: rgb(100, 146, 153) !default;
+$info: rgb(244, 255, 254);
+// $info: rgb(229, 243, 245) !default;
+$dark: rgb(63, 81, 83);
+
+
+
+$navbar-dark-color: #1B2A4E !default;
+$navbar-dark-hover-color: $primary !default;
+$navbar-dark-active-color: $primary !default;
+$navbar-dark-toggler-border-color: transparent !default;
+
+$navbar-light-color: #1B2A4E !default;

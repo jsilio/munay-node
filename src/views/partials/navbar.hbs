@@ -1,0 +1,148 @@
+<nav id="mainNavbar" class="navbar navbar-expand-lg px-0 px-md-7@@classList">
+  <div class="container-fluid">
+
+    {{!-- Logo --}}
+    <a class="navbar-brand" href="/">
+      <img src="/img/logomunay5.svg" class="navbar-brand-img" alt="Munay - Psicología Clinica y Neuropsicología">
+    </a>
+
+    {{!-- Toggler: Hamburger Menu --}}
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    {{!-- Collapsable content of navbar --}}
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+
+      {{!-- Toggler: Closing X --}}
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fe fe-x"></i>
+      </button>
+
+      {{!-- Navigation list --}}
+      <ul class="navbar-nav font-size-lg ml-auto pt-0 pt-md-2">
+
+        {{!-- Especialidades --}}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarLandings" data-toggle="dropdown"
+            href="/especialidades" aria-haspopup="true" aria-expanded="false">
+            Especialidades
+          </a>
+
+          {{!-- Dropdown Menu --}}
+          <div class="dropdown-menu dropdown-menu-sm" aria-labelledby="navbarDocumentation">
+            <div class="list-group list-group-flush">
+
+              {{!-- Adultos --}}
+              <a class="list-group-item" href="/especialidades#adultos">
+
+                {{!-- Icono --}}
+                <div class="icon icon-xs text-primary">
+                  <img src="img/icons/duotone-icons/Clothes/Shirt.svg" alt="">
+                </div>
+
+                <!-- Content -->
+                <div class="ml-4">
+                  <h6 class="font-weight-bold text-uppercase text-primary mb-0">
+                    Adultos
+                  </h6>
+                </div>
+              </a>
+
+              <!-- Infantojuvenil -->
+              <a class="list-group-item" href="@@webRoot/docs/alerts.html">
+
+                <!-- Icon -->
+                <div class="icon icon-xs text-primary">
+                  @@include("../assets/img/icons/duotone-icons/Clothes/Sun-glasses.svg")
+                </div>
+
+                <!-- Content -->
+                <div class="ml-4">
+
+                  <!-- Heading -->
+                  <h6 class="font-weight-bold text-uppercase text-primary mb-0">
+                    Infantojuvenil
+                  </h6>
+
+                </div>
+
+              </a>
+
+              <!-- Tercera edad -->
+              <a class="list-group-item" href="@@webRoot/docs/changelog.html">
+
+                <!-- Icon -->
+                <div class="icon icon-xs text-primary">
+                  @@include("../assets/img/icons/duotone-icons/Home/Timer.svg")
+                </div>
+
+                <!-- Content -->
+                <div class="ml-4">
+
+                  <!-- Heading -->
+                  <h6 class="font-weight-bold text-uppercase text-primary mb-0">
+                    Tercera edad
+                  </h6>
+
+                </div>
+              </a>
+
+              <a class="list-group-item" href="@@webRoot/docs/changelog.html">
+
+                <!-- Icon -->
+                <div class="icon icon-xs text-primary">
+                  @@include("../assets/img/icons/duotone-icons/Communication/Group.svg")
+                </div>
+
+                <!-- Content -->
+                <div class="ml-4">
+
+                  <!-- Heading -->
+                  <h6 class="font-weight-bold text-uppercase text-primary mb-0">
+                    Parejas
+                  </h6>
+
+                </div>
+              </a>
+
+
+            </div> <!-- ./list-group -->
+          </div> <!-- ./dropdown-menu -->
+        </li>
+
+        {{!-- Tarifas --}}
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            Tarifas
+          </a>
+        </li>
+
+        {{!-- Blog --}}
+        <li class="nav-item">
+          <a class="nav-link" href="/blog">
+            Blog
+          </a>
+        </li>
+
+        {{!-- Comparte tu experiencia --}}
+        <li class="nav-item">
+          <a class="nav-link" href="/comparte-tu-experiencia">
+            Comparte tu experiencia
+          </a>
+        </li>
+
+        {{!-- Contacto --}}
+        <li class="nav-item">
+          <a class="nav-link" href="/contacto">
+            Contacto
+          </a>
+        </li>
+      </ul>
+
+
+    </div> <!-- ./navbar-collapse -->
+  </div> <!-- ./container -->
+</nav>
