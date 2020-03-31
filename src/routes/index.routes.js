@@ -9,8 +9,6 @@ router.get("/contacto", renderContacto);
 
 router.get("/especialidades", renderEspecialidades);
 
-router.get("/blog", renderBlog);
-
 router.get("/reserva", renderReserva);
 
 module.exports = router;

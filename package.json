@@ -29,6 +29,7 @@
     "jarallax": "^1.12.0",
     "jquery": "^3.4.1",
     "mongoose": "^5.9.6",
+    "morgan": "^1.10.0",
     "smooth-scroll": "^16.1.0",
     "typed.js": "^2.0.11"
   }
