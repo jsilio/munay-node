@@ -1,35 +1,26 @@
 const blogCtrl = {};
 
+const BlogPost = require("../models/BlogPost");
+
 // Mostrar todos los posts
 
-blogCtrl.renderBlog = (req, res) => {
-    res.render("blog/blog");
+blogCtrl.renderBlog = async (req, res) => {
+
+    const blogPosts = await BlogPost.find().lean();
+
+    res.render("blog/blog", { blogPosts });
 };
 
-// Nuevo post
+// Mostrar un artículo
 
-blogCtrl.renderBlogForm = (req, res) => {
-    res.render("blog/nuevo-post")
-};
+blogCtrl.renderBlogPost = (req, res) => {
+    res.render("blog/blog-post");
+}
 
-blogCtrl.addNewPost = (req, res) => {
-    res.send("add post")
-};
+// Búsqueda de posts
 
-// Editar post
-
-blogCtrl.renderEditForm = (req, res) => {
-    res.send("edit post")
-};
-
-blogCtrl.updateBlogPost = (req, res) => {
-    res.send("update post")
-};
-
-// Eliminar post
-
-blogCtrl.deleteBlogPost = (req, res) => {
-    res.send("delete post")
-};
+blogCtrl.renderBlogSearch = (req, res) => {
+    res.render("blog/blog-buscar")
+}
 
 module.exports = blogCtrl;

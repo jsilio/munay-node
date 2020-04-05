@@ -12,7 +12,7 @@
 
             {{#each blogPosts}}
             <!-- /// Entrada 1 /// -->
-            <div class="col-12 col-lg-4 d-flex mt-5">
+            <div class="col-12 col-lg-4 d-flex">
 
                 <!-- Card -->
                 <div class="card mb-6 mb-lg-0 shadow-light-lg lift lift-lg">
@@ -48,6 +48,19 @@
                         <p class="mb-0 text-muted">
                             {{content}}
                         </p>
+
+                        <button class="btn btn-warning">
+                            <a href="/dashboard/blog/editar/{{_id}}">
+                                Editar <i class="fe fe-edit"></i> 
+                            </a>
+                        </button>
+
+
+                        <form action="/dashboard/blog/eliminar/{{_id}}?_method=DELETE" method="POST">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button class="btn btn-danger-soft">Eliminar <i class="fe fe-x"></i></button>
+                        </form>
+
                     </a>
 
                     <!-- Meta -->

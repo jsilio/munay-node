@@ -12,12 +12,12 @@ indexCtrl.renderEspecialidades = (req, res) => {
     res.render("especialidades");
 }
 
-indexCtrl.renderBlog = (req, res) => {
-    res.render("blog");
-}
-
 indexCtrl.renderReserva = (req, res) => {
     res.render("reserva");
+}
+
+indexCtrl.renderDashboard = (req, res) => {
+    res.render("/blog/dashboard")
 }
 
 module.exports = indexCtrl;

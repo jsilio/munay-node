@@ -2,30 +2,22 @@ const { Router } = require("express");
 const router = Router();
 
 const { 
-    renderBlog, 
-    renderBlogForm, 
-    addNewPost, 
-    renderEditForm, 
-    updateBlogPost, 
-    deleteBlogPost 
+    renderBlog,
+    renderBlogPost,
+    renderBlogSearch, 
 } = require("../controllers/blog.controller");
 
 //  Mostrar todos los posts
+
 router.get("/blog", renderBlog);
 
-// Nuevo post
-router.get("/blog/nuevo-post", renderBlogForm);
+//  Mostrar un artículo del blog
 
-router.post("/blog/nuevo-post", addNewPost);
+router.get("/blog/entrada", renderBlogPost)
 
-// Editar post
+// Búsqueda de posts
 
-router.get("/blog/editar/:id", renderEditForm);
+router.get("/blog/busqueda", renderBlogSearch)
 
-router.post("/blog/editar/:id", updateBlogPost);
-
-// Eliminar post
-
-router.delete("/blog/eliminar/:id", deleteBlogPost);
 
 module.exports = router;

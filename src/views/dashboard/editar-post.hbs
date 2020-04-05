@@ -1,0 +1,35 @@
+<div class="container pt-10">
+    <div class="col-md-4 mx-auto">
+        <div class="card">
+
+            <div class="card-header">
+                <h4>Edit note</h4>
+            </div>
+
+            <div class="card-body">
+
+                <form action="/dashboard/blog/editar/{{blogPost._id}}?_method=PUT" method="POST">
+    
+                    <input type="hidden" name="_method" value="PUT">
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="title" 
+                        value="{{ blogPost.title }}">
+                    </div>
+
+                    <div class="form-group">
+                        <textarea name="content" rows="10">
+                            {{ blogPost.content }}
+                        </textarea>
+                    </div>
+
+                    <button class="btn btn-primary" type="submit">
+                        Editar
+                    </button>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
