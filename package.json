@@ -33,6 +33,7 @@
     "method-override": "^3.0.0",
     "mongoose": "^5.9.6",
     "morgan": "^1.10.0",
+    "nodemailer": "^6.4.6",
     "smooth-scroll": "^16.1.0",
     "typed.js": "^2.0.11"
   }

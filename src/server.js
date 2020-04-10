@@ -3,6 +3,8 @@ const exphbs = require("express-handlebars");
 const path = require("path");
 const morgan = require("morgan");
 const methodOverride = require("method-override");
+const flash = require("connect-flash");
+const session = require("express-session");
 
 // Initializations
 const app = express();
@@ -23,8 +25,14 @@ app.set("view engine", ".hbs")
 // Middlewares
 app.use(morgan("dev"));
 app.use(express.urlencoded({extended: false})); // Parsing data
+app.use(express.json());
 app.use(methodOverride("_method"));
-
+app.use(session({
+    secret: "secretword",
+    resave: true,
+    saveUninitialized: true
+}));
+app.use(flash());
 
 // Global Variables
 

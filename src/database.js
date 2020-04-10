@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
-const MONGODB_URI = "mongodb://localhost/munay"
+const MONGODB_URL = "mongodb://localhost/munay"
 
-mongoose.connect(MONGODB_URI, {
+mongoose.connect(MONGODB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
