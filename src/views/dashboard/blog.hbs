@@ -10,7 +10,7 @@
         <!-- ||| Entradas del Blog ||| -->
         <div class="row">
 
-            {{#each blogPosts}}
+            {{#each blogPost}}
 
             <!-- /// Entrada 1 /// -->
             <div class="col-12 col-lg-4 d-flex">
@@ -81,7 +81,7 @@
 
                         <!-- Fecha -->
                         <p class="h6 text-uppercase text-muted mb-0 ml-auto">
-                            <time datetime="2019-05-02">22 MARZO</time>
+                            {{date createdAt}}
                         </p>
 
                         <i class="fe fe-calendar text-muted ml-2 mb-1"></i>

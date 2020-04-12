@@ -1,14 +1,23 @@
 {{!-- << Formulario >> --}}
 
-<section class="pt-8 pt-md-13 pb-8 pb-md-14 bg-info">
+
+
+<section class="pt-10 pt-md-11 pb-8 pb-md-14 bg-info" style="background: rgb(147,203,202);
+background: linear-gradient(0deg, rgba(147,203,202,1) 0%, rgba(177,219,225,1) 35%, rgba(229,243,245,1) 100%);">
     <div class="container">
 
         {{!-- Título y Descripción --}}
         <div class="row justify-content-center">
             <div class="col-12 col-md-10 col-lg-10 text-center">
+
+                <div class="mb-5">
+                    {{> messages }}
+                </div>
+
+
                 <h2 class="font-weight-bold mb-5 display-4"> Contacta con nosotros. </h2>
 
-                <p class="font-size-lg text-gray-700 mb-9">
+                <p class="font-size-lg text-gray-700 mb-6 mb-md-9">
                     En Munay no nos gusta que te quedes con dudas. Puedes dejarnos un mensaje contándonos tu situación y
                     nos pondremos en contacto contigo lo antes posible.
                 </p>
@@ -18,11 +27,11 @@
         {{!-- Form--}}
         <div class="row justify-content-between">
 
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6 order-2 order-md-1">
                 <img src="/img/illustrations/personas.svg" class="img-fluid" alt="">
             </div>
 
-            <div class="col-12 col-md-6 align-self-top">
+            <div class="col-12 col-md-6 order-1 order-md-2 align-self-top">
 
                 <form action="/enviar-email" method="POST">
 
@@ -38,7 +47,8 @@
                                 </label>
 
                                 <!-- Input -->
-                                <input type="text" class="form-control" name="name" id="contactName" placeholder="Nombre completo" autofocus required>
+                                <input type="text" class="form-control" name="name" id="contactName"
+                                    placeholder="Nombre" autofocus required>
 
                             </div>
                         </div>
@@ -52,7 +62,8 @@
                                 </label>
 
                                 <!-- Input -->
-                                <input type="email" class="form-control" name="email" id="contactEmail" placeholder="correo@ejemplo.com" required>
+                                <input type="email" class="form-control" name="email" id="contactEmail"
+                                    placeholder="correo@ejemplo.com" required>
 
                             </div>
                         </div>
@@ -63,12 +74,13 @@
                         <div class="col-12">
                             <div class="form-group mb-5">
 
-                                <label for="contactMessage" class="font-weight-bold font-size-lg">  
+                                <label for="contactMessage" class="font-weight-bold font-size-lg">
                                     ¿En qué podemos ayudarte?
                                 </label>
 
                                 <!-- Input -->
-                                <textarea class="form-control mb-3" id="contactMessage" name="message" rows="6" placeholder="Escríbenos tu mensaje" required></textarea>
+                                <textarea class="form-control mb-3" id="contactMessage" name="message" rows="6"
+                                    placeholder="Escríbenos tu mensaje" required></textarea>
                             </div>
                         </div>
                     </div> <!-- / .row -->
@@ -78,9 +90,17 @@
 
                         {{!-- Política de privacidad  --}}
                         <div class="form-check mb-4">
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" required>
 
-                            <label class="form-check-label" for="defaultCheck1">
+                            <label class="checkbox bounce form-check-label">
+                                <input type="checkbox" id="defaultCheck1" required>
+                                <svg viewBox="0 0 21 21">
+                                    <polyline points="5 10.75 8.5 14.25 16 6"></polyline>
+                                </svg>
+                            </label>
+
+                            {{!-- <input class="form-check-input" type="checkbox" id="defaultCheck1" required> --}}
+
+                            <label class="form-check-label ml-2 font-size-lg" for="defaultCheck1">
                                 Acepto la <a href="/politica-de-privacidad">política de privacidad.</a>
                             </label>
                         </div>

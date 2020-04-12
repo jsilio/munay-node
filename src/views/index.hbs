@@ -1,5 +1,6 @@
 {{!-- << Hero >> --}}
-<section id="hero" class="py-md-12 pb-5 pb-md-6 bg-info">
+<section id="hero" class="py-md-12 pb-5 pb-md-6" style="background: rgb(122,183,182);
+background: linear-gradient(346deg, rgba(122,183,182,1) 0%, rgba(177,219,225,1) 35%, rgba(229,243,245,1) 100%);">
 
   <div class="container-fluid">
     <div class="row align-items-center">
@@ -11,7 +12,7 @@
       </div>
 
       {{!-- Bloque héroe --}}
-      <div class="col-12 col-md-7 col-lg-6 order-md-1 px-12">
+      <div class="col-12 col-md-7 col-lg-6 order-md-1 px-0 px-md-12">
         {{!-- Título --}}
         <h1 class="display-3 font-weight-bold text-center text-md-left mb-6 mb-lg-8">
           Terapia psicológica <br> basada <span class="text-primary">en la evidencia</span>
@@ -253,7 +254,7 @@
     <div class="row align-items-center justify-content-between mb-8 mb-md-11">
 
       {{!-- Texto e Ilustración --}}
-      <div class="col-12 col-md-6 mb-3 mb-md-0 align-self-start">
+      <div class="col-12 col-md-6 mb-14 mb-md-3 align-self-start">
 
         {{!-- Título y Descripción --}}
         <div class="text-center text-md-left">
@@ -261,12 +262,12 @@
           <h2 class="font-weight-bold">Modalidades</h2>
 
           <p class="font-size-lg text-gray-700 mb-6">
-            Atendemos las consultas en varias modalidades que puedes modificar a lo largo de la terapia sin ningún inconveniente. Puedes elegir la que prefieras y si cambias de opinión o cambian tus circunstancias personales, no habrá ningún problema en continuar el tratamiento.
+            Atendemos las consultas en varias modalidades que puedes modificar a lo largo de la terapia sin ningún inconveniente. <br> <br> Puedes elegir la que prefieras y si cambias de opinión o cambian tus circunstancias personales, no habrá ningún problema en continuar el tratamiento.
           </p>
 
-          <p class="text-gray-700 mb-6">
+          {{!-- <p class="text-gray-700 mb-6">
             En caso de que reserves cita en la modalidad de videollamada y quieras después venir al despacho, basta con que nos escribas unos días de antelación para notificarnos el cambio.
-          </p>
+          </p> --}}
 
           <div class="mb-6">
             <a href="/tarifas" class="font-weight-bold text-decoration-none text-uppercase mb-6">
@@ -284,7 +285,7 @@
       </div> <!-- ./col -->
 
       {{!-- Bloque de Modalidades --}}
-      <div class="col-12 col-md-6 px-6 px-md-9 align-self-start" data-aos="fade-left">
+      <div class="col-12 col-md-6 px-6 px-md-9 " data-aos="fade-left">
 
         {{!-- Carta --}}
         <div class="card card-border card-border-xl border-primary shadow-lg mb-6 mb-md-8 lift lift-lg">
@@ -308,7 +309,7 @@
               {{!-- Vídeollamada --}}
               <div class="list-group-item">
 
-                <div class="icon-circle bg-primary text-white">
+                <div class="icon-circle bg-primary text-white mb-5">
                   <i class="fe fe-video"></i>
                 </div>
 

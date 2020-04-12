@@ -5,16 +5,16 @@ const Contact = require("../models/Contact");
 const nodemailer = require("nodemailer");
 
 indexCtrl.renderIndex = (req, res) => {
-    res.render("index");
+    res.render("index", {title: "Munay - Psicología Clínica y Neuropsicología"});
 }
 
 indexCtrl.renderContacto = (req, res) => {
-    res.render("contacto");
+    res.render("contacto", {title: "Contacto | Munay"});
 }
 
-indexCtrl.enviarMail = async (req, res) => {
-    
-    const {name, email, message} = req.body;
+indexCtrl.sendMail = async (req, res) => {
+
+    const { name, email, message } = req.body;
 
     // Contenido del correo
     contentHTML = `
@@ -27,16 +27,16 @@ indexCtrl.enviarMail = async (req, res) => {
     `;
 
     let testAccount = await nodemailer.createTestAccount();
-    
+
     // Configuración del transporter
     let transporter = nodemailer.createTransport({
         host: "smtp.ethereal.email",
-        port: 587 ,
+        port: 587,
         secure: false,
         auth: {
             user: testAccount.user,
             pass: testAccount.pass
-        }, 
+        },
         tls: {
             rejectUnauthorized: false
         }
@@ -51,10 +51,11 @@ indexCtrl.enviarMail = async (req, res) => {
     });
 
     // Guardar contacto en db
-    const newContact = new Contact({name, email});
-    
-    await newContact.save();
+    // const newContact = new Contact({name, email});
+    // await newContact.save();
 
+    // Enviar alerta de acción exitosa
+    req.flash("success_msg", "Tu mensaje ha sido enviado correctamente. Te contactaremos en un plazo estimado de 24h.");
 
     console.log(contentHTML);
     console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));

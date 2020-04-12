@@ -12,9 +12,9 @@ dashCtrl.renderDashboard = (req, res) => {
 
 dashCtrl.renderBlog = async (req, res) => {
 
-    const blogPosts = await BlogPost.find().lean();
+    const blogPost = await BlogPost.find().lean().sort({createdAt: "desc"});
 
-    res.render("dashboard/blog", { blogPosts });
+    res.render("dashboard/blog", { blogPost });
 };
 
 // Crear nuevo post del blog

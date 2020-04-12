@@ -4,7 +4,7 @@ const router = Router();
 const { 
     renderIndex, 
     renderContacto,
-    enviarMail, 
+    sendMail, 
     renderEspecialidades, 
     renderReserva, 
 } = require("../controllers/index.controller");
@@ -17,7 +17,7 @@ router.get("/especialidades", renderEspecialidades);
 
 router.get("/contacto", renderContacto);
 
-router.post("/enviar-email", enviarMail);
+router.post("/enviar-email", sendMail);
 
 // Reserva
 

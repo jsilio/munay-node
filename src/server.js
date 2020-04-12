@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express");
 const exphbs = require("express-handlebars");
 const path = require("path");
@@ -17,7 +19,12 @@ app.engine(".hbs", exphbs({ // Configuración del templating engine
     defaultLayout: "main",
     layoutsDir: path.join(app.get("views"), "layouts"),
     partialsDir: path.join(app.get("views"), "partials"),
-    extname: ".hbs"
+    extname: ".hbs",
+    helpers: {
+        date: function(date) {
+            return date.toLocaleDateString();
+        }
+    }
 })); 
 app.set("view engine", ".hbs") 
 
@@ -35,6 +42,10 @@ app.use(session({
 app.use(flash());
 
 // Global Variables
+app.use((req, res, next) => {
+    res.locals.success_msg = req.flash("success_msg");
+    next();
+});
 
 // Routes
 app.use(require("./routes/index.routes"));
