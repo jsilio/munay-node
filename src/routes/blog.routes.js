@@ -13,7 +13,7 @@ router.get("/blog", renderBlog);
 
 //  Mostrar un artículo del blog
 
-router.get("/blog/entrada", renderBlogPost)
+router.get("/blog/:slug", renderBlogPost)
 
 // Búsqueda de posts
 

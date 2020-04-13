@@ -22,7 +22,7 @@ app.engine(".hbs", exphbs({ // Configuración del templating engine
     extname: ".hbs",
     helpers: {
         date: function(date) {
-            return date.toLocaleDateString();
+            return date.toLocaleDateString("es-ES");
         }
     }
 })); 

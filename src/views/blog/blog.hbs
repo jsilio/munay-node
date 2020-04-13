@@ -10,15 +10,15 @@
         <!-- ||| Entradas del Blog ||| -->
         <div class="row">
 
-            {{#each blogPosts}}
+            {{#each blogPost}}
             <!-- /// Entrada 1 /// -->
-            <div class="col-12 col-lg-4 d-flex mt-5">
+            <div class="col-12 col-lg-4 d-flex my-5">
 
                 <!-- Card -->
                 <div class="card mb-6 mb-lg-0 shadow-light-lg lift lift-lg">
 
                     <!-- Imagen -->
-                    <a class="card-zoom" href="#!">
+                    <a class="card-zoom" href="/blog/{{slug}}">
                         <img src="/img/photos/blog1.jpg" alt="..." class="img-fluid card-img-top">
                     </a>
 
@@ -32,7 +32,7 @@
                     </div>
 
                     <!-- Body -->
-                    <a class="card-body" href="#!">
+                    <a class="card-body" href="/blog/{{slug}}">
 
                         <!-- Categoría de la entrada -->
                         <div class="position-relative text-right mt-n8 mr-n4 mb-3">
@@ -46,7 +46,7 @@
 
                         <!-- Text -->
                         <p class="mb-0 text-muted">
-                            {{content}}
+                            {{description}}
                         </p>
                     </a>
 
@@ -78,9 +78,6 @@
             </div>
             {{/each}}
 
-            <div class="col-12 col-lg-4 d-flex">
-                <h3>{{title}}</h3>
-            </div>
 
         </div> <!-- / .row -->
 

@@ -1,134 +1,158 @@
-{{!-- Entradas --}}
-<section class="pt-7 pt-md-10 bg-light">
-    <div class="container">
+<!-- MAIN CONTENT
+    ================================================== -->
+<div class="main-content">
 
-        <!-- Heading -->
-        <h2 class="mb-5 font-weight-bold">
-            Últimas entradas
-        </h2>
-
-        <!-- ||| Entradas del Blog ||| -->
+    <!-- CONTENT -->
+    <div class="container-fluid mt-5">
         <div class="row">
 
-            {{#each blogPost}}
 
-            <!-- /// Entrada 1 /// -->
-            <div class="col-12 col-lg-4 d-flex">
+            <div class="col-12">
 
-                <!-- Card -->
-                <div class="card mb-6 mb-lg-0 shadow-light-lg lift lift-lg">
+                <!-- Files -->
+                <div class="card" data-toggle="lists" data-options='{"valueNames": ["name"]}'>
+                    <div class="card-header">
 
-                    <!-- Imagen -->
-                    <a class="card-zoom" href="#!">
-                        <img src="/img/photos/blog1.jpg" alt="..." class="img-fluid card-img-top">
-                    </a>
+                        <!-- Title -->
+                        <h4 class="card-header-title">
+                            Posts
+                        </h4>
 
-                    <!-- Shape -->
-                    <div class="position-relative">
-                        <div class="shape shape-fluid-x shape-bottom svg-shim text-white">
-                            <svg viewBox="0 0 2880 48" fill="none">
-                                <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor" />
-                            </svg>
-                        </div>
-                    </div>
+                        <!-- Dropdown -->
+                        <div class="dropdow mr-3">
 
-                    <!-- Body -->
-                    <a class="card-body" href="#!">
-
-                        <!-- Categoría de la entrada -->
-                        <div class="position-relative text-right mt-n8 mr-n4 mb-3">
-                            <span class="badge badge-pill badge-primary">
-                                <span class="h6 text-uppercase">Neuropsicología</span>
-                            </span>
-                        </div>
-
-                        <!-- Heading -->
-                        <h3> {{title}} </h3>
-
-                        <!-- Text -->
-                        <p class="mb-0 text-muted">
-                            {{content}}
-                        </p>
-
-                        <button class="btn btn-warning">
-                            <a href="/dashboard/blog/editar/{{_id}}">
-                                Editar <i class="fe fe-edit"></i> 
+                            <!-- Toggle -->
+                            <a href="#" class="small text-muted dropdown-toggle" data-toggle="dropdown">
+                                Ordenar
                             </a>
-                        </button>
 
+                            <!-- Menu -->
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item sort" data-sort="name" href="#!">
+                                    Asc
+                                </a>
+                                <a class="dropdown-item sort" data-sort="name" href="#!">
+                                    Desc
+                                </a>
+                            </div>
 
-                        <form action="/dashboard/blog/eliminar/{{_id}}?_method=DELETE" method="POST">
-                            <input type="hidden" name="_method" value="DELETE">
-                            <button class="btn btn-danger-soft">Eliminar <i class="fe fe-x"></i></button>
+                        </div>
+
+                        <!-- Button -->
+                        <a href="/dashboard/blog/nuevo-post" class="btn btn-sm btn-primary">
+                            Crear nueva entrada <i class="fe fe-plus ml-2"></i>
+                        </a>
+
+                    </div>
+                    <div class="card-header">
+
+                        <!-- Form -->
+                        <form>
+                            <div class="input-group input-group-flush input-group-merge">
+                                <input type="search" class="form-control form-control-prepended search"
+                                    placeholder="Buscar">
+
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <span class="fe fe-search"></span>
+                                    </div>
+                                </div>
+                            </div>
                         </form>
 
-                    </a>
+                    </div>
+                    <div class="card-body">
 
-                    <!-- Meta -->
-                    <a class="card-meta mt-auto" href="#!">
+                        <!-- List -->
+                        <ul class="list-group list-group-lg list-group-flush list my-n4">
 
-                        <!-- Divisor -->
-                        <hr class="card-meta-divider">
+                            {{#each blogPost}}
+                            <li class="list-group-item">
 
-                        <!-- Avatar -->
-                        <div class="avatar avatar-sm mr-2">
-                            <img src="/img/photos/laurita.jpg" alt="Laura Marín Psicóloga Clínica Munay"
-                                class="avatar-img rounded-circle">
-                        </div>
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
 
-                        <!-- Autor -->
-                        <h6 class="text-uppercase text-muted mr-2 mb-0"> Laura Marín </h6>
+                                        <!-- Avatar -->
+                                        <a href="#!" class="avatar avatar-lg">
+                                            <img src="/img/photos/blog1.jpg" alt="..." class="avatar-img rounded">
+                                        </a>
 
-                        <!-- Fecha -->
-                        <p class="h6 text-uppercase text-muted mb-0 ml-auto">
-                            {{date createdAt}}
-                        </p>
+                                    </div>
+                                    <div class="col ml-n2">
 
-                        <i class="fe fe-calendar text-muted ml-2 mb-1"></i>
-                    </a>
+                                        <!-- Title -->
+                                        <h4 class="mb-3 name">
+                                            <a href="/blog/{{slug}}">{{title}}</a>
+                                        </h4>
 
-                </div>
+                                        <!-- Text -->
+                                        <p class="card-text small text-muted mb-3 pr-0 pr-lg-8">
+                                            {{description}}
+                                        </p>
 
+                                        <!-- Time -->
+                                        <p class="card-text small text-secondary">
+                                            <i class="fe fe-user mr-2"></i> <strong>Autor:</strong> Laura Marín
+                                            <i class="fe fe-calendar mx-2"></i> <strong>Fecha de publicación:</strong>
+                                            {{date createdAt}}
+                                        </p>
+
+                                    </div>
+                                    <div class="col-auto">
+
+                                        
+                                        <!-- Button -->
+
+
+                                        <a href="/dashboard/blog/editar/{{_id}}" class="btn btn-sm btn-secondary d-none d-md-inline-block">
+                                            Editar <i class="fe fe-edit ml-1"></i>
+                                        </a>
+
+                                        <form action="/dashboard/blog/eliminar/{{_id}}?_method=DELETE" method="post" class="d-none d-md-inline-block">
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <button class="btn btn-sm btn-danger">
+                                                  Eliminar <i class="fe fe-x ml-1"></i>
+                                            </button>
+                                        </form>
+
+                                    </div>
+
+                                    <div class="col-auto">
+
+                                        <!-- Dropdown -->
+                                        <div class="dropdown">
+
+                                            <!-- Toggle -->
+                                            <a href="#" class="dropdown-ellipses dropdown-toggle" role="button"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fe fe-more-vertical"></i>
+                                            </a>
+
+                                            <!-- Menu -->
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a href="#!" class="dropdown-item">
+                                                    Action
+                                                </a>
+                                                <a href="#!" class="dropdown-item">
+                                                    Another action
+                                                </a>
+                                                <a href="#!" class="dropdown-item">
+                                                    Something else here
+                                                </a>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div> <!-- / .row -->
+
+                            </li>
+                            {{/each}}
+
+                    </div>
+                </div> <!-- / .row -->
             </div>
-            {{/each}}
-
-            <div class="col-12 col-lg-4 d-flex">
-                <h3>{{title}}</h3>
-            </div>
-
-        </div> <!-- / .row -->
-
-        <!-- ||| Entradas del Blog 2 ||| -->
-        <div class="row mt-7">
 
 
-        </div> <!-- / .row -->
 
-        <!-- Pagination -->
-        <nav aria-label="Cambio de pagina">
-            <ul class="pagination justify-content-center py-10">
-
-                <li class="page-item disabled">
-                    <span class="page-link">Anterior</span>
-                </li>
-
-                <li class="page-item active">
-                    <span class="page-link">
-                        1
-                        <span class="sr-only">(current)</span>
-                    </span>
-                </li>
-
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-
-                <li class="page-item">
-                    <a class="page-link" href="#">Siguiente</a>
-                </li>
-
-            </ul>
-        </nav>
-
-    </div> <!-- / .container -->
-</section>
+        </div> <!-- / .main-content -->

@@ -1,4 +1,136 @@
-<div class="container pt-10">
+<!-- MAIN CONTENT
+    ================================================== -->
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+
+            <div class="col-12 col-lg-10 col-xl-8">
+
+                {{!-- Título --}}
+                <div class="header mt-md-5">
+                    <div class="header-body">
+                        <div class="row align-items-center">
+                            <div class="col">
+
+                                <h6 class="header-pretitle">
+                                    Blog post
+                                </h6>
+
+
+                                <h1 class="header-title">
+                                    Editar entrada
+                                </h1>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <form action="/dashboard/blog/editar/{{blogPost._id}}?_method=PUT" method="POST" class="mb-4">
+    
+                    <input type="hidden" name="_method" value="PUT">
+
+                    <!-- Título de la entrada -->
+                    <div class="form-group">
+
+                        <label> Título </label>
+                        <input type="text" class="form-control" name="title" value="{{ blogPost.title }}" required>
+
+                    </div>
+
+                    <!-- Descripción de la entrada -->
+                    <div class="form-group">
+
+                        <label> Descripción </label>
+                        <input type="text" class="form-control" name="description" value="{{ blogPost.description }}" required/>
+
+                    </div>
+
+                    {{!-- Divider --}}
+                    <hr class="mt-4 mb-5">
+
+                    <!-- Cover -->
+                    <div class="form-group mb-4">
+                        <label class="mb-1"> Cover </label>
+
+
+                        <small class="form-text text-muted">
+                            1200px * 600px.
+                        </small>
+
+                        <!-- Dropzone -->
+                        <div class="dropzone dropzone-single mb-3" data-toggle="dropzone"
+                            data-options='{"url": "https://", "maxFiles": 1, "acceptedFiles": "image/*"}'>
+
+                            <!-- Fallback -->
+                            <div class="fallback">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="projectCoverUploads" />
+                                    <label class="custom-file-label" for="projectCoverUploads">Choose file</label>
+                                </div>
+                            </div>
+
+                            <!-- Preview -->
+                            <div class="dz-preview dz-preview-single">
+                                <div class="dz-preview-cover">
+                                    <img class="dz-preview-img" src="data:image/svg+xml,%3csvg3c/svg%3e" alt="..."
+                                        data-dz-thumbnail />
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                    <!-- Contenido -->
+                    <div class="form-group mb-5">
+
+                        <label class="mb-1"> Contenido </label>
+
+
+                        <small class="form-text text-muted">
+                            This is how others will preview the entry, so make it good!
+                        </small>
+
+                        <!-- Textarea: Rich text editor -->
+                        <div data-toggle="quill" data-options='{"placeholder": "Hello"}'></div>
+
+                        <div id="toolbar">
+                            <button class="ql-bold">Bold</button>
+                            <button class="ql-italic">Italic</button>
+                        </div>
+
+                        <div id="editor"></div>
+
+                        <textarea name="content" id="" cols="30" rows="10" required></textarea>
+                    </div>
+
+
+
+
+                    {{!-- Botones --}}
+                    <div class="form-group">
+
+                        <button type="submit" class="btn btn-block btn-primary">
+                            Editar entrada
+                        </button>
+
+                        <a href="/dashboard/blog" class="btn btn-block btn-link text-muted">
+                            Cancelar
+                        </a>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div> <!-- / .main-content -->
+
+
+
+{{!-- <div class="container pt-10">
     <div class="col-md-4 mx-auto">
         <div class="card">
 
@@ -32,4 +164,4 @@
 
         </div>
     </div>
-</div>
+</div> --}}

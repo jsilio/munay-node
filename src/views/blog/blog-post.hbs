@@ -30,12 +30,12 @@
 
             {{!-- Título --}}
             <h1 class="position-relative display-4 text-center text-white mb-7 font-weight-bold">
-                El absurdo surge de la confrontación entre la búsqueda del ser humano y el silencio irracional del mundo
+               {{blogPost.title}}
             </h1>
 
             {{!-- Descripción --}} 
             <p class="position-relative mb-7 text-center text-white-70 px-10 font-size-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec condimentum quam. Fusce pellentesque Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint ut nulla cumque deleniti ipsum saepe.
+              {{blogPost.description}}
             </p>
 
           </div>
@@ -67,7 +67,7 @@
 
 
               <i class="fe fe-calendar text-muted mr-2 mb-1"></i>
-              20 de Mayo, 2019
+              {{date blogPost.createdAt}}
             </time>
 
           </div>

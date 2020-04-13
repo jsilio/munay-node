@@ -6,15 +6,20 @@ const BlogPost = require("../models/BlogPost");
 
 blogCtrl.renderBlog = async (req, res) => {
 
-    const blogPosts = await BlogPost.find().lean();
+    const blogPost = await BlogPost.find().lean();
 
-    res.render("blog/blog", { blogPosts });
+    res.render("blog/blog", { blogPost });
 };
 
 // Mostrar un artículo
 
-blogCtrl.renderBlogPost = (req, res) => {
-    res.render("blog/blog-post");
+blogCtrl.renderBlogPost = async (req, res) => {
+
+    const blogPost = await BlogPost.findOne({ slug: req.params.slug }).lean();
+
+    if (blogPost == null) res.redirect("/blog")
+ 
+    res.render("blog/blog-post", { blogPost });
 }
 
 // Búsqueda de posts

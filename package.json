@@ -35,6 +35,7 @@
     "mongoose": "^5.9.6",
     "morgan": "^1.10.0",
     "nodemailer": "^6.4.6",
+    "slugify": "^1.4.0",
     "smooth-scroll": "^16.1.0",
     "typed.js": "^2.0.11"
   }
