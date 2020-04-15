@@ -1,4 +1,3 @@
-
 <div class="main-content">
     <div class="container-fluid">
         <div class="row justify-content-center">
@@ -92,11 +91,24 @@
                         </small>
 
                         <!-- Textarea: Rich text editor -->
-                        <div data-toggle="quill" data-options='{"placeholder": "Hello"}'></div>
+                        {{!-- <div data-toggle="quill" data-options='{"placeholder": "Hello"}'></div> --}}
 
+                        {{!-- Toolbar  --}}
                         <div id="toolbar">
-                            <button class="ql-bold">Bold</button>
-                            <button class="ql-italic">Italic</button>
+                            <span class="ql-formats">
+                                <button class="ql-bold">Bold</button>
+                                <button class="ql-italic">Italic</button>
+                            </span>
+
+                            <span class="ql-formats">
+                                <button class="ql-blockquote"></button>
+                                <button class="ql-link ql-active"></button>
+                                <button class="ql-image"></button>
+                            </span>
+                            <span class="ql-formats">
+                                <button class="ql   -bold"></button>
+                            </span>
+
                         </div>
 
                         <div id="editor"></div>
@@ -124,4 +136,3 @@
 
         </div>
     </div> <!-- / .main-content -->
-

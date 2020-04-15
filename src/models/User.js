@@ -1,10 +1,13 @@
 const {Schema, model} = require("mongoose");
-const bcrypt = required(bcryptjs);
+const bcrypt = require("bcryptjs");
 
 const UserSchema = new Schema({
     name: { type: String, required: true },
-    email: { type: String, required: true },
-    password: { type: String, required: true }
+    username: { type: String, required: true },
+    email: { type: String, required: true, unique: true },
+    password: { type: String, required: true },
+    avatar: { type: String },
+    bio: { type: String }
 }, {
     timestamps: true
 });
@@ -16,7 +19,7 @@ UserSchema.methods.encryptPassword = async password => {
 }
 
 // Comparar contraseña con la que introduce el usuario
-UserSchema.methods.matchPassword = function(password) {
+UserSchema.methods.matchPassword = async function(password) {
     return await bcrypt.compare(password, this.password);
 }
 

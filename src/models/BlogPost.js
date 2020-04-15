@@ -6,6 +6,7 @@ const BlogPostSchema = new Schema({
     description: { type: String, required: true},
     content: { type: String, required: true },
     slug: { type: String, required: true, unique: true },
+    //   author: { type: Schema.Types.ObjectId, required: true, ref: "User" },
     author: { type: String },
     category: { type: String }
 }, {

@@ -1,0 +1,85 @@
+<section class="d-flex align-items-center bg-auth border-top border-top-5 border-info py-15">
+
+    <!-- CONTENT
+    ================================================== -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-5 my-6">
+
+                {{> messages}}
+
+                <!-- Heading -->
+                <h1 class="display-4 text-center mb-5">
+                    Registra un usuario
+                </h1>
+
+                <!-- Form -->
+                <form action="/dashboard/registro" method="POST" class="mb-4">
+
+                    <!-- Email address -->
+                    <div class="form-group">
+
+                        <!-- Label -->
+                        <label>Nombre completo</label>
+
+                        <!-- Input -->
+                        <input type="text" name="name" class="form-control" placeholder="Nombre completo" required>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <!-- Label -->
+                        <label>Usuario</label>
+
+                        <!-- Input -->
+                        <input type="text" name="username" class="form-control" placeholder="Nombre de usuario"
+                            required>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <!-- Label -->
+                        <label>Correo eléctronico</label>
+
+                        <!-- Input -->
+                        <input type="email" name="email" class="form-control" placeholder="correo@munay.es" required>
+
+                    </div>
+
+
+                    <!-- Password -->
+                    <div class="form-group">
+
+                        <!-- Label -->
+                        <label>Contraseña</label>
+
+                        <!-- Input group -->
+                        <div class="input-group input-group-merge">
+
+                            <!-- Input -->
+                            <input type="password" name="password" class="form-control form-control-appended"
+                                placeholder="Introduce tu contraseña" required>
+
+                            <!-- Icon -->
+                            <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i class="fe fe-eye"></i>
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Submit -->
+                    <button class="btn btn-lg btn-block btn-info mb-3">
+                        Registrar
+                    </button>
+
+                </form>
+
+            </div>
+        </div> <!-- / .row -->
+    </div> <!-- / .container -->
+</section>
