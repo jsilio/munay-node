@@ -11,7 +11,7 @@ const passport = require("passport");
 
 // Initializations
 const app = express();
-require("./config/passport");
+require("./config/passport")(passport);
 
 // Settings
 app.set("port", process.env.PORT || 3000);

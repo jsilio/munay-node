@@ -63,20 +63,18 @@ usersCtrl.renderSignIn = (req, res) => {
 // Realizar inicio de sesión
 
 usersCtrl.signIn = passport.authenticate("local", {
-    failureRedirect: "/dashboard/login",
     successRedirect: "/dashboard",
+    failureRedirect: "/dashboard/login",
     failureFlash: true
 });
-
-// usersCtrl.signIn = (req, res) => {
-//     res.send("Sign in");
-// }
 
 
 // Cerrar sesión
 
 usersCtrl.logOut = (req, res) => {
-    res.send("Log out");
+    req.logout();
+    req.flash("succes_msg", "Has cerrado sesión.");
+    res.redirect("/dashboard/login");
 }
 
 

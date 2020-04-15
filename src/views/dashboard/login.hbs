@@ -68,10 +68,14 @@
                         Iniciar sesión
                     </button>
 
-                    {{error}}
-
                 </form>
+                
+                {{>errors}}
 
+                {{!-- <div class="text-danger bg-danger-soft p-3 rounded">
+                   <i class="fe fe-alert-circle mr-2"></i> {{error}}
+                </div> --}}
+                
             </div>
         </div> <!-- / .row -->
     </div> <!-- / .container -->
