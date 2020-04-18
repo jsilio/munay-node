@@ -6,7 +6,7 @@ const BlogPost = require("../models/BlogPost");
 
 blogCtrl.renderBlog = async (req, res) => {
 
-    const blogPost = await BlogPost.find().lean();
+    const blogPost = await BlogPost.find().lean().sort({ createdAt: "desc" });
 
     res.render("blog/blog", { blogPost });
 };

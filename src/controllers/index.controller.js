@@ -1,11 +1,18 @@
 const indexCtrl = {};
 
 const Contact = require("../models/Contact");
+const BlogPost = require("../models/BlogPost");
 
 const nodemailer = require("nodemailer");
 
-indexCtrl.renderIndex = (req, res) => {
-    res.render("index", {title: "Munay - Psicología Clínica y Neuropsicología"});
+indexCtrl.renderIndex = async (req, res) => {
+
+    const blogPost = await BlogPost.find().lean().sort({ createdAt: "desc" }).limit(3);
+
+    res.render("index", {
+        blogPost,
+        title: "Munay - Psicología Clínica y Neuropsicología"
+    });
 }
 
 indexCtrl.renderContacto = (req, res) => {

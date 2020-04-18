@@ -1,50 +1,29 @@
-{{!-- Blog Post --}}
-
-{{!-- <div class="row justify-content-center py-6">
-  <div class="col-12">
-    <div data-jarallax data-speed="1.5" class="py-5 py-md-14 bg-cover jarallax rounded"
-      style="background-image: url(/img/photos/blog3.png);">
-    </div>
-  </div>
-</div> --}}
-
-
-
-
-
-
-<!-- HEADER
-    ================================================== -->
-<section class="pt-8 pt-md-11">
+{{!-- Título y metadatos --}}
+<section class="pt-8 pt-md-12 bg-gradient-light">
   <div class="container">
 
+    <div class="row align-items-center justify-content-center">
 
+      {{!-- Título y Descripción --}}
+      <div class="col-12 col-md-10">
+        <div class="container text-center">
 
-    <div class="row align-items-center justify-content-center"> 
-      <div class="col-12 mb-3">
+          <h1 class="display-4 text-primary font-weight-bold mb-4">
+            {{blogPost.title}}
+          </h1>
 
-        <div class="py-10 rounded bg-cover overlay overlay-black overlay-70"
-          style="background-image: url(/img/photos/blog3.png);">
-
-          <div class="container px-9">
-
-            {{!-- Título --}}
-            <h1 class="position-relative display-4 text-center text-white mb-7 font-weight-bold">
-               {{blogPost.title}}
-            </h1>
-
-            {{!-- Descripción --}} 
-            <p class="position-relative mb-7 text-center text-white-70 px-10 font-size-lg">
-              {{blogPost.description}}
-            </p>
-
-          </div>
+          <p class="mb-7 font-size-lg text-gray-700 px-4">
+            {{blogPost.description}}
+          </p>
 
         </div>
       </div>
 
+      <div class="col-12 text-center mb-4">
+        <img src="{{blogPost.coverURL}}" alt="Munay - Psicología Clínica y Neuropsicología" class="img-fluid rounded">
+      </div>
+
       <div class="col-12 col-md-10 col-lg-9 col-xl-8">
-        <!-- Meta -->
         <div class="row align-items-center justify-content-end py-5 border-bottom">
           <div class="col-auto">
 
@@ -57,8 +36,8 @@
           <div class="col ml-n5">
 
             <!-- Name -->
-            <h5 class="mb-3">
-              Laura Marín Cuesta
+            <h5 class="mb-2">
+              Laura Marín
             </h5>
 
 
@@ -110,13 +89,15 @@
   </div> <!-- / .container -->
 </section>
 
-<!-- SECTION
-    ================================================== -->
+{{!-- Entradas --}}
 <section class="pt-6 pt-md-8">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-12 col-md-10 col-lg-9 col-xl-8">
+      <div class="col-12 col-md-10 col-lg-9">
 
+        <h2 class="font-weight-bold">
+          Big heading for a new topic
+        </h2>
 
         <p>
           Nos gustaría recordarte algunas cosas acerca del tratamiento psicológico:
@@ -191,7 +172,7 @@
 
 <!-- SECTION
     ================================================== -->
-<section class="pt-6 pt-md-8">
+{{!-- <section class="pt-6 pt-md-8">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12 col-lg-11 col-xl-10">
@@ -212,7 +193,7 @@
       </div>
     </div> <!-- / .row -->
   </div> <!-- / .container -->
-</section>
+</section> --}}
 
 <!-- SECTION
     ================================================== -->
@@ -304,7 +285,7 @@
         </ul>
 
         <!-- Grid -->
-        <div class="form-row align-items-center">
+        {{!-- <div class="form-row align-items-center">
           <div class="col-6">
 
             <!-- Image -->
@@ -329,7 +310,7 @@
             </a>
 
           </div>
-        </div> <!-- / .row -->
+        </div> <!-- / .row --> --}}
 
       </div>
     </div> <!-- / .row -->
@@ -454,7 +435,7 @@
 
       {{!-- Botón --}}
       <div class="col-12 col-md-auto">
-        <a href="#!" class="btn btn-sm btn-outline-gray-300 d-none d-md-inline">
+        <a href="/blog" class="btn btn-sm btn-outline-gray-300 d-none d-md-inline">
           Ver más
         </a>
       </div>

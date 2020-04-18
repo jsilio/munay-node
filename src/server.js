@@ -2,12 +2,14 @@ require("dotenv").config();
 
 const express = require("express");
 const exphbs = require("express-handlebars");
-const path = require("path");
-const morgan = require("morgan");
-const methodOverride = require("method-override");
 const flash = require("connect-flash");
-const session = require("express-session");
+const methodOverride = require("method-override");
+const moment = require("moment");
+const morgan = require("morgan");
+const multer = require("multer");
 const passport = require("passport");
+const path = require("path");
+const session = require("express-session");
 
 // Initializations
 const app = express();
@@ -24,7 +26,8 @@ app.engine(".hbs", exphbs({ // Configuración del templating engine
     extname: ".hbs",
     helpers: {
         date: function(date) {
-            return date.toLocaleDateString("es-ES");
+            moment.locale("es");
+            return moment(date).format("l");
         }
     }
 })); 
@@ -43,8 +46,17 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-
 app.use(flash());
+
+const storage = multer.diskStorage({
+    destination: path.join(__dirname, "public/uploads"),
+    filename: (req, file, cb) => {
+        cb(null, new Date().getTime() + path.extname(file.originalname));
+    }
+});
+
+app.use(multer({storage}).single("file"));
+
 
 
 

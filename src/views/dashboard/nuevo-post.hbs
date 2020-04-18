@@ -24,61 +24,53 @@
                     </div>
                 </div>
 
-                <!-- Form -->
-                <form action="/dashboard/blog/nuevo-post" method="POST" class="mb-4">
+                {{!-- Formulario --}}
+                <form action="/dashboard/blog/nuevo-post" method="POST" enctype="multipart/form-data" class="mb-4">
 
-                    <!-- Título de la entrada -->
+                    {{!-- Título --}}
                     <div class="form-group">
 
                         <label> Título </label>
-                        <input type="text" class="form-control" name="title" />
+
+                        <input type="text" class="form-control" name="title" autofocus required />
 
                     </div>
 
-                    <!-- Descripción de la entrada -->
+                    {{!-- Descripción --}}
                     <div class="form-group">
 
-                        <label> Descripción </label>
-                        <input type="text" class="form-control" name="description" />
+                        <label class="mb-1"> Descripción </label>
+
+                        <small class="form-text text-muted">
+                            Máximo: 180 caracteres.
+                        </small>
+
+                        <textarea name="description" class="form-control" maxlength="180" rows="3" required>
+                        </textarea>
 
                     </div>
 
-                    {{!-- Divider --}}
-                    <hr class="mt-4 mb-5">
-
-                    <!-- Cover -->
+                    {{!-- Cover --}}
                     <div class="form-group mb-4">
                         <label class="mb-1"> Cover </label>
 
 
                         <small class="form-text text-muted">
-                            1200px * 600px.
+                            Formatos aceptados: jpg, jpeg, png.
                         </small>
 
-                        <!-- Dropzone -->
-                        <div class="dropzone dropzone-single mb-3" data-toggle="dropzone"
-                            data-options='{"url": "https://", "maxFiles": 1, "acceptedFiles": "image/*"}'>
-
-                            <!-- Fallback -->
-                            <div class="fallback">
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="projectCoverUploads" />
-                                    <label class="custom-file-label" for="projectCoverUploads">Choose file</label>
-                                </div>
+                        <div class="input-group mt-3">
+                            <div class="custom-file">
+                                <input type="file" name="file" class="custom-file-input" id="inputGroupFile01"
+                                    aria-describedby="inputGroupFileAddon01">
+                                <label class="custom-file-label" for="inputGroupFile01">Selecciona la imagen</label>
                             </div>
-
-                            <!-- Preview -->
-                            <div class="dz-preview dz-preview-single">
-                                <div class="dz-preview-cover">
-                                    <img class="dz-preview-img" src="data:image/svg+xml,%3csvg3c/svg%3e" alt="..."
-                                        data-dz-thumbnail />
-                                </div>
-                            </div>
-
                         </div>
+
                     </div>
 
-
+                    {{!-- Divider --}}
+                    <hr class="my-4 my-6">
 
                     <!-- Contenido -->
                     <div class="form-group mb-5">
@@ -89,9 +81,6 @@
                         <small class="form-text text-muted">
                             This is how others will preview the entry, so make it good!
                         </small>
-
-                        <!-- Textarea: Rich text editor -->
-                        {{!-- <div data-toggle="quill" data-options='{"placeholder": "Hello"}'></div> --}}
 
                         {{!-- Toolbar  --}}
                         <div id="toolbar">
@@ -113,7 +102,7 @@
 
                         <div id="editor"></div>
 
-                        <textarea name="content" id="" cols="30" rows="10"></textarea>
+                        <textarea name="content" id="" cols="30" rows="10" required></textarea>
                     </div>
 
 

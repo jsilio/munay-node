@@ -1,6 +1,18 @@
 const dashCtrl = {}
 
+// Models
 const BlogPost = require("../models/BlogPost");
+
+// Modules
+const cloudinary = require("cloudinary").v2;
+
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET
+});
+
+const fs = require("fs-extra");
 
 // Mostrar dashboard
 
@@ -19,7 +31,7 @@ dashCtrl.renderBlog = async (req, res) => {
 
     res.render("dashboard/blog", {
         blogPost,
-        title: "Munay Admin - Blog",
+        title: "Blog - Munay Admin",
         layout: "admin"
     });
 };
@@ -39,12 +51,22 @@ dashCtrl.addNewPost = async (req, res) => {
 
     // Extraer los datos del formulario
     const { title, description, content } = req.body;
-    // Pasar los datos a la db
-    const newBlogPost = new BlogPost({ title, description, content });
 
-    // Guardar datos en la db
+    
     try {
+        const uploadedImg = await cloudinary.uploader.upload(req.file.path);
+        // Pasar los datos a la db
+        const newBlogPost = new BlogPost({ 
+            title, 
+            description, 
+            content, 
+            coverURL: uploadedImg.url,
+            public_id: uploadedImg.public_id
+        });
+
+        // Guardar datos en la db
         await newBlogPost.save();
+        await fs.unlink(req.file.path);
         res.redirect("/dashboard/blog")
 
     } catch (err) {
@@ -91,10 +113,10 @@ dashCtrl.updatePost = async (req, res) => {
 // Eliminar post
 
 dashCtrl.deletePost = async (req, res) => {
-
+    
     // Encuentra post por id y lo elimina
-    await BlogPost.findByIdAndDelete(req.params.id);
-
+    const blogPost = await BlogPost.findByIdAndDelete(req.params.id);
+    await cloudinary.uploader.destroy(blogPost.public_id);
     res.redirect("/dashboard/blog")
 };
 

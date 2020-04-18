@@ -11,28 +11,30 @@ const {
     deletePost 
 } = require("../controllers/dashboard.controller");
 
+const { isAuthenticated } = require("../helpers/auth");
+
 // Mostrar dashboard
 
-router.get("/dashboard", renderDashboard);
+router.get("/dashboard", isAuthenticated, renderDashboard);
 
 // Mostrar todos los posts
 
-router.get("/dashboard/blog", renderBlog);
+router.get("/dashboard/blog", isAuthenticated, renderBlog);
 
 // Nuevo post
 
-router.get("/dashboard/blog/nuevo-post", renderNewPost);
+router.get("/dashboard/blog/nuevo-post", isAuthenticated, renderNewPost);
 
-router.post("/dashboard/blog/nuevo-post", addNewPost);
+router.post("/dashboard/blog/nuevo-post", isAuthenticated, addNewPost);
 
 // Editar post
 
-router.get("/dashboard/blog/editar/:id", renderEditPost);
+router.get("/dashboard/blog/editar/:id", isAuthenticated, renderEditPost);
 
-router.put("/dashboard/blog/editar/:id", updatePost);
+router.put("/dashboard/blog/editar/:id", isAuthenticated, updatePost);
 
 // Eliminar post
 
-router.delete("/dashboard/blog/eliminar/:id", deletePost);
+router.delete("/dashboard/blog/eliminar/:id", isAuthenticated, deletePost);
 
 module.exports = router;
