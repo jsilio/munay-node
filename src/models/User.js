@@ -7,7 +7,8 @@ const UserSchema = new Schema({
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     avatar: { type: String },
-    bio: { type: String }
+    bio: { type: String },
+    blogPosts: [{ type: Schema.Types.ObjectId, ref: "BlogPost" }]
 }, {
     timestamps: true
 });
@@ -19,9 +20,9 @@ UserSchema.methods.encryptPassword = async password => {
 }
 
 // Comparar contraseña con la que introduce el usuario
-UserSchema.methods.matchPassword = async function(password) {
-    return await bcrypt.compare(password, this.password);
-}
+// UserSchema.methods.matchPassword = async function(password) {
+//     return await bcrypt.compare(password, this.password);
+// }
 
 module.exports = model("User", UserSchema);
 

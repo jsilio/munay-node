@@ -90,14 +90,21 @@
                                             {{description}}
                                         </p>
 
-                                        <!-- Time -->
+                                        {{!-- Metadata --}}
                                         <p class="card-text small text-secondary">
-                                            <i class="fe fe-user mr-2"></i> <strong>Autor:</strong> Laura Marín
-                                            <i class="fe fe-calendar mx-2"></i> <strong>Fecha de publicación:</strong>
-                                            {{date createdAt}}
+
+                                            {{!-- Autor --}}
+                                            <i class="fe fe-user mr-2"></i> 
+                                            <strong>Autor:</strong> {{author.name}}
+
+                                            {{!-- Fecha --}}
+                                            <i class="fe fe-calendar mx-2"></i> 
+                                            <strong>Fecha de publicación:</strong> {{date createdAt}}
+
                                         </p>
 
                                     </div>
+
                                     <div class="col-auto">
 
                                         

@@ -45,8 +45,7 @@
                             Máximo: 180 caracteres.
                         </small>
 
-                        <textarea name="description" class="form-control" maxlength="180" rows="3" required>
-                        </textarea>
+                        <textarea name="description" class="form-control" maxlength="180" rows="3" required></textarea>
 
                     </div>
 
@@ -75,34 +74,30 @@
                     <!-- Contenido -->
                     <div class="form-group mb-5">
 
-                        <label class="mb-1"> Contenido </label>
-
-
-                        <small class="form-text text-muted">
-                            This is how others will preview the entry, so make it good!
-                        </small>
+                        <label for="content" class="mb-1"> Contenido </label>
 
                         {{!-- Toolbar  --}}
                         <div id="toolbar">
                             <span class="ql-formats">
+                                <button class="ql-header" value="1"></button>
+                                <button class="ql-header" value="2"></button>
+                            </span>
+                            <span class="ql-formats">
                                 <button class="ql-bold">Bold</button>
                                 <button class="ql-italic">Italic</button>
                             </span>
-
                             <span class="ql-formats">
                                 <button class="ql-blockquote"></button>
                                 <button class="ql-link ql-active"></button>
                                 <button class="ql-image"></button>
+                                <button class="ql-video"></button>
                             </span>
-                            <span class="ql-formats">
-                                <button class="ql   -bold"></button>
-                            </span>
-
                         </div>
 
+                    
+                        <input type="hidden" name="content">
                         <div id="editor"></div>
 
-                        <textarea name="content" id="" cols="30" rows="10" required></textarea>
                     </div>
 
 
@@ -118,6 +113,7 @@
                         <a href="/dashboard/blog" class="btn btn-block btn-link text-muted">
                             Cancelar
                         </a>
+
                     </div>
 
                 </form>
@@ -125,3 +121,5 @@
 
         </div>
     </div> <!-- / .main-content -->
+
+   

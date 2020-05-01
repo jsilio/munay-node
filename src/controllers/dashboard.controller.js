@@ -2,6 +2,7 @@ const dashCtrl = {}
 
 // Models
 const BlogPost = require("../models/BlogPost");
+const User = require("../models/User");
 
 // Modules
 const cloudinary = require("cloudinary").v2;
@@ -14,78 +15,127 @@ cloudinary.config({
 
 const fs = require("fs-extra");
 
-// Mostrar dashboard
 
+
+// GET - Mostrar dashboard
 dashCtrl.renderDashboard = (req, res) => {
     res.render("dashboard/dashboard", {
-        title: "Munay Admin",
-        layout: "admin"
+        title: "Munay Admin"
     })
 }
 
-// Mostrar todos los posts 
+// GET - Mostrar configuración de perfil
+dashCtrl.renderProfile = async (req, res) => {
 
+    const user = await User.findOne({ username: req.user.username }).lean();
+
+    res.render("dashboard/editar-perfil", {
+        user,
+        title: "Editar perfil - Munay"
+    });
+}
+
+// PUT - Editar perfil
+dashCtrl.updateProfile = async (req, res) => {
+
+    const { name, username, email, avatar, bio } = req.body;
+
+    const user = await User.findByIdAndUpdate(req.user.id, { name, username, email, avatar, bio });
+
+    // Guardar datos en la db
+    try {
+        await user.save();
+
+        req.flash("success_msg", "El perfil ha sido modificado correctamente.")
+        res.redirect("/dashboard/perfil")
+
+    } catch (err) {
+        console.log(err)
+        res.render("dashboard/editar-perfil", {
+            user,
+            title: "Editar perfil - Munay"
+        });
+    }
+};
+
+// GET - Mostrar todos los posts 
 dashCtrl.renderBlog = async (req, res) => {
 
-    const blogPost = await BlogPost.find().lean().sort({ createdAt: "desc" });
-
+    // Query
+    const blogPost = await BlogPost.find()
+    .populate("author")
+    .lean()
+    .sort({ createdAt: "desc" });
+   
+    // Render
     res.render("dashboard/blog", {
         blogPost,
-        title: "Blog - Munay Admin",
-        layout: "admin"
+        title: "Blog - Munay Admin"
     });
 };
 
-// Crear nuevo post del blog
-
-dashCtrl.renderNewPost = (req, res) => {
+// GET - Mostrar formulario de nueva entrada
+dashCtrl.renderNewPost = async (req, res) => {
 
     // Mostrar formulario para añadir nuevo post
     res.render("dashboard/nuevo-post", {
-        title: "Crear nueva entrada - Munay Admin",
-        layout: "admin"
+        title: "Crear nueva entrada - Munay Admin"
     });
+
 };
 
+// POST - Añadir nuevo post
 dashCtrl.addNewPost = async (req, res) => {
 
     // Extraer los datos del formulario
     const { title, description, content } = req.body;
 
-    
     try {
+
+        // Asignar el autor
+        const author = await User.findOne({ username: req.user.username }).lean();
+
+        // Subir la imagen a Cloudinary
         const uploadedImg = await cloudinary.uploader.upload(req.file.path);
-        // Pasar los datos a la db
-        const newBlogPost = new BlogPost({ 
-            title, 
-            description, 
-            content, 
+
+        // Crear un nuevo post como modelo
+        const newBlogPost = new BlogPost({
+            title,
+            description,
+            content,
             coverURL: uploadedImg.url,
-            public_id: uploadedImg.public_id
+            public_id: uploadedImg.public_id,
+            author: author._id
         });
 
-        // Guardar datos en la db
+        // Guardar post en la db
         await newBlogPost.save();
+
+        // author.blogPosts.push(newBlogPost._id);
+
+        // // ARREGLAR - no me permite guardar los posts en el array del modelo de usuario
+        // await author.save()
+
+
+        // Borrar imagen del servidor
         await fs.unlink(req.file.path);
+        
         res.redirect("/dashboard/blog")
 
     } catch (err) {
         console.log(err)
         res.render("dashboard/nuevo-post", {
-            title: "Crear nueva entrada - Munay Admin",
-            layout: "admin"
+            title: "Crear nueva entrada - Munay Admin"
         });
     }
 };
 
 // Editar un post del Blog
-
 dashCtrl.renderEditPost = async (req, res) => {
     const blogPost = await BlogPost.findById(req.params.id).lean();
     res.render("dashboard/editar-post", {
         blogPost,
-        title: "Editar entrada - Munay Admin",
-        layout: "admin"
+        title: "Editar entrada - Munay Admin"
     });
 };
 
@@ -103,8 +153,7 @@ dashCtrl.updatePost = async (req, res) => {
     } catch (err) {
         console.log(err)
         res.render("dashboard/editar-post", {
-            title: "Editar entrada - Munay Admin",
-            layout: "admin"
+            title: "Editar entrada - Munay Admin"
         });
     }
 
@@ -113,11 +162,19 @@ dashCtrl.updatePost = async (req, res) => {
 // Eliminar post
 
 dashCtrl.deletePost = async (req, res) => {
-    
+
     // Encuentra post por id y lo elimina
     const blogPost = await BlogPost.findByIdAndDelete(req.params.id);
     await cloudinary.uploader.destroy(blogPost.public_id);
     res.redirect("/dashboard/blog")
+};
+
+// Mostrar fichas de pacientes
+
+dashCtrl.renderPacientes = async (req, res) => {
+    res.render("dashboard/pacientes", {
+        title: "Pacientes - Munay Admin"
+    });
 };
 
 module.exports = dashCtrl;

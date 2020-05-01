@@ -73,7 +73,7 @@ usersCtrl.signIn = passport.authenticate("local", {
 
 usersCtrl.logOut = (req, res) => {
     req.logout();
-    req.flash("succes_msg", "Has cerrado sesión.");
+    req.flash("success_msg", "Has cerrado sesión correctamente.");
     res.redirect("/dashboard/login");
 }
 

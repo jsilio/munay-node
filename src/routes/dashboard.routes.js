@@ -3,6 +3,8 @@ const router = Router();
 
 const { 
     renderDashboard,
+    renderProfile,
+    updateProfile,
     renderBlog,
     renderNewPost, 
     addNewPost, 
@@ -13,9 +15,22 @@ const {
 
 const { isAuthenticated } = require("../helpers/auth");
 
+router.all("/*", (req, res, next) => {
+
+    req.app.locals.layout = "admin"
+    next();
+    
+});
+
 // Mostrar dashboard
 
 router.get("/dashboard", isAuthenticated, renderDashboard);
+
+// Configuración del perfil
+router.get("/dashboard/perfil", isAuthenticated, renderProfile);
+
+// Editar perfil
+router.put("/dashboard/perfil", isAuthenticated, updateProfile);
 
 // Mostrar todos los posts
 

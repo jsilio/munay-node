@@ -7,7 +7,7 @@ const BlogPost = require("../models/BlogPost");
 blogCtrl.renderBlog = async (req, res) => {
 
     const blogPost = await BlogPost.find().lean().sort({ createdAt: "desc" });
-
+    
     res.render("blog/blog", { blogPost });
 };
 
@@ -15,7 +15,9 @@ blogCtrl.renderBlog = async (req, res) => {
 
 blogCtrl.renderBlogPost = async (req, res) => {
 
-    const blogPost = await BlogPost.findOne({ slug: req.params.slug }).lean();
+    const blogPost = await BlogPost.findOne({ slug: req.params.slug })
+        .lean()
+        .populate("author");
 
     if (blogPost == null) res.redirect("/blog")
  

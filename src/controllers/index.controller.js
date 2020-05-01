@@ -7,7 +7,10 @@ const nodemailer = require("nodemailer");
 
 indexCtrl.renderIndex = async (req, res) => {
 
-    const blogPost = await BlogPost.find().lean().sort({ createdAt: "desc" }).limit(3);
+    const blogPost = await BlogPost.find()
+        .lean()
+        .sort({ createdAt: "desc" })
+        .limit(3);
 
     res.render("index", {
         blogPost,

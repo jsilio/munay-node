@@ -19,58 +19,72 @@
         </div>
       </div>
 
-      <div class="col-12 text-center mb-4">
-        <img src="{{blogPost.coverURL}}" alt="Munay - Psicología Clínica y Neuropsicología" class="img-fluid rounded">
-      </div>
-
+      {{!-- Metadata --}}
       <div class="col-12 col-md-10 col-lg-9 col-xl-8">
         <div class="row align-items-center justify-content-end py-5 border-bottom">
+
+          {{!-- Avatar --}}
           <div class="col-auto">
 
-            <!-- Avatar -->
             <div class="avatar avatar-xl">
-              <img src="/img/photos/avatar-laura.jpg" alt="..." class="avatar-img rounded-circle">
+              <img src="/img/photos/avatar-laura.jpg" alt="{{blogPost.author.name}}" class="avatar-img rounded-circle">
             </div>
 
           </div>
+
+
           <div class="col ml-n5">
 
-            <!-- Name -->
-            <h5 class="mb-2">
-              Laura Marín
+            {{!-- Autor --}}
+            <h5 class="mb-2 display-6">
+              {{blogPost.author.name}}
             </h5>
 
 
-            <!-- Date -->
-            <time class="font-size-sm text-muted" datetime="2019-05-20">
-
+            {{!-- Fecha de publicación --}}
+            <time class="font-size-sm text-muted" datetime="{{date blogPost.createdAt}}">
 
               <i class="fe fe-calendar text-muted mr-2 mb-1"></i>
               {{date blogPost.createdAt}}
+
             </time>
 
           </div>
+
           <div class="col-auto">
 
-
-
-            <!-- Icons -->
+            {{!-- Lista de redes sociales --}}
             <ul class="d-inline list-unstyled list-inline list-social">
+
+              {{!-- Instagram --}}
               <li class="list-inline-item list-social-item mr-3">
                 <a href="#!" class="text-decoration-none">
-                  <img src="/img/icons/social/instagram.svg" class="list-social-icon" alt="...">
+                  <img src="/img/icons/social/instagram.svg" class="list-social-icon" alt="Instagram">
                 </a>
               </li>
+
+              {{!-- Facebook --}}
               <li class="list-inline-item list-social-item mr-3">
                 <a href="#!" class="text-decoration-none">
-                  <img src="/img/icons/social/facebook.svg" class="list-social-icon" alt="...">
+                  <img src="/img/icons/social/facebook.svg" class="list-social-icon" alt="Facebook">
                 </a>
               </li>
+
+              {{!-- Twitter --}}
               <li class="list-inline-item list-social-item mr-3">
                 <a href="#!" class="text-decoration-none">
-                  <img src="/img/icons/social/twitter.svg" class="list-social-icon" alt="...">
+                  <img src="/img/icons/social/twitter.svg" class="list-social-icon" alt="Twitter">
                 </a>
               </li>
+
+              {{!-- LinkedIn --}}
+              <li class="list-inline-item list-social-item mr-3">
+                <a href="#!" class="text-decoration-none">
+                  <img src="/img/icons/social/linkedin.svg" class="list-social-icon" alt="Linkedin">
+                </a>
+              </li>
+
+
             </ul>
 
             <div class="mr-auto">
@@ -85,6 +99,12 @@
         </div>
 
       </div>
+
+      <div class="col-12 text-center mb-4">
+        <img src="{{blogPost.coverURL}}" alt="Munay - Psicología Clínica y Neuropsicología" class="img-fluid rounded">
+      </div>
+
+
     </div> <!-- / .row -->
   </div> <!-- / .container -->
 </section>
@@ -366,17 +386,16 @@
           {{!-- Datos del auto --}}
           <div class="col ml-n5">
 
-            <h5> Laura Marín </h5>
+            <h5> {{blogPost.author.name}} </h5>
 
             <p class="font-size-sm text-muted pr-8">
-              Graduada en Psicología. Colegiada M-35246. Máster en Psicología General Sanitaria.
-              Posgrado en Neuropsicología Clínica.
+              {{blogPost.author.bio}}
             </p>
 
             <i class="fe fe-calendar text-muted mr-2 mb-1"></i>
             <!-- Date -->
             <time class="font-size-sm text-muted" datetime="2019-05-20">
-              20 de Mayo, 2019
+              {{date blogpost.createdAt}}
             </time>
 
           </div>

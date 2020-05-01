@@ -27,7 +27,8 @@
                 </div>
 
                 <!-- Form -->
-                <form action="/dashboard/blog/editar/{{blogPost._id}}?_method=PUT" method="POST" class="mb-4">
+                <form action="/dashboard/blog/editar/{{blogPost._id}}?_method=PUT" method="POST" class="mb-4"
+                    enctype="multipart/form-data">
 
                     <input type="hidden" name="_method" value="PUT">
 
@@ -48,9 +49,8 @@
                             Máximo: 180 caracteres.
                         </small>
 
-                        <textarea name="description" class="form-control" maxlength="180" rows="3" required>
-                            {{ blogPost.description }}
-                        </textarea>
+                        <textarea name="description" class="form-control" maxlength="180" rows="3"
+                            required>{{blogPost.description}}</textarea>
 
                     </div>
 

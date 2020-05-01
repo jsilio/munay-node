@@ -9,6 +9,13 @@ const {
     renderReserva, 
 } = require("../controllers/index.controller");
 
+router.all("/*", (req, res, next) => {
+
+    req.app.locals.layout = "main"
+    next();
+    
+});
+
 router.get("/", renderIndex);
 
 router.get("/especialidades", renderEspecialidades);

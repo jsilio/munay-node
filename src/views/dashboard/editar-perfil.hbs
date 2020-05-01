@@ -1,0 +1,314 @@
+<div class="main-content">
+
+
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-10 col-xl-8">
+
+                <!-- Header -->
+                <div class="header mt-md-5">
+
+                    {{>messages}}
+
+                    <div class="header-body">
+                        <div class="row align-items-center">
+                            <div class="col">
+
+                                <!-- Pretitle -->
+                                <h6 class="header-pretitle">
+                                    Administradora
+                                </h6>
+
+                                <!-- Title -->
+                                <h1 class="header-title">
+                                    Configuración
+                                </h1>
+
+                            </div>
+                        </div> <!-- / .row -->
+                        <div class="row align-items-center">
+                            <div class="col">
+
+                                <!-- Nav -->
+                                <ul class="nav nav-tabs nav-overflow header-tabs">
+                                    <li class="nav-item">
+                                        <a href="#!" class="nav-link active">
+                                            General
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#!" class="nav-link">
+                                            Profile
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#!" class="nav-link">
+                                            Billing
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#!" class="nav-link">
+                                            Notifications
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <form action="/dashboard/perfil?_method=PUT" method="POST" class="mb-4" enctype="multipart/form-data">
+
+                    <div class="row">
+
+                        <div class="col-12">
+                            <div class="avatar avatar-xxl">
+                                <img src="{{user.avatar}}" alt="{{user.name}}">
+                            </div>
+
+                            <small class="form-text text-muted">
+                                Pendiente arreglar subida de imagen
+                            </small>
+                        </div>
+
+                        {{!-- Nombre --}}
+                        <div class="col-12 col-md-6">
+                            <div class="form-group">
+
+                                <label> Nombre </label>
+
+                                <input type="text" class="form-control" name="name" value="{{user.name}}" required>
+
+                            </div>
+                        </div>
+
+                        {{!-- Usuario --}}
+                        <div class="col-12 col-md-6">
+                            <div class="form-group">
+
+                                <label> Usuario </label>
+
+                                <input type="text" class="form-control" name="username" value="{{user.username}}"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+                        {{!-- Correo eletrónico --}}
+                        <div class="col-12">
+                            <div class="form-group">
+
+                                <label class="mb-1"> Bio </label>
+
+                                <small class="form-text text-muted">
+                                    Esta biografía aparecerá visible para tus artículos del blog
+                                </small>
+
+                                <textarea name="bio" class="form-control" maxlength="180" data-toggle="autosize"
+                                    style="resize: none;" required>{{user.bio}}</textarea>
+
+
+
+                            </div>
+
+                        </div>
+
+                        {{!-- Correo electrónico --}}
+                        <div class="col-12 col-md-6">
+                            <div class="form-group">
+
+                                <label class="mb-1"> Correo eletrónico </label>
+
+                                <input type="email" class="form-control" name="email" value="{{user.email}}" required>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-12 col-md-6">
+
+                            <!-- Birthday -->
+                            <div class="form-group">
+
+                                <!-- Label -->
+                                <label>
+                                    Birthday
+                                </label>
+
+                                <!-- Input -->
+                                <input type="text" class="form-control">
+
+                            </div>
+
+                        </div>
+                    </div> <!-- / .row -->
+
+                    <!-- Divider -->
+                    <hr class="mt-4 mb-5">
+
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+
+                            <!-- Public profile -->
+                            <div class="form-group">
+
+                                <!-- Label -->
+                                <label class="mb-1">
+                                    Public profile
+                                </label>
+
+                                <!-- Form text -->
+                                <small class="form-text text-muted">
+                                    Making your profile public means that anyone on the Dashkit network will be able
+                                    to find you.
+                                </small>
+
+                                <div class="row">
+                                    <div class="col-auto">
+
+                                        <!-- Switch -->
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input" id="switchOne">
+                                            <label class="custom-control-label" for="switchOne"></label>
+                                        </div>
+
+                                    </div>
+                                    <div class="col ml-n2">
+
+                                        <!-- Help text -->
+                                        <small class="text-muted">
+                                            You're currently invisible
+                                        </small>
+
+                                    </div>
+                                </div> <!-- / .row -->
+                            </div>
+
+                        </div>
+                        <div class="col-12 col-md-6">
+
+                            <!-- Allow for additional Bookings -->
+                            <div class="form-group">
+
+                                <!-- Label -->
+                                <label class="mb-1">
+                                    Allow for additional Bookings
+                                </label>
+
+                                <!-- Form text -->
+                                <small class="form-text text-muted">
+                                    If you are available for hire outside of the current situation, you can
+                                    encourage others to hire you.
+                                </small>
+
+                                <div class="row">
+                                    <div class="col-auto">
+
+                                        <!-- Switch -->
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input" id="switchTwo">
+                                            <label class="custom-control-label" for="switchTwo"></label>
+                                        </div>
+
+                                    </div>
+                                    <div class="col ml-n2">
+
+                                        <!-- Help text -->
+                                        <small class="text-muted">
+                                            You're currently available
+                                        </small>
+
+                                    </div>
+                                </div> <!-- / .row -->
+                            </div>
+
+                        </div>
+                    </div> <!-- / .row -->
+
+                    <!-- Divider -->
+                    <hr class="mt-4 mb-5">
+
+                    <div class="row">
+                        <div class="col-12 col-md-6 order-md-2">
+
+                            <!-- Card -->
+                            <div class="card bg-light border ml-md-4">
+                                <div class="card-body">
+
+                                    <!-- Text -->
+                                    <p class="mb-2">
+                                        Password requirements
+                                    </p>
+
+                                    <!-- Text -->
+                                    <p class="small text-muted mb-2">
+                                        To create a new password, you have to meet all of the following
+                                        requirements:
+                                    </p>
+
+                                    <!-- List group -->
+                                    <ul class="small text-muted pl-4 mb-0">
+                                        <li>
+                                            Minimum 8 character
+                                        </li>
+                                        <li>
+                                            At least one special character
+                                        </li>
+                                        <li>
+                                            At least one number
+                                        </li>
+                                        <li>
+                                            Can’t be the same as a previous password
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-12 col-md-6">
+
+                            {{!-- Contraseña --}}
+                            <div class="form-group">
+
+                                <label> Password </label>
+                                <input type="password" class="form-control">
+
+                            </div>
+
+                            {{!-- Nueva contraseña --}}
+                            <div class="form-group">
+
+                                <label> New password </label>
+                                <input type="password" class="form-control">
+
+                            </div>
+
+                            {{!-- Confirmar nueva contraseña --}}
+                            <div class="form-group">
+
+                                <label> Confirmar nueva contraseña </label>
+                                <input type="password" class="form-control">
+
+                            </div>
+
+                            {{!-- Actualizar contraseña --}}
+                            <button type="submit" class="btn btn-primary lift">
+                                Actualizar contraseña
+                            </button>
+
+                        </div>
+                    </div> <!-- / .row -->
+
+                </form>
+
+            </div>
+        </div> <!-- / .row -->
+    </div>
+
+</div> <!-- / .main-content -->
