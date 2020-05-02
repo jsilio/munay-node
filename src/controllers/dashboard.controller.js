@@ -38,9 +38,12 @@ dashCtrl.renderProfile = async (req, res) => {
 // PUT - Editar perfil
 dashCtrl.updateProfile = async (req, res) => {
 
-    const { name, username, email, avatar, bio } = req.body;
+    const { name, username, email, bio } = req.body;
+    
+    // Subir la imagen a Cloudinary
+    const uploadedImg = await cloudinary.uploader.upload(req.file.path);
 
-    const user = await User.findByIdAndUpdate(req.user.id, { name, username, email, avatar, bio });
+    const user = await User.findByIdAndUpdate(req.user.id, { name, username, email, avatar: uploadedImg.url, bio });
 
     // Guardar datos en la db
     try {
@@ -75,7 +78,7 @@ dashCtrl.renderBlog = async (req, res) => {
 };
 
 // GET - Mostrar formulario de nueva entrada
-dashCtrl.renderNewPost = async (req, res) => {
+dashCtrl.renderNewPost = (req, res) => {
 
     // Mostrar formulario para añadir nuevo post
     res.render("dashboard/nuevo-post", {
@@ -169,12 +172,6 @@ dashCtrl.deletePost = async (req, res) => {
     res.redirect("/dashboard/blog")
 };
 
-// Mostrar fichas de pacientes
 
-dashCtrl.renderPacientes = async (req, res) => {
-    res.render("dashboard/pacientes", {
-        title: "Pacientes - Munay Admin"
-    });
-};
 
 module.exports = dashCtrl;

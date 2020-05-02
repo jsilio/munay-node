@@ -1,12 +1,10 @@
 <div class="main-content">
-
-
-
     <div class="container-fluid">
         <div class="row justify-content-center">
+
             <div class="col-12 col-lg-10 col-xl-8">
 
-                <!-- Header -->
+                {{!-- Header --}}
                 <div class="header mt-md-5">
 
                     {{>messages}}
@@ -15,12 +13,11 @@
                         <div class="row align-items-center">
                             <div class="col">
 
-                                <!-- Pretitle -->
                                 <h6 class="header-pretitle">
                                     Administradora
                                 </h6>
 
-                                <!-- Title -->
+                                {{!-- ítulo --}}
                                 <h1 class="header-title">
                                     Configuración
                                 </h1>
@@ -39,17 +36,12 @@
                                     </li>
                                     <li class="nav-item">
                                         <a href="#!" class="nav-link">
-                                            Profile
+                                            Perfil
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="#!" class="nav-link">
-                                            Billing
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#!" class="nav-link">
-                                            Notifications
+                                            Notificaciones
                                         </a>
                                     </li>
                                 </ul>
@@ -59,19 +51,31 @@
                     </div>
                 </div>
 
-                <!-- Form -->
+                {{!-- Form --}}
                 <form action="/dashboard/perfil?_method=PUT" method="POST" class="mb-4" enctype="multipart/form-data">
 
                     <div class="row">
 
-                        <div class="col-12">
+                        {{!-- Avatar --}}
+                        <div class="col-12 col-md-6 mb-4">
                             <div class="avatar avatar-xxl">
-                                <img src="{{user.avatar}}" alt="{{user.name}}">
+                                <img src="{{user.avatar}}" alt="{{user.name}}" class="avatar-img rounded-circle">
                             </div>
+                        </div>
 
-                            <small class="form-text text-muted">
-                                Pendiente arreglar subida de imagen
-                            </small>
+                        {{!-- Cambiar foto de perfil --}}
+                        <div class="col-12 col-md-6">
+                            <div class="input-group ">
+
+                                <div class="custom-file">
+                                    <input type="file" name="file" class="custom-file-input" id="inputGroupFile01"
+                                        aria-describedby="inputGroupFileAddon01">
+
+                                    <label class="custom-file-label" for="inputGroupFile01">Cambiar foto de
+                                        perfil</label>
+                                </div>
+
+                            </div>
                         </div>
 
                         {{!-- Nombre --}}
@@ -98,7 +102,7 @@
 
                         </div>
 
-                        {{!-- Correo eletrónico --}}
+                        {{!-- Biografía --}}
                         <div class="col-12">
                             <div class="form-group">
 
@@ -121,12 +125,15 @@
                         <div class="col-12 col-md-6">
                             <div class="form-group">
 
-                                <label class="mb-1"> Correo eletrónico </label>
+                                <label class="mb-1"> Correo electrónico </label>
 
                                 <input type="email" class="form-control" name="email" value="{{user.email}}" required>
 
                             </div>
-
+                            
+                             <button type="submit" class="btn btn-primary lift mt-2">
+                                Editar perfil
+                            </button>
                         </div>
 
                         <div class="col-12 col-md-6">
@@ -143,95 +150,19 @@
                                 <input type="text" class="form-control">
 
                             </div>
-
                         </div>
+
+                        
+
+
                     </div> <!-- / .row -->
+                </form>
 
-                    <!-- Divider -->
-                    <hr class="mt-4 mb-5">
-
-                    <div class="row">
-                        <div class="col-12 col-md-6">
-
-                            <!-- Public profile -->
-                            <div class="form-group">
-
-                                <!-- Label -->
-                                <label class="mb-1">
-                                    Public profile
-                                </label>
-
-                                <!-- Form text -->
-                                <small class="form-text text-muted">
-                                    Making your profile public means that anyone on the Dashkit network will be able
-                                    to find you.
-                                </small>
-
-                                <div class="row">
-                                    <div class="col-auto">
-
-                                        <!-- Switch -->
-                                        <div class="custom-control custom-switch">
-                                            <input type="checkbox" class="custom-control-input" id="switchOne">
-                                            <label class="custom-control-label" for="switchOne"></label>
-                                        </div>
-
-                                    </div>
-                                    <div class="col ml-n2">
-
-                                        <!-- Help text -->
-                                        <small class="text-muted">
-                                            You're currently invisible
-                                        </small>
-
-                                    </div>
-                                </div> <!-- / .row -->
-                            </div>
-
-                        </div>
-                        <div class="col-12 col-md-6">
-
-                            <!-- Allow for additional Bookings -->
-                            <div class="form-group">
-
-                                <!-- Label -->
-                                <label class="mb-1">
-                                    Allow for additional Bookings
-                                </label>
-
-                                <!-- Form text -->
-                                <small class="form-text text-muted">
-                                    If you are available for hire outside of the current situation, you can
-                                    encourage others to hire you.
-                                </small>
-
-                                <div class="row">
-                                    <div class="col-auto">
-
-                                        <!-- Switch -->
-                                        <div class="custom-control custom-switch">
-                                            <input type="checkbox" class="custom-control-input" id="switchTwo">
-                                            <label class="custom-control-label" for="switchTwo"></label>
-                                        </div>
-
-                                    </div>
-                                    <div class="col ml-n2">
-
-                                        <!-- Help text -->
-                                        <small class="text-muted">
-                                            You're currently available
-                                        </small>
-
-                                    </div>
-                                </div> <!-- / .row -->
-                            </div>
-
-                        </div>
-                    </div> <!-- / .row -->
-
-                    <!-- Divider -->
-                    <hr class="mt-4 mb-5">
-
+                <!-- Divider -->
+                <hr class="mt-4 mb-5">
+                {{!-- Pendiente: password reset. --}}
+                {{!-- Cambiar contraseña --}}
+                <form action="" class="mb-4">
                     <div class="row">
                         <div class="col-12 col-md-6 order-md-2">
 
@@ -241,28 +172,27 @@
 
                                     <!-- Text -->
                                     <p class="mb-2">
-                                        Password requirements
+                                        Requisitos de la contraseña
                                     </p>
 
                                     <!-- Text -->
                                     <p class="small text-muted mb-2">
-                                        To create a new password, you have to meet all of the following
-                                        requirements:
+                                        Para cambiar tu contraseña, debes cumplir los siguientes requirimientos:
                                     </p>
 
                                     <!-- List group -->
                                     <ul class="small text-muted pl-4 mb-0">
                                         <li>
-                                            Minimum 8 character
+                                            Longitud mínima de 8 carácteres.
                                         </li>
                                         <li>
-                                            At least one special character
+                                            Debe incluir un carácter especial.
                                         </li>
                                         <li>
-                                            At least one number
+                                            Debe incluir un número.
                                         </li>
                                         <li>
-                                            Can’t be the same as a previous password
+                                            No puede ser igual a la contraseña anterior.
                                         </li>
                                     </ul>
 
@@ -274,41 +204,44 @@
                         <div class="col-12 col-md-6">
 
                             {{!-- Contraseña --}}
-                            <div class="form-group">
+                <div class="form-group">
 
-                                <label> Password </label>
-                                <input type="password" class="form-control">
+                    <label> Password </label>
+                    <input type="password" class="form-control">
 
-                            </div>
+                </div>
 
-                            {{!-- Nueva contraseña --}}
-                            <div class="form-group">
+                {{!-- Nueva contraseña --}}
+                <div class="form-group">
 
-                                <label> New password </label>
-                                <input type="password" class="form-control">
+                    <label> New password </label>
+                    <input type="password" class="form-control">
 
-                            </div>
+                </div>
 
-                            {{!-- Confirmar nueva contraseña --}}
-                            <div class="form-group">
+                {{!-- Confirmar nueva contraseña --}}
+                <div class="form-group">
 
-                                <label> Confirmar nueva contraseña </label>
-                                <input type="password" class="form-control">
+                    <label> Confirmar nueva contraseña </label>
+                    <input type="password" class="form-control">
 
-                            </div>
+                </div>
 
-                            {{!-- Actualizar contraseña --}}
-                            <button type="submit" class="btn btn-primary lift">
-                                Actualizar contraseña
-                            </button>
-
-                        </div>
-                    </div> <!-- / .row -->
-
-                </form>
+                {{!-- Actualizar contraseña --}}
+                <button type="submit" class="btn btn-primary lift">
+                    Actualizar contraseña
+                </button>
 
             </div>
         </div> <!-- / .row -->
+
+        </form>
+        
+
+
+
     </div>
+</div> <!-- / .row -->
+</div>
 
 </div> <!-- / .main-content -->

@@ -1,0 +1,202 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+
+            <div class="col-12 col-lg-10 col-xl-8">
+
+                {{!-- Header --}}
+                <div class="header mt-md-5">
+
+                    {{>messages}}
+
+                    <div class="header-body">
+                        <div class="row align-items-center">
+                            <div class="col">
+
+                                <h6 class="header-pretitle">
+                                    Pacientes
+                                </h6>
+
+                                {{!-- ítulo --}}
+                                <h1 class="header-title">
+                                    Crear nueva ficha
+                                </h1>
+
+                            </div>
+                        </div> <!-- / .row -->
+                        <div class="row align-items-center">
+                            <div class="col">
+
+                                <!-- Nav -->
+                                <ul class="nav nav-tabs nav-overflow header-tabs">
+                                    <li class="nav-item">
+                                        <a href="#!" class="nav-link active">
+                                            General
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#!" class="nav-link">
+                                            Perfil
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#!" class="nav-link">
+                                            Notificaciones
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{!-- Form --}}
+                <form action="/dashboard/pacientes/nueva-ficha" method="POST" class="mb-4">
+
+                    <div class="row">
+
+                        {{!-- Nombre --}}
+                        <div class="col-12 col-md-6">
+                            <div class="form-group">
+
+                                <label> Nombre </label>
+
+                                <input type="text" class="form-control" name="name" required>
+
+                            </div>
+                        </div>
+
+                        {{!-- Fecha de nacimiento --}}
+                        <div class="col-12 col-md-3">
+                            <div class="form-group">
+
+                                <label> <i class="fe fe-calendar mr-2"></i> Fecha de nacimiento </label>
+
+                                <input type="date" class="form-control" name="birthdate" required>
+
+                            </div>
+
+                        </div>
+
+                        {{!-- Género --}}
+                        <div class="col-12 col-md-3">
+                            <label> Género </label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="genero" id="masculino"
+                                    value="masculino">
+                                <label class="form-check-label" for="masculino">Masculino</label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="genero" id="femenino"
+                                    value="femenino">
+                                <label class="form-check-label" for="masculino">Femenino</label>
+                            </div>
+                        </div>
+
+                        {{!-- Lugar de nacimiento --}}
+                        <div class="col-12 col-md-6">
+                            <div class="form-group">
+
+                                <label> <i class="fe fe-mail mr-2"></i> Correo electrónico </label>
+
+                                <input type="email" class="form-control" name="email" required>
+
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+
+                            <!-- Birthday -->
+                            <div class="form-group">
+
+                                <!-- Label -->
+                                <label>
+                                    <i class="fe fe-phone mr-2"></i> Teléfono
+                                </label>
+
+                                <!-- Input -->
+                                <input type="text" class="form-control" name="phone">
+
+                            </div>
+                        </div>
+
+                        {{!-- Lugar de residencia --}}
+                        <div class="col-12 col-md-6">
+                            <div class="form-group">
+
+                                <label> <i class="fe fe-map mr-2"></i> Lugar de nacimiento</label>
+
+                                <input type="text" class="form-control" name="birthplace">
+
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+
+                            <!-- Birthday -->
+                            <div class="form-group">
+
+                                <!-- Label -->
+                                <label>
+                                    <i class="fe fe-map-pin mr-2"></i> Lugar de residencia
+                                </label>
+
+                                <!-- Input -->
+                                <input type="text" class="form-control" name="address">
+
+                            </div>
+                        </div>
+
+                        {{!-- Resumen breve --}}
+                        <div class="col-12">
+                            <div class="form-group">
+
+                                <label class="mb-1"> Resumen </label>
+
+                                <small class="form-text text-muted">
+                                    Breve recopilación de datos del paciente
+                                </small>
+
+                                <textarea name="bio" class="form-control" data-toggle="autosize" style="resize: none;"
+                                    required></textarea>
+
+
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="col-12 col-md6">
+                            <div class="form-group">
+
+                                <button type="submit" class="btn btn-block btn-primary lift">
+                                    Crear ficha de paciente
+                                </button>
+
+                                <a href="/dashboard/pacientes" class="btn btn-block btn-link text-muted">
+                                    Cancelar
+                                </a>
+
+                            </div>
+                        </div>
+
+
+
+
+                    </div> <!-- / .row -->
+                </form>
+
+
+
+
+
+
+            </div>
+        </div> <!-- / .row -->
+    </div>
+
+</div> <!-- / .main-content -->
