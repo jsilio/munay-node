@@ -1,9 +1,148 @@
-<div class="container-fluid">
-  <div class="row align-items-center justify-content-center">
-    
-    <a href="/dashboard/pacientes/nueva-ficha" class="btn btn-sm btn-primary">
-      Crear nueva entrada <i class="fe fe-plus ml-2"></i>
-    </a>
+<div class="main-content pt-5">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
 
+        <div class="card">
+
+          <div class="card-header py-5">
+
+            <!-- Title -->
+            <h3 class="card-header-title">
+              Pacientes
+            </h3>
+
+            <!-- Button -->
+            <a href="/dashboard/pacientes/nueva-ficha" class="btn btn-primary">
+              <i class="fe fe-user-plus mr-2"></i> Crear nueva ficha
+            </a>
+
+          </div>
+
+          <div class="card-header">
+
+            <!-- Form -->
+            <form>
+              <div class="input-group input-group-flush input-group-merge">
+
+                <!-- Input -->
+                <input type="search" class="form-control form-control-prepended search" placeholder="Buscar">
+
+                <!-- Prepend -->
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <span class="fe fe-search"></span>
+                  </div>
+                </div>
+
+              </div>
+            </form>
+
+          </div>
+
+          <div class="table-responsive mb-0" data-toggle="lists"
+            data-options='{"valueNames": ["project-project", "project-status", "project-progress", "project-date"]}'>
+
+            <table class="table table-sm table-nowrap card-table table-hover">
+              <thead>
+                <tr>
+                  <th>
+                    <a href="#" class="text-muted sort" data-sort="project-project">
+                      Nombre
+                    </a>
+                  </th>
+                  <th>
+                    <a href="#" class="text-muted sort" data-sort="project-status">
+                      Teléfono
+                    </a>
+                  </th>
+                  <th>
+                    <a href="#" class="text-muted sort" data-sort="project-progress">
+                      Especialidad
+                    </a>
+                  </th>
+                  <th>
+                    <a href="#" class="text-muted sort" data-sort="project-date">
+                      Última sesión
+                    </a>
+                  </th>
+                  <th class="text-right">
+                    <a href="#" class="text-muted sort">
+                      Estado
+                    </a>
+                  </th>
+                </tr>
+              </thead>
+
+              <tbody class="list">
+                {{#each patient}}
+                <tr>
+
+                  {{!-- Nombre --}}
+                  <td class="project-project">
+
+                    <h4 class="font-weight-normal mb-1">{{firstName}} {{lastName}}</h4>
+
+                    <small class="text-muted"> <i class="fe fe-mail mr-2"></i> {{email}} </small>
+
+                  </td>
+
+                  {{!-- Teléfono --}}
+                  <td class="project-status">
+
+                    611 212 337
+
+                  </td>
+
+
+                  <td class="project-progress">
+                    <div class="d-flex align-items-center">
+
+                      Adultos
+
+                    </div>
+                  </td>
+
+                  <td class="project-date">
+
+                    <!-- Time -->
+                    <time datetime="2018-10-24">07/24/18</time>
+
+                  </td>
+                  <td>
+
+                    <span class="badge badge-soft-success"> Activo </span>
+
+                  </td>
+
+                  <td class="text-right">
+
+                    <!-- Dropdown -->
+                    <div class="dropdown">
+                      <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <i class="fe fe-more-vertical"></i>
+                      </a>
+                      <div class="dropdown-menu dropdown-menu-right">
+                        <a href="#!" class="dropdown-item">
+                          <i class="fe fe-edit mr-2"></i> Editar
+                        </a>
+                        <a href="#!" class="dropdown-item">
+                          <i class="fe fe-trash-2 mr-2"></i> Eliminar
+                        </a>
+                      </div>
+                    </div>
+
+                  </td>
+                </tr>
+                {{/each}}
+            
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
 </div>

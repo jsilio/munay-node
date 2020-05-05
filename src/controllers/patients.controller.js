@@ -5,8 +5,14 @@ const Patient = require("../models/Patient");
 
 
 // GET - Mostrar todos los pacientes
-patientCtrl.renderPatientList = (req, res) => {
+patientCtrl.renderPatientList = async (req, res) => {
+
+    const patient = await Patient.find()
+        .lean()
+        .sort({ createdAt: "desc" });
+
     res.render("dashboard/pacientes", {
+        patient,
         title: "Pacientes — Munay"
     });
 };
@@ -29,18 +35,20 @@ patientCtrl.renderNewPatient = (req, res) => {
 patientCtrl.addNewPatient = async (req, res) => {
 
     // Extraer los datos del formulario
-    const { name, gender, birthdate, birthplace, address, email, phone,  } = req.body;
+    const { firstName, lastName, gender, birthdate, email, phone, birthplace, residence, summary } = req.body;
 
     try {
 
         const newPatient = new Patient({
-            name,
+            firstName,
+            lastName,
             gender,
             birthdate,
-            birthplace,
-            address,
             email,
-            phone
+            phone,
+            birthplace,
+            residence,
+            summary
         });
 
         await newPatient.save();

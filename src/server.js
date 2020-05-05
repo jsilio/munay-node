@@ -38,7 +38,7 @@ app.set("view engine", ".hbs")
 
 // Middlewares
 app.use(morgan("dev"));
-app.use(express.urlencoded({extended: false})); // Parsing data
+app.use(express.urlencoded({extended: true})); // Parsing data
 app.use(express.json());
 app.use(methodOverride("_method"));
 app.use(session({
