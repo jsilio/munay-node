@@ -27,18 +27,23 @@ app.engine(".hbs", exphbs({ // Configuración del templating engine
     partialsDir: path.join(app.get("views"), "partials"),
     extname: ".hbs",
     helpers: {
-        date: function(date) {
+        date: function (date, format) {
             moment.locale("es");
-            return moment(date).format("l");
+            return moment(date).format(format);
+        },
+        
+        initial: function (string) {
+            return string.charAt(0).toUpperCase();
         }
+        // MMM DD, YYYY
     }
-})); 
-app.set("view engine", ".hbs") 
+}));
+app.set("view engine", ".hbs")
 
 
 // Middlewares
-app.use(morgan("dev"));
-app.use(express.urlencoded({extended: true})); // Parsing data
+// app.use(morgan("dev"));
+app.use(express.urlencoded({ extended: true })); // Parsing data
 app.use(express.json());
 app.use(methodOverride("_method"));
 app.use(session({
@@ -57,7 +62,7 @@ const storage = multer.diskStorage({
     }
 });
 
-app.use(multer({storage}).single("file"));
+app.use(multer({ storage }).single("file"));
 
 
 

@@ -13,6 +13,7 @@
     "nodemon": "^2.0.2"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^19.0.0",
     "@fancyapps/fancybox": "^3.5.7",
     "aos": "^3.0.0-beta.6",
     "bcryptjs": "^2.4.3",

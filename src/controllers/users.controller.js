@@ -11,7 +11,7 @@ const passport = require("passport");
 
 usersCtrl.renderSignUp = (req, res) => {
     res.render("dashboard/registro", {
-        title: "Registro - Munay Admin",
+        title: "Registro — Munay",
         layout: "auth"
     });
 }
@@ -54,7 +54,7 @@ usersCtrl.signUp = async (req, res) => {
 
 usersCtrl.renderSignIn = (req, res) => {
     res.render("dashboard/login", {
-        title: "Iniciar sesión - Munay Admin",
+        title: "Iniciar sesión — Munay",
         layout: "auth"
     });
 }

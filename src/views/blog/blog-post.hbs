@@ -19,6 +19,10 @@
         </div>
       </div>
 
+      <div class="col-12 text-center mb-4">
+        <img src="{{blogPost.coverURL}}" alt="Munay - Psicología Clínica y Neuropsicología" class="img-fluid rounded">
+      </div>
+
       {{!-- Metadata --}}
       <div class="col-12 col-md-10 col-lg-9 col-xl-8">
         <div class="row align-items-center justify-content-end py-5 border-bottom">
@@ -36,16 +40,16 @@
           <div class="col ml-n5">
 
             {{!-- Autor --}}
-            <h5 class="mb-2 display-6">
+            <h4 class="mb-2">
               {{blogPost.author.name}}
-            </h5>
+            </h4>
 
 
             {{!-- Fecha de publicación --}}
-            <time class="font-size-sm text-muted" datetime="{{date blogPost.createdAt}}">
+            <time class="font-size-sm text-muted text-uppercase" datetime="{{date blogPost.createdAt "L"}}">
 
               <i class="fe fe-calendar text-muted mr-2 mb-1"></i>
-              {{date blogPost.createdAt}}
+              {{date blogPost.createdAt "L"}}
 
             </time>
 
@@ -100,10 +104,6 @@
 
       </div>
 
-      <div class="col-12 text-center mb-4">
-        <img src="{{blogPost.coverURL}}" alt="Munay - Psicología Clínica y Neuropsicología" class="img-fluid rounded">
-      </div>
-
 
     </div> <!-- / .row -->
   </div> <!-- / .container -->
@@ -115,251 +115,8 @@
     <div class="row justify-content-center">
       <div class="col-12 col-md-10 col-lg-9">
 
-        <h2 class="font-weight-bold">
-          Big heading for a new topic
-        </h2>
+        {{{blogPost.content}}}
 
-        <p>
-          Nos gustaría recordarte algunas cosas acerca del tratamiento psicológico:
-        </p>
-
-        <p class="mb-7">
-          Ir a terapia no debería ser un proceso pasivo, sino más bien activo para que las conclusiones que has sacado o
-          descubierto de ti en sesión las traslades a tu vida diaria y de verdad generes/apliques unos cambios que se
-          mantengan a largo plazo. El/la profesional te proporciona un apoyo temporal que va disminuyendo a medida que
-          vas adquiriendo las habilidades necesarias.
-        </p>
-
-        <!-- Fugure -->
-        <figure class="figure mb-7">
-
-
-
-          <!-- Image -->
-          <img class="figure-img img-fluid rounded lift lift-lg" src="/img/photos/blog1.jpg" alt="...">
-
-
-          <!-- Caption -->
-          <figcaption class="figure-caption text-center">
-            This is a caption on this photo for reference
-          </figcaption>
-
-        </figure>
-
-
-
-      </div>
-    </div> <!-- / .row -->
-  </div> <!-- / .container -->
-</section>
-
-<!-- SECTION
-    ================================================== -->
-<section class="pt-6 pt-md-8">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-12 col-md-10 col-lg-9 col-xl-8">
-
-        <!-- Heading -->
-        <h2 class="font-weight-bold">
-          Big heading for a new topic
-        </h2>
-
-        <!-- Text -->
-        <p>
-          No hay un tiempo estándar o establecida de antemano aunque sí se plantean unos objetivos a conseguir. La
-          duración de la terapia variará en función de tus características personales y del grado de implicación en el
-          tratamiento (asistencia y cumplimiento). Podemos asimilarlo como una recuperación muscular que será más
-          temprana o tardía en función de la rehabilitación que haga la persona y su herencia familiar.
-        </p>
-        <ul class="mb-0">
-          <li>
-            Es una decisión personal y voluntaria que tiene que partir del autoconocimiento (o de la carencia del
-            mismo). No hay un momento óptimo como tal para solicitar ayuda psicológica. Al igual que con otras
-            especialidades médicas, uno/a debería pedirlo cuando tiene una sensación subjetiva, ya sea:
-          </li>
-          <li class="mt-4">
-            Malestar intenso y duradero (semanas o meses con un cambio en el humor).
-            No tener recursos suficientes para gestionar una situación.
-            Estancamiento repitiendo las mismas conductas una y otra a vez a pesar de que quiera dejar de hacerlas.
-          </li>
-        </ul>
-
-      </div>
-    </div> <!-- / .row -->
-  </div> <!-- / .container -->
-</section>
-
-<!-- SECTION
-    ================================================== -->
-{{!-- <section class="pt-6 pt-md-8">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-12 col-lg-11 col-xl-10">
-
-        <!-- Slider -->
-        <div data-flickity='{"wrapAround": true, "pageDots": false, "imagesLoaded": true, "adaptiveHeight": true}'>
-          <div class="w-100">
-            <img src="/img/photos/blog1.jpg" alt="..." class="img-fluid rounded">
-          </div>
-          <div class="w-100">
-            <img src="/img/photos/blog3.png" alt="..." class="img-fluid rounded">
-          </div>
-          <div class="w-100">
-            <img src="/img/photos/blog1.jpg" alt="..." class="img-fluid rounded">
-          </div>
-        </div>
-
-      </div>
-    </div> <!-- / .row -->
-  </div> <!-- / .container -->
-</section> --}}
-
-<!-- SECTION
-    ================================================== -->
-<section class="pt-6 pt-md-8">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-12 col-md-10 col-lg-9 col-xl-8">
-
-        <!-- Heading -->
-        <h3 class="font-weight-bold">
-          Small heading for a smaller transition
-        </h3>
-
-        <!-- Text -->
-        <p class="mb-7">
-          El profesional también debería ser puesto a prueba. Con esto queremos decir que para que la terapia realmente
-          funcione, debes sentir que aunque le contaras la mayor locura que se te ocurra, no te va a juzgar. De esta
-          forma, te sentirás libre para expresar tus miedos e inseguridades, que es precisamente lo que está manteniendo
-          tus conductas y el foco de trabajo. Aunque seas tú el paciente, puedes y debes preguntar lo que quieras como
-          por ejemplo aquellas cosas que no entiendas o el objetivo de realizar ciertas tareas.
-        </p>
-
-        <!-- Divider -->
-        <hr class="hr-md mb-7">
-
-        <!-- Blockquote -->
-        <blockquote class="blockquote mb-7">
-          <p class="h2 mb-0 text-center text-primary-desat">
-            Tienes que sentirte cómodo con tu terapeuta para evitar ir a la consulta “porque toca” y darte un tiempo de
-            trabajo compartido en lugar de resignarte y concluir “que no tienes solución”.
-          </p>
-        </blockquote>
-
-        <!-- Divider -->
-        <hr class="hr-md mb-7">
-
-        <!-- Text -->
-        <p>
-          Créeme, estos puntos son importantes porque afectan a la eficacia del tratamiento. A veces, puedes avanzar
-          menos de lo que te gustaría o quizás sales de sesión con un caos de emociones que aunque resulte desagradable
-          en ese momento, te va a ayudar.
-
-        </p>
-
-        <!-- List -->
-        <ul class="list-unstyled mb-7">
-          <li class="d-flex">
-
-            <!-- Check -->
-            <div class="badge badge-rounded-circle badge-success-soft mt-1 mr-4">
-              <i class="fe fe-check"></i>
-            </div>
-
-            <!-- Text -->
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis quo labore, deleniti optio non,
-              voluptate illo doloribus odio iure molestiae eos tempora nobis.
-            </p>
-
-          </li>
-          <li class="d-flex">
-
-            <!-- Check -->
-            <div class="badge badge-rounded-circle badge-success-soft mt-1 mr-4">
-              <i class="fe fe-check"></i>
-            </div>
-
-            <!-- Text -->
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis quo labore, deleniti optio non,
-              voluptate illo doloribus odio iure molestiae eos tempora nobis.
-            </p>
-
-          </li>
-          <li class="d-flex">
-
-            <!-- Check -->
-            <div class="badge badge-rounded-circle badge-success-soft mt-1 mr-4">
-              <i class="fe fe-check"></i>
-            </div>
-
-            <!-- Text -->
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis quo labore, deleniti optio non,
-              voluptate illo doloribus odio iure molestiae eos tempora nobis.
-            </p>
-
-          </li>
-        </ul>
-
-        <!-- Grid -->
-        {{!-- <div class="form-row align-items-center">
-          <div class="col-6">
-
-            <!-- Image -->
-            <a class="d-block lift lift-lg" data-fancybox data-width="1280" data-height="1920"
-              href="/img/photos/laurita.jpg">
-              <img src="/img/photos/laurita.jpg" alt="..." class="img-fluid rounded">
-            </a>
-
-          </div>
-          <div class="col-6">
-
-            <!-- Image -->
-            <a class="d-block mb-4 lift lift-lg" data-fancybox data-width="900" data-height="600"
-              href="/img/photos/blog2.jpg">
-              <img src="/img/photos/blog2.jpg" alt="..." class="img-fluid rounded">
-            </a>
-
-            <!-- Image -->
-            <a class="d-block lift lift-lg" data-fancybox data-width="900" data-height="600"
-              href="/img/photos/blog1.jpg">
-              <img src="/img/photos/blog1.jpg" alt="..." class="img-fluid rounded">
-            </a>
-
-          </div>
-        </div> <!-- / .row --> --}}
-
-      </div>
-    </div> <!-- / .row -->
-  </div> <!-- / .container -->
-</section>
-
-<!-- SECTION
-    ================================================== -->
-<section class="pt-6 pt-md-8">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-12 col-md-10 col-lg-9 col-xl-8">
-
-        <!-- Heading -->
-        <h3 class="font-weight-bold">
-          Small heading for a smaller transition
-        </h3>
-
-        <!-- Text -->
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi reiciendis odio perferendis libero saepe
-          voluptatum fugiat dolore voluptates aut, ut quas doloremque quo ad quis ipsum molestias neque pariatur
-          commodi.
-        </p>
-        <p class="mb-0">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim quos, commodi fugiat? Repellat accusantium
-          error quisquam autem magni. Placeat ea dolorem voluptatem sequi veritatis, fugit nisi omnis, aspernatur sint
-          quidem.
-        </p>
 
       </div>
     </div> <!-- / .row -->
@@ -394,8 +151,8 @@
 
             <i class="fe fe-calendar text-muted mr-2 mb-1"></i>
             <!-- Date -->
-            <time class="font-size-sm text-muted" datetime="2019-05-20">
-              {{date blogpost.createdAt}}
+            <time class="font-size-sm text-muted" datetime="{{date blogPost.createdAt "L"}}">
+              {{date blogPost.createdAt "L"}}
             </time>
 
           </div>

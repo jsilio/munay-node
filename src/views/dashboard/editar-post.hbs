@@ -35,7 +35,7 @@
                     <!-- Título de la entrada -->
                     <div class="form-group">
 
-                        <label> Título </label>
+                        <label class="mb-3 h3"> Título </label>
                         <input type="text" class="form-control" name="title" value="{{ blogPost.title }}" required>
 
                     </div>
@@ -43,7 +43,7 @@
                     <!-- Descripción de la entrada -->
                     <div class="form-group mb-5">
 
-                        <label class="mb-1"> Descripción </label>
+                        <label class="mb-1 h3"> Descripción </label>
 
                         <small class="form-text text-muted">
                             Máximo: 180 caracteres.
@@ -55,64 +55,38 @@
                     </div>
 
 
-                    <!-- Cover -->
+                    {{!-- Cover --}}
                     <div class="form-group mb-4">
-                        <label class="mb-1"> Cover </label>
+                        <label class="mb-1 h3"> Cover </label>
 
 
                         <small class="form-text text-muted">
                             Formatos aceptados: jpg, jpeg, png.
                         </small>
 
-                        <!-- Dropzone -->
-                        <div class="dropzone dropzone-single mb-3" data-toggle="dropzone"
-                            data-options='{"url": "https://", "maxFiles": 1, "acceptedFiles": "image/*"}'>
-
-                            <!-- Fallback -->
-                            <div class="fallback">
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="projectCoverUploads" />
-                                    <label class="custom-file-label" for="projectCoverUploads">Choose file</label>
-                                </div>
+                        <div class="input-group mt-3">
+                            <div class="custom-file">
+                                <input type="file" name="file" class="custom-file-input" id="inputGroupFile01"
+                                    aria-describedby="inputGroupFileAddon01">
+                                <label class="custom-file-label" for="inputGroupFile01">Selecciona la imagen</label>
                             </div>
-
-                            <!-- Preview -->
-                            <div class="dz-preview dz-preview-single">
-                                <div class="dz-preview-cover">
-                                    <img class="dz-preview-img" src="data:image/svg+xml,%3csvg3c/svg%3e" alt="..."
-                                        data-dz-thumbnail />
-                                </div>
-                            </div>
-
                         </div>
+
                     </div>
+
 
                     {{!-- Divider --}}
-                    <hr class="my-4 my-md-6">
+                    <hr class="my-5">
 
-                    <!-- Contenido -->
-                    <div class="form-group mb-5">
+                    {{!-- Contenido --}}
+                    <div class="form-group mb-6">
 
-                        <label class="mb-1"> Contenido </label>
+                        <label for="content" class="h3 mb-3"> Contenido </label>
+
+                        <textarea name="content" id="editor">{{blogPost.content}}</textarea>
 
 
-                        <small class="form-text text-muted">
-                            This is how others will preview the entry, so make it good!
-                        </small>
-
-                        <!-- Textarea: Rich text editor -->
-                        <div data-toggle="quill" data-options='{"placeholder": "Hello"}'></div>
-
-                        <div id="toolbar">
-                            <button class="ql-bold">Bold</button>
-                            <button class="ql-italic">Italic</button>
-                        </div>
-
-                        <div id="editor"></div>
-
-                        <textarea name="content" id="" cols="30" rows="10" required></textarea>
                     </div>
-
 
 
 

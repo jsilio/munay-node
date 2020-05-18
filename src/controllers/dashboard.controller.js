@@ -17,10 +17,11 @@ const fs = require("fs-extra");
 
 
 
+
 // GET - Mostrar dashboard
 dashCtrl.renderDashboard = (req, res) => {
     res.render("dashboard/dashboard", {
-        title: "Munay Admin"
+        title: "Dahsboard — Munay"
     })
 }
 
@@ -31,7 +32,7 @@ dashCtrl.renderProfile = async (req, res) => {
 
     res.render("dashboard/editar-perfil", {
         user,
-        title: "Editar perfil - Munay"
+        title: "Editar perfil — Munay"
     });
 }
 
@@ -39,7 +40,7 @@ dashCtrl.renderProfile = async (req, res) => {
 dashCtrl.updateProfile = async (req, res) => {
 
     const { name, username, email, bio } = req.body;
-    
+
     // Subir la imagen a Cloudinary
     const uploadedImg = await cloudinary.uploader.upload(req.file.path);
 
@@ -56,7 +57,7 @@ dashCtrl.updateProfile = async (req, res) => {
         console.log(err)
         res.render("dashboard/editar-perfil", {
             user,
-            title: "Editar perfil - Munay"
+            title: "Editar perfil — Munay"
         });
     }
 };
@@ -66,14 +67,14 @@ dashCtrl.renderBlog = async (req, res) => {
 
     // Query
     const blogPost = await BlogPost.find()
-    .populate("author")
-    .lean()
-    .sort({ createdAt: "desc" });
-   
+        .populate("author")
+        .lean()
+        .sort({ createdAt: "desc" });
+
     // Render
     res.render("dashboard/blog", {
         blogPost,
-        title: "Blog - Munay Admin"
+        title: "Blog — Munay"
     });
 };
 
@@ -82,7 +83,7 @@ dashCtrl.renderNewPost = (req, res) => {
 
     // Mostrar formulario para añadir nuevo post
     res.render("dashboard/nuevo-post", {
-        title: "Crear nueva entrada - Munay Admin"
+        title: "Crear nueva entrada — Munay"
     });
 
 };
@@ -122,13 +123,13 @@ dashCtrl.addNewPost = async (req, res) => {
 
         // Borrar imagen del servidor
         await fs.unlink(req.file.path);
-        
+
         res.redirect("/dashboard/blog")
 
     } catch (err) {
         console.log(err)
         res.render("dashboard/nuevo-post", {
-            title: "Crear nueva entrada - Munay Admin"
+            title: "Crear nueva entrada — Munay"
         });
     }
 };
@@ -138,7 +139,7 @@ dashCtrl.renderEditPost = async (req, res) => {
     const blogPost = await BlogPost.findById(req.params.id).lean();
     res.render("dashboard/editar-post", {
         blogPost,
-        title: "Editar entrada - Munay Admin"
+        title: "Editar entrada — Munay"
     });
 };
 
@@ -156,7 +157,7 @@ dashCtrl.updatePost = async (req, res) => {
     } catch (err) {
         console.log(err)
         res.render("dashboard/editar-post", {
-            title: "Editar entrada - Munay Admin"
+            title: "Editar entrada — Munay"
         });
     }
 

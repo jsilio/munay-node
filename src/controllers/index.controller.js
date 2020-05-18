@@ -19,7 +19,9 @@ indexCtrl.renderIndex = async (req, res) => {
 }
 
 indexCtrl.renderContacto = (req, res) => {
-    res.render("contacto", {title: "Contacto | Munay"});
+    res.render("contacto", {
+        title: "Contacto — Munay"
+    });
 }
 
 indexCtrl.sendMail = async (req, res) => {
@@ -74,15 +76,20 @@ indexCtrl.sendMail = async (req, res) => {
 }
 
 indexCtrl.renderEspecialidades = (req, res) => {
-    res.render("especialidades");
+    res.render("especialidades", {
+        title: "Especialidades — Munay"
+    });
+}
+
+indexCtrl.renderTarifas = (req, res) => {
+    res.render("tarifas", {
+        title: "Tarifas — Munay"
+    });
 }
 
 indexCtrl.renderReserva = (req, res) => {
     res.render("reserva");
 }
 
-indexCtrl.renderDashboard = (req, res) => {
-    res.render("/blog/dashboard")
-}
 
 module.exports = indexCtrl;

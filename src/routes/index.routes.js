@@ -6,6 +6,7 @@ const {
     renderContacto,
     sendMail, 
     renderEspecialidades, 
+    renderTarifas,
     renderReserva, 
 } = require("../controllers/index.controller");
 
@@ -19,6 +20,8 @@ router.all("/*", (req, res, next) => {
 router.get("/", renderIndex);
 
 router.get("/especialidades", renderEspecialidades);
+
+router.get("/tarifas", renderTarifas);
 
 // Contacto
 

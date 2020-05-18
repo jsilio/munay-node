@@ -26,11 +26,11 @@
 
                 {{!-- Formulario --}}
                 <form action="/dashboard/blog/nuevo-post" method="POST" enctype="multipart/form-data" class="mb-4">
-
+                    
                     {{!-- Título --}}
                     <div class="form-group">
 
-                        <label> Título </label>
+                        <label class="mb-3 h3"> Título </label>
 
                         <input type="text" class="form-control" name="title" autofocus required />
 
@@ -39,19 +39,19 @@
                     {{!-- Descripción --}}
                     <div class="form-group">
 
-                        <label class="mb-1"> Descripción </label>
+                        <label class="mb-1 h3"> Descripción </label>
 
                         <small class="form-text text-muted">
                             Máximo: 180 caracteres.
                         </small>
 
-                        <textarea name="description" class="form-control" maxlength="180" rows="3" required></textarea>
+                        <textarea name="description" class="form-control" maxlength="180" rows="3" style="resize: none;" required> </textarea>
 
                     </div>
 
                     {{!-- Cover --}}
                     <div class="form-group mb-4">
-                        <label class="mb-1"> Cover </label>
+                        <label class="mb-1 h3"> Cover </label>
 
 
                         <small class="form-text text-muted">
@@ -69,34 +69,15 @@
                     </div>
 
                     {{!-- Divider --}}
-                    <hr class="my-4 my-6">
+                    <hr class="my-5">
 
                     <!-- Contenido -->
-                    <div class="form-group mb-5">
+                    <div class="form-group mb-6">
 
-                        <label for="content" class="mb-1"> Contenido </label>
-
-                        {{!-- Toolbar  --}}
-                        <div id="toolbar">
-                            <span class="ql-formats">
-                                <button class="ql-header" value="1"></button>
-                                <button class="ql-header" value="2"></button>
-                            </span>
-                            <span class="ql-formats">
-                                <button class="ql-bold">Bold</button>
-                                <button class="ql-italic">Italic</button>
-                            </span>
-                            <span class="ql-formats">
-                                <button class="ql-blockquote"></button>
-                                <button class="ql-link ql-active"></button>
-                                <button class="ql-image"></button>
-                                <button class="ql-video"></button>
-                            </span>
-                        </div>
-
-                    
-                        <input type="hidden" name="content">
-                        <div id="editor"></div>
+                        <label for="content" class="h3 mb-3"> Contenido </label>
+                        
+                        <textarea name="content" id="editor"></textarea>
+                        
 
                     </div>
 
