@@ -37,8 +37,8 @@
 
                 {{!-- Tabla --}}
                 <div class="card"
-                    data-list='{"valueNames": ["item-name", "item-category", "item-email", "item-phone", "item-status", "item-session"], "page": 10, "pagination": {"paginationClass": "list-pagination"}}'
-                    id="contactsList">
+                    data-list='{"valueNames": ["item-title", "item-author", "item-date"], "page": 10, "pagination": {"paginationClass": "list-pagination"}}'
+                    id="entriesList">
 
                     <div class="card-header">
                         <div class="row align-items-center">
@@ -156,6 +156,7 @@
                                 </div>
 
                             </div>
+
                         </div> <!-- / .row -->
                     </div>
 
@@ -163,9 +164,10 @@
                         <table class="table table-sm table-hover table-nowrap card-table">
                             <thead>
                                 <tr>
+
+                                    {{!-- Checkbox --}}
                                     <th>
 
-                                        <!-- Checkbox -->
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="list-checkbox-all custom-control-input"
                                                 id="listCheckboxAll">
@@ -173,21 +175,29 @@
                                         </div>
 
                                     </th>
+
+                                    {{!-- Título --}}
                                     <th>
                                         <a class="list-sort text-muted font-size-sm" data-sort="item-title" href="#">
-                                            <i class="fe fe-info mr-1"></i> Título</a>
+                                            <i class="fe fe-info mr-1"></i> Título
+                                        </a>
                                     </th>
+
+                                    {{!-- Autor --}}
                                     <th>
-                                        <a class="list-sort text-muted  font-size-sm" data-sort="item-category" href="#">
-                                            <i class="fe fe-user mr-1"></i> Autor</a>
+                                        <a class="list-sort text-muted  font-size-sm" data-sort="item-author" href="#">
+                                            <i class="fe fe-user mr-1"></i> Autor
+                                        </a>
                                     </th>
 
                                     <th colspan="2">
-                                        <a class="list-sort text-muted  font-size-sm" data-sort="item-session" href="#">
-                                            <i class="fe fe-calendar mr-1"></i> Fecha de publicación</a>
+                                        <a class="list-sort text-muted  font-size-sm" data-sort="item-date" href="#">
+                                            <i class="fe fe-calendar mr-1"></i> Fecha de publicación
+                                        </a>
                                     </th>
                                 </tr>
                             </thead>
+
                             <tbody class="list font-size-base">
 
                                 {{#each blogPost}}
@@ -204,10 +214,8 @@
 
                                     </td>
 
-                                    {{!-- Nombre y avatar --}}
+                                    {{!-- Cover y Título --}}
                                     <td>
-
-                                        <!-- Avatar -->
                                         <div class="avatar avatar-xs align-middle mr-2">
                                             <img class="avatar-img rounded-circle" src="{{coverURL}}" alt="{{title}}">
                                         </div>
@@ -215,31 +223,35 @@
                                         <a href="/blog/{{slug}}" class="item-title text-reset h4">{{title}}</a>
                                     </td>
 
-                                    {{!-- Especialidad --}}
+                                    {{!-- Autor --}}
                                     <td>
                                         <span class="item-author">{{author.name}}</span>
                                     </td>
 
 
-                                    {{!-- Última sesión --}}
+                                    {{!-- Fecha de publicación --}}
                                     <td>
                                         <a class="item-session text-reset" href="#">{{date createdAt "LL"}}</a>
                                     </td>
 
+                                    {{!-- Botones de Editar y Eliminar --}}
                                     <td class="text-right">
 
-                                        <!-- Dropdown -->
+                                        {{!-- Icono dropdown --}}
                                         <div class="dropdown">
                                             <a class="dropdown-ellipses dropdown-toggle" href="#" role="button"
                                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <i class="fe fe-more-vertical"></i>
                                             </a>
-                                            <div class="dropdown-menu dropdown-menu-right">
 
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                
+                                                {{!-- Editar --}}
                                                 <a href="/dashboard/blog/editar/{{_id}}" class="dropdown-item">
                                                     <i class="fe fe-edit mr-2"></i> Editar
                                                 </a>
 
+                                                {{!-- Eliminar --}}
                                                 <form action="/dashboard/blog/eliminar/{{_id}}?_method=DELETE"
                                                     method="POST">
                                                     <input type="hidden" name="_method" value="DELETE">
@@ -248,11 +260,11 @@
                                                     </button>
                                                 </form>
 
-
                                             </div>
                                         </div>
 
                                     </td>
+
                                 </tr>
                                 {{/each}}
 
@@ -295,7 +307,7 @@
                                         <input type="checkbox" class="custom-control-input" id="listAlertCheckbox"
                                             checked disabled>
                                         <label class="custom-control-label text-white" for="listAlertCheckbox"><span
-                                                class="list-alert-count">0</span> deal(s)</label>
+                                                class="list-alert-count">0</span> entrada(s)</label>
                                     </div>
 
                                 </div>
@@ -303,12 +315,12 @@
 
                                     <!-- Button -->
                                     <button class="btn btn-sm btn-white-20">
-                                        Edit
+                                        Editar
                                     </button>
 
                                     <!-- Button -->
                                     <button class="btn btn-sm btn-white-20">
-                                        Delete
+                                        Eliminar
                                     </button>
 
                                 </div>

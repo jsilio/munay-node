@@ -10,9 +10,9 @@
                         <div class="row align-items-center">
                             <div class="col">
 
-                                <h6 class="header-pretitle">
-                                    Blog post
-                                </h6>
+                                <h5 class="header-pretitle">
+                                    <i class="fe fe-plus-circle mr-2"></i> Blog
+                                </h5>
 
 
                                 <h1 class="header-title">
@@ -26,7 +26,7 @@
 
                 {{!-- Formulario --}}
                 <form action="/dashboard/blog/nuevo-post" method="POST" enctype="multipart/form-data" class="mb-4">
-                    
+
                     {{!-- Título --}}
                     <div class="form-group">
 
@@ -45,7 +45,8 @@
                             Máximo: 180 caracteres.
                         </small>
 
-                        <textarea name="description" class="form-control" maxlength="180" rows="3" style="resize: none;" required> </textarea>
+                        <textarea name="description" class="form-control" maxlength="180" rows="3" style="resize: none;"
+                            required> </textarea>
 
                     </div>
 
@@ -75,9 +76,9 @@
                     <div class="form-group mb-6">
 
                         <label for="content" class="h3 mb-3"> Contenido </label>
-                        
+
                         <textarea name="content" id="editor"></textarea>
-                        
+
 
                     </div>
 
@@ -102,5 +103,3 @@
 
         </div>
     </div> <!-- / .main-content -->
-
-   

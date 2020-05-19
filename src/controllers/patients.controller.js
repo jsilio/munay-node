@@ -2,7 +2,7 @@ const patientCtrl = {}
 
 // Models
 const Patient = require("../models/Patient");
-
+const Evaluation = require("../models/Evaluation");
 
 // GET - Mostrar todos los pacientes
 patientCtrl.renderPatientList = async (req, res) => {
@@ -36,9 +36,55 @@ patientCtrl.addNewPatient = async (req, res) => {
 
     // Extraer los datos del formulario
     const { firstName, lastName, gender, birthdate, email, phone, birthplace, residence, summary } = req.body;
+    const { problemDescription, startCourse } = req.body;
 
     try {
 
+        // Crear nuevo modelo de evaluación  
+        const newEvaluation = new Evaluation({
+            consultationReason: {
+                problemDescription,
+                startCourse
+            },
+
+            sociodemographicData: {
+                education,
+                workStatus,
+                workHistory
+            },
+
+            familyData: {
+                interestData,
+                maritalStatus,
+                partner,
+                partnerEducation,
+                partnerWork
+            },
+
+            psychosocialArea: {
+                supportCircle,
+                recreationalActivities
+            },
+
+            psychiatricHistory: {
+                symptoms,
+                treatment,
+                duration,
+                location,
+                problem
+            },
+
+            physicalHealth: {
+                healthStatus,
+                medication,
+                symptoms
+            }
+        });
+
+        // Guardar evaluación
+        await newEvaluation.save();
+
+        // Crear nuevo modelo de paciente
         const newPatient = new Patient({
             firstName,
             lastName,
@@ -48,11 +94,14 @@ patientCtrl.addNewPatient = async (req, res) => {
             phone,
             birthplace,
             residence,
-            summary
+            summary,
+            evaluation: newEvaluation._id
         });
 
+        // Guardar paciente
         await newPatient.save();
 
+        // TERMINAR: Redirigir a perfil de paciente
         res.redirect("/dashboard/pacientes")
 
     } catch (err) {
