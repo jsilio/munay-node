@@ -9,7 +9,11 @@ const BlogPostSchema = new Schema({
     author: { type: Schema.Types.ObjectId, ref: "User" },
     coverURL: { type: String },
     public_id: { type: String },
-    category: { type: String }
+    category: { type: String },
+    tags: [{ type: String }],
+    comments: [{ type: Schema.Types.ObjectId, ref: "Comment" }],
+    views: { type: Number, default: 0 },
+    likes: { type: Number, default: 0 }
 }, {
     timestamps: true
 })

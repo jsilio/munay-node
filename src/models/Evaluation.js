@@ -15,7 +15,7 @@ const EvaluationSchema = new Schema({
     familyData: {
         interestData: { type: String },
         maritalStatus: { type: String },
-        partner: { type: Boolean },
+        partner: { type: String },
         partnerEducation: { type: String },
         partnerWork: { type: String }
     },

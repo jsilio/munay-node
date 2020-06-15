@@ -13,14 +13,24 @@ patientCtrl.renderPatientList = async (req, res) => {
 
     res.render("dashboard/pacientes", {
         patient,
-        title: "Pacientes — Munay"
+        title: "Pacientes — Munay",
+        active: { patients: true }
     });
 };
 
 // GET - Mostrar ficha de paciente
-patientCtrl.renderPatient = (req, res) => {
-    res.render("dashboard/pacientes", {
-        title: "Ficha del paciente — Munay"
+patientCtrl.renderPatient = async (req, res) => {
+
+    const patient = await Patient.findOne({ slug: req.params.slug })
+        .lean()
+        .populate("evaluation");
+
+    if (patient == null) res.redirect("/dashboard/pacientes")
+
+    res.render("dashboard/ficha-paciente", {
+        patient,
+        title: "Ficha de " + patient.firstName + " " + patient.lastName.charAt(0).toUpperCase() + ". — Munay",
+        active: { patients: true }
     });
 };
 
@@ -45,39 +55,6 @@ patientCtrl.addNewPatient = async (req, res) => {
             consultationReason: {
                 problemDescription,
                 startCourse
-            },
-
-            sociodemographicData: {
-                education,
-                workStatus,
-                workHistory
-            },
-
-            familyData: {
-                interestData,
-                maritalStatus,
-                partner,
-                partnerEducation,
-                partnerWork
-            },
-
-            psychosocialArea: {
-                supportCircle,
-                recreationalActivities
-            },
-
-            psychiatricHistory: {
-                symptoms,
-                treatment,
-                duration,
-                location,
-                problem
-            },
-
-            physicalHealth: {
-                healthStatus,
-                medication,
-                symptoms
             }
         });
 
@@ -127,10 +104,12 @@ patientCtrl.editPatient = (req, res) => {
 };
 
 // DELETE - Eliminar ficha de paciente
-patientCtrl.deletePatient = (req, res) => {
-    res.render("dashboard/pacientes", {
-        title: "Pacientes - Munay Admin"
-    });
+patientCtrl.deletePatient = async (req, res) => {
+
+    // Encuentra post por id y lo elimina
+    await Patient.findByIdAndDelete(req.params.id);
+
+    res.redirect("/dashboard/pacientes")
 };
 
 module.exports = patientCtrl;

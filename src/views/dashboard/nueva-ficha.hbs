@@ -1,4 +1,4 @@
-<div class="main-content">
+<div class="main-content" id="nuevaFicha">
     <div class="container-fluid">
         <div class="row justify-content-center">
 
@@ -69,22 +69,18 @@
                             {{!-- Nombre --}}
                             <div class="col-12 col-lg-4">
                                 <div class="form-group">
-
                                     <label> Nombre </label>
 
                                     <input type="text" class="form-control" name="firstName" required autofocus>
-
                                 </div>
                             </div>
 
                             {{!-- Apellidos --}}
                             <div class="col-12 col-lg-6">
                                 <div class="form-group">
-
                                     <label> Apellidos </label>
 
                                     <input type="text" class="form-control" name="lastName" required>
-
                                 </div>
                             </div>
 
@@ -108,66 +104,55 @@
                             {{!-- Fecha de nacimiento --}}
                             <div class="col-12 col-lg-3">
                                 <div class="form-group">
-
                                     <label> <i class="fe fe-calendar mr-2"></i> Fecha de nacimiento </label>
 
-                                    <input type="date" class="form-control" name="birthdate" required>
-
+                                    <input type="date" class="form-control" name="birthdate">
                                 </div>
                             </div>
 
                             {{!-- Correo electrónico --}}
                             <div class="col-12 col-lg-5">
                                 <div class="form-group">
-
                                     <label> <i class="fe fe-mail mr-2"></i> Correo electrónico </label>
 
                                     <input type="email" class="form-control" name="email" required>
-
                                 </div>
                             </div>
 
                             {{!-- Teléfono --}}
                             <div class="col-12 col-lg-4">
                                 <div class="form-group">
-
                                     <label for="phone">
                                         <i class="fe fe-phone mr-2"></i> Teléfono
                                     </label>
 
                                     <input type="tel" id="phone" class="form-control" name="phone">
-
                                 </div>
                             </div>
 
                             {{!-- Lugar de nacimiento --}}
                             <div class="col-12 col-lg-6">
                                 <div class="form-group">
-
                                     <label> <i class="fe fe-map mr-2"></i> Lugar de nacimiento</label>
 
                                     <input type="text" class="form-control" name="birthplace">
-
                                 </div>
                             </div>
 
                             {{!-- Lugar de residencia --}}
                             <div class="col-12 col-lg-6">
                                 <div class="form-group">
-
                                     <label>
                                         <i class="fe fe-map-pin mr-2"></i> Lugar de residencia
                                     </label>
 
                                     <input type="text" class="form-control" name="residence">
-
                                 </div>
                             </div>
 
                             {{!-- Resumen breve --}}
                             <div class="col-12">
                                 <div class="form-group">
-
                                     <label class="mb-1">
                                         <i class="fe fe-clipboard"></i> Resumen
                                     </label>
@@ -176,35 +161,11 @@
                                         Breve recopilación de datos del paciente
                                     </small>
 
-                                    <textarea name="summary" class="form-control" data-toggle="autosize"
-                                        style="resize: none;"></textarea>
-
+                                    <textarea name="summary" class="form-control" data-toggle="autosize"></textarea>
                                 </div>
                             </div>
 
                         </div> <!-- / .row -->
-
-                        {{!-- Botones --}}
-                        <div class="row align-items-center justify-content-between mt-4">
-
-                            {{!-- Cancelar --}}
-                            <div class="col-auto">
-
-                                <a href="/dashboard/pacientes" class="btn btn-lg btn-white btn-lift">Cancelar</a>
-
-                            </div>
-
-                            {{!-- Continuar --}}
-                            <div class="col-auto">
-
-                                <a class="btn btn-lg btn-primary" data-toggle="wizard" href="#wizardStepTwo"> Continuar
-                                    a Evaluación
-                                    <i class="fe fe-arrow-right ml-2"></i>
-                                </a>
-
-                            </div>
-
-                        </div>
 
                     </div>
 
@@ -212,35 +173,38 @@
                     <div class="tab-pane fade" id="wizardStepTwo" role="tabpanel" aria-labelledby="wizardTabTwo">
 
                         {{!-- Entrevista general --}}
-                        <h2>Entrevista General</h2>
+                        <h2 class="text-uppercase text-primary my-4">
+                            <i class="fe fe-book mr-2"></i> Entrevista General
+                        </h2>
 
                         {{!-- Acordeón --}}
-                        <div id="accordion">
+                        <div id="accordion" class="font-size-lg mb-4">
 
                             {{!-- Motivo de consulta --}}
                             <div class="card">
+                                <div class="card-header" id="consultationReason" data-toggle="collapse"
+                                    data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <h4 class="mb-0 text-uppercase" style="cursor: pointer; letter-spacing: 0.06rem;">
+                                        Motivo de Consulta
+                                    </h4>
 
-                                <div class="card-header" id="headingOne">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
-                                            aria-expanded="true" aria-controls="collapseOne">
-                                            Motivo de consulta
-                                        </button>
-                                    </h5>
+                                    <i class="fe fe-chevron-down ml-auto text-secondary" style="cursor: pointer;"></i>
                                 </div>
 
-                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                <div id="collapseOne" class="collapse" aria-labelledby="consultationReason"
                                     data-parent="#accordion">
+
                                     <div class="card-body">
 
                                         <div class="row">
 
+                                            {{!-- Descripción el problema --}}
                                             <div class="col-12">
                                                 <div class="form-group">
 
-                                                    <label for="descripcionProblema">Descripción del problema</label>
-                                                    <textarea name="problemDescription" id="" class="form-control" data-toggle="autosize"
-                                                        style="resize: none;"></textarea>
+                                                    <label for="problemDescription">Descripción del problema</label>
+                                                    <textarea name="problemDescription" id="problemDescription"
+                                                        class="form-control" data-toggle="autosize"></textarea>
 
                                                 </div>
                                             </div>
@@ -249,7 +213,8 @@
                                                 <div class="form-group">
 
                                                     <label>Inicio y curso</label>
-                                                    <textarea name="startCourse" id="" class="form-control"></textarea>
+                                                    <textarea name="startCourse" id="startCourse" class="form-control"
+                                                        data-toggle="autosize"></textarea>
 
                                                 </div>
                                             </div>
@@ -264,41 +229,43 @@
                             {{!-- Datos sociodemográficos --}}
                             <div class="card">
 
-                                <div class="card-header" id="headingTwo">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link collapsed" data-toggle="collapse"
-                                            data-target="#collapseTwo" aria-expanded="false"
-                                            aria-controls="collapseTwo">
-                                            Datos sociodemográficos
-                                        </button>
-                                    </h5>
+                                <div class="card-header" id="sociodemographicData" data-toggle="collapse"
+                                    data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <h4 class="mb-0 text-uppercase" style="cursor: pointer; letter-spacing: 0.06rem;">
+                                        Datos Sociodemográficos
+                                    </h4>
+
+                                    <i class="fe fe-chevron-down ml-auto text-secondary" style="cursor: pointer;"></i>
                                 </div>
 
-                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                <div id="collapseTwo" class="collapse" aria-labelledby="sociodemographicData"
                                     data-parent="#accordion">
                                     <div class="card-body">
 
                                         <div class="row">
 
+                                            {{!-- Formación educativa --}}
                                             <div class="col-12 col-lg-6">
                                                 <div class="form-group">
                                                     <label> Formación educativa </label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" name="education" class="form-control">
                                                 </div>
-
                                             </div>
 
+                                            {{!-- Situación laboral --}}
                                             <div class="col-12 col-lg-6">
                                                 <div class="form-group">
                                                     <label> Situación laboral </label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" name="workStatus" class="form-control">
                                                 </div>
                                             </div>
 
+                                            {{!-- Historia laboral --}}
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label> Historia laboral </label>
-                                                    <textarea name="" id="" class="form-control"></textarea>
+                                                    <textarea name="workHistory" class="form-control"
+                                                        data-toggle="autosize"></textarea>
                                                 </div>
                                             </div>
 
@@ -310,17 +277,16 @@
 
                             {{!-- Datos familiares --}}
                             <div class="card">
-                                <div class="card-header" id="headingThree">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link collapsed" data-toggle="collapse"
-                                            data-target="#collapseThree" aria-expanded="false"
-                                            aria-controls="collapseThree">
-                                            Datos familiares
-                                        </button>
-                                    </h5>
+                                <div class="card-header" id="familyData" data-toggle="collapse"
+                                    data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <h4 class="mb-0 text-uppercase" style="cursor: pointer; letter-spacing: 0.06rem;">
+                                        Datos Familiares
+                                    </h4>
+
+                                    <i class="fe fe-chevron-down ml-auto text-secondary" style="cursor: pointer;"></i>
                                 </div>
 
-                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                <div id="collapseThree" class="collapse" aria-labelledby="familyData"
                                     data-parent="#accordion">
                                     <div class="card-body">
 
@@ -331,7 +297,8 @@
 
                                                 <div class="form-group">
                                                     <label> Datos de interés </label>
-                                                    <textarea name="" id="" class="form-control"></textarea>
+                                                    <textarea name="interestData" id="interestData" class="form-control"
+                                                        data-toggle="autosize"></textarea>
                                                 </div>
 
                                             </div>
@@ -340,7 +307,7 @@
                                             <div class="col-12 col-lg-6">
                                                 <div class="form-group">
                                                     <label> Estado civil </label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" name="maritalStatus" class="form-control">
                                                 </div>
                                             </div>
 
@@ -348,7 +315,7 @@
                                             <div class="col-12 col-lg-6">
                                                 <div class="form-group">
                                                     <label> Pareja </label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" name="partner" class="form-control">
                                                 </div>
                                             </div>
 
@@ -356,14 +323,15 @@
                                             <div class="col-12 col-lg-6">
                                                 <div class="form-group">
                                                     <label> Formación educativa de la pareja </label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" name="partnerEducation" class="form-control">
                                                 </div>
                                             </div>
 
+                                            {{!-- Situación laboral de la pareja --}}
                                             <div class="col-12 col-lg-6">
                                                 <div class="form-group">
                                                     <label> Situación laboral de la pareja </label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" name="partnerWork" class="form-control">
                                                 </div>
                                             </div>
 
@@ -375,17 +343,16 @@
 
                             {{!-- Área psicosocial --}}
                             <div class="card">
-                                <div class="card-header" id="headingFour">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link collapsed" data-toggle="collapse"
-                                            data-target="#collapseFour" aria-expanded="false"
-                                            aria-controls="collapseFour">
-                                            Área psicosocial
-                                        </button>
-                                    </h5>
+                                <div class="card-header" id="psychosocialArea" data-toggle="collapse"
+                                    data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    <h4 class="mb-0 text-uppercase" style="cursor: pointer; letter-spacing: 0.06rem;">
+                                        Área psicosocial
+                                    </h4>
+
+                                    <i class="fe fe-chevron-down ml-auto text-secondary" style="cursor: pointer;"></i>
                                 </div>
 
-                                <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                                <div id="collapseFour" class="collapse" aria-labelledby="psychosocialArea"
                                     data-parent="#accordion">
                                     <div class="card-body">
 
@@ -396,7 +363,8 @@
 
                                                 <div class="form-group">
                                                     <label> Círculos de apoyo </label>
-                                                    <textarea name="" id="" class="form-control"></textarea>
+                                                    <textarea name="supportCircle" id="supportCircle"
+                                                        class="form-control" data-toggle="autosize"></textarea>
                                                 </div>
 
                                             </div>
@@ -405,7 +373,8 @@
                                             <div class="col-12 col-lg-6">
                                                 <div class="form-group">
                                                     <label> Actividades de ocio </label>
-                                                    <textarea name="" id="" class="form-control"></textarea>
+                                                    <textarea name="recreationalActivities" id="recreationalActivities"
+                                                        class="form-control" data-toggle="autosize"></textarea>
                                                 </div>
                                             </div>
 
@@ -417,17 +386,16 @@
 
                             {{!-- Historia psiquiátrica anterior --}}
                             <div class="card">
-                                <div class="card-header" id="headingFive">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link collapsed" data-toggle="collapse"
-                                            data-target="#collapseFive" aria-expanded="false"
-                                            aria-controls="collapseFive">
-                                            Historia psiquiátrica anterior
-                                        </button>
-                                    </h5>
+                                <div class="card-header" id="psychiatricHistory" data-toggle="collapse"
+                                    data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    <h4 class="mb-0 text-uppercase" style="cursor: pointer; letter-spacing: 0.06rem;">
+                                        Historia psiquiátrica anterior
+                                    </h4>
+
+                                    <i class="fe fe-chevron-down ml-auto text-secondary" style="cursor: pointer;"></i>
                                 </div>
 
-                                <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                                <div id="collapseFive" class="collapse" aria-labelledby="psychiatricHistory"
                                     data-parent="#accordion">
                                     <div class="card-body">
 
@@ -438,7 +406,8 @@
 
                                                 <div class="form-group">
                                                     <label> Círculos de apoyo </label>
-                                                    <textarea name="" id="" class="form-control"></textarea>
+                                                    <textarea name="" id="" class="form-control"
+                                                        data-toggle="autosize"></textarea>
                                                 </div>
 
                                             </div>
@@ -447,7 +416,8 @@
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label> Actividades de ocio </label>
-                                                    <textarea name="" id="" class="form-control"></textarea>
+                                                    <textarea name="" id="" class="form-control"
+                                                        data-toggle="autosize"></textarea>
                                                 </div>
                                             </div>
 
@@ -459,17 +429,16 @@
 
                             {{!-- Salud física --}}
                             <div class="card">
-                                <div class="card-header" id="headingSix">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link collapsed" data-toggle="collapse"
-                                            data-target="#collapseSix" aria-expanded="false"
-                                            aria-controls="collapseSix">
-                                            Salud física
-                                        </button>
-                                    </h5>
+                                <div class="card-header" id="physicalHealth" data-toggle="collapse"
+                                    data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                    <h4 class="mb-0 text-uppercase" style="cursor: pointer; letter-spacing: 0.06rem;">
+                                        Salud física
+                                    </h4>
+
+                                    <i class="fe fe-chevron-down ml-auto text-secondary" style="cursor: pointer;"></i>
                                 </div>
 
-                                <div id="collapseSix" class="collapse" aria-labelledby="headingSix"
+                                <div id="collapseSix" class="collapse" aria-labelledby="physicalHealth"
                                     data-parent="#accordion">
                                     <div class="card-body">
 
@@ -480,7 +449,7 @@
 
                                                 <div class="form-group">
                                                     <label> Percepción subjetiva del estado de salud (0 — 10) </label>
-                                                    <input type="number" min="0" max="10" class="form-control ">
+                                                    <input type="number" name="healthStatus" min="0" max="10" class="form-control">
                                                 </div>
 
                                             </div>
@@ -489,7 +458,8 @@
                                             <div class="col-12 col-lg-6">
                                                 <div class="form-group">
                                                     <label> Medicación </label>
-                                                    <textarea name="" id="" class="form-control"></textarea>
+                                                    <textarea name="medication" id="medication" class="form-control"
+                                                        data-toggle="autosize"></textarea>
                                                 </div>
                                             </div>
 
@@ -497,7 +467,8 @@
                                             <div class="col-12 col-lg-6">
                                                 <div class="form-group">
                                                     <label> Síntomas </label>
-                                                    <textarea name="" id="" class="form-control"></textarea>
+                                                    <textarea name="symptoms" id="symptoms" class="form-control"
+                                                        data-toggle="autosize"></textarea>
                                                 </div>
                                             </div>
 
@@ -507,77 +478,37 @@
                                 </div>
                             </div>
 
-
-
                         </div>
-
-                        {{!-- Botones --}}
-
-                        <div class="row">
-
-                            {{!-- Crear ficha de paciente --}}
-                            <div class="col-12">
-                                <div class="form-group">
-
-                                    <button class="btn btn-block btn-primary lift">
-                                        Crear ficha de paciente
-                                    </button>
-
-                                    <a href="/dashboard/pacientes" class="btn btn-block btn-link text-muted">
-                                        Cancelar
-                                    </a>
-
-                                </div>
-                            </div>
-
-                        </div>
-
-                        {{!-- Footer --}}
-                        <div class="row align-items-center justify-content-between">
-                            <div class="col-auto">
-
-                                <!-- Button -->
-                                <a class="btn btn-lg btn-white" data-toggle="wizard" href="#wizardStepOne">
-                                    <i class="fe fe-arrow-left mr-2"></i> Anterior
-                                </a>
-
-                            </div>
-
-                            <div class="col-auto">
-
-                                <!-- Button -->
-                                <button class="btn btn-lg btn-primary" type="submit">
-                                    Crear ficha de paciente <i class="fe fe-plus-circle ml-2"></i>
-                                </button>
-
-                            </div>
-                        </div>
-
 
                     </div>
 
+                    {{!-- Botones --}}
+                    <div class="row">
+                        <div class="col-12">
 
+                            <div class="form-group">
+                                <button class="btn btn-block btn-primary lift">
+                                    Crear ficha de paciente
+                                </button>
+
+                                <a href="/dashboard/pacientes" class="btn btn-block btn-link text-muted">
+                                    Cancelar
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
 
                 </form>
+
+
 
             </div>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
-    </div> <!-- / .row -->
-</div>
 
-</div> <!-- / .main-content -->
+    </div>
+</div> <!-- / .row -->
+</div>

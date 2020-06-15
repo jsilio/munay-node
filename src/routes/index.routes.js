@@ -5,7 +5,10 @@ const {
     renderIndex, 
     renderContacto,
     sendMail, 
-    renderEspecialidades, 
+    renderAdultos,
+    renderInfantojuvenil,
+    renderTerceraEdad,
+    renderParejas, 
     renderTarifas,
     renderReserva, 
 } = require("../controllers/index.controller");
@@ -17,9 +20,22 @@ router.all("/*", (req, res, next) => {
     
 });
 
+// Index
+
 router.get("/", renderIndex);
 
-router.get("/especialidades", renderEspecialidades);
+// Especialidades
+
+router.get("/adultos", renderAdultos);
+
+router.get("/infantojuvenil", renderInfantojuvenil);
+
+router.get("/tercera-edad", renderTerceraEdad);
+
+router.get("/parejas", renderParejas);
+
+
+// Tarifas
 
 router.get("/tarifas", renderTarifas);
 

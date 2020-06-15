@@ -75,9 +75,31 @@ indexCtrl.sendMail = async (req, res) => {
     res.redirect("/contacto");
 }
 
-indexCtrl.renderEspecialidades = (req, res) => {
-    res.render("especialidades", {
-        title: "Especialidades — Munay"
+// Adultos
+indexCtrl.renderAdultos = (req, res) => {
+    res.render("especialidades/adultos", {
+        title: "Terapia para Adultos — Munay"
+    });
+}
+
+// Infantojuvenil
+indexCtrl.renderInfantojuvenil = (req, res) => {
+    res.render("especialidades/infantojuvenil", {
+        title: "Terapia para Niños y Adolescentes — Munay"
+    });
+}
+
+// Infantojuvenil
+indexCtrl.renderTerceraEdad = (req, res) => {
+    res.render("especialidades/tercera-edad", {
+        title: "Terapia para Tercera Edad — Munay"
+    });
+}
+
+// Parejas
+indexCtrl.renderParejas = (req, res) => {
+    res.render("especialidades/parejas", {
+        title: "Terapia para Parejas — Munay"
     });
 }
 

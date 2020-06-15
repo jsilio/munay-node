@@ -21,7 +21,8 @@ const fs = require("fs-extra");
 // GET - Mostrar dashboard
 dashCtrl.renderDashboard = (req, res) => {
     res.render("dashboard/dashboard", {
-        title: "Dahsboard — Munay"
+        title: "Dahsboard — Munay",
+        active: { dashboard: true }
     })
 }
 
@@ -74,7 +75,8 @@ dashCtrl.renderBlog = async (req, res) => {
     // Render
     res.render("dashboard/blog", {
         blogPost,
-        title: "Blog — Munay"
+        title: "Blog — Munay",
+        active: { blog: true }
     });
 };
 

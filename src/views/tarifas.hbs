@@ -1,21 +1,121 @@
-{{!-- Cartas de precios --}}
-<section class="pt-12 bg-info">
-    <div class="container-fluid px-10">
-        <div class="row align-items-center justify-content-center px-0 px-md-12">
 
+{{!-- Modal Presencial --}}
+<div class="modal fade" id="presencial" tabindex="-1" role="dialog" aria-labelledby="modalSignupHorizontalTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+
+            <div class="calendly-inline-widget" data-url="https://calendly.com/munay/presencial?primary_color=649299"
+                style="max-width: 75rem; height: 43rem;">
+            </div>
+
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js">
+            </script>
+
+
+        </div>
+    </div>
+</div>
+
+{{!-- Modal Presencial --}}
+<div class="modal fade" id="presencialParejas" tabindex="-1" role="dialog" aria-labelledby="modalSignupHorizontalTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+            <button type="button" class="modal-close close text-primary text-center pr-2 mt-n4" data-dismiss="modal"
+                aria-label="Close">
+                <span aria-hidden="true" class="display-3">×</span>
+            </button>
+
+
+            <div class="calendly-inline-widget"
+                data-url="https://calendly.com/munay/presencial-parejas?hide_landing_page_details=1&primary_color=649299"
+                style="max-width: 75rem; height: 43rem;">
+            </div>
+
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js">
+            </script>
+
+
+        </div>
+    </div>
+</div>
+
+{{!-- Modal Presencial --}}
+<div class="modal fade" id="online" tabindex="-1" role="dialog" aria-labelledby="modalSignupHorizontalTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+
+            <div class="calendly-inline-widget" data-url="https://calendly.com/munay/online?primary_color=649299"
+                style="max-width: 75rem; height: 43rem;">
+            </div>
+
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js">
+            </script>
+
+
+        </div>
+    </div>
+</div>
+
+{{!-- Modal Online Parejas --}}
+<div class="modal fade" id="onlineParejas" tabindex="-1" role="dialog" aria-labelledby="modalSignupHorizontalTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+
+            <div class="calendly-inline-widget"
+                data-url="https://calendly.com/munay/online-parejas?primary_color=649299"
+                style="max-width: 75rem; height: 43rem;">
+            </div>
+
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js">
+            </script>
+
+
+        </div>
+    </div>
+</div>
+
+{{!-- Precios --}}
+<section class="pt-12 pb-5" style="background-color: rgb(244, 255, 255);">
+    <div class="container-fluid px-4 px-md-6 px-lg-10 px-xl-12">
+        <div class="row align-items-center justify-content-center">
+
+            {{!-- Título --}}
             <div class="col-12 text-center mb-5">
                 <h1 class="display-3">Elige tu modalidad</h1>
             </div>
 
-
-
-            {{!-- Online --}}
+            {{!-- Carta Individual --}}
             <div class="col-12 col-md-6 mb-6 mb-md-0">
                 <div class="card shadow-lg lift">
 
                     {{!-- Header --}}
-                    <h3 class="card-header font-weight-bold text-center text-white bg-primary"><i
-                            class="fe fe-map-pin mr-2"></i>Presencial</h3>
+                    <h2 class="card-header text-center text-white bg-primary">
+                        {{!-- <i class="fe fe-map-pin mr-4"></i>  --}}
+                        <svg class="mr-3 mt-n3" x="0px" y="0px" width="40"
+                            height="40" viewBox="0 0 172 172" style=" fill:#000000;">
+                            <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                                stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                                font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                                style="mix-blend-mode: normal">
+                                <path d="M0,172v-172h172v172z" fill="none"></path>
+                                <g fill="#ffffff">
+                                    <path
+                                        d="M68.81344,20.62656c0,-9.48688 7.69969,-17.18656 17.18656,-17.18656c9.48688,0 17.18656,7.69969 17.18656,17.18656c0,9.48687 -7.69969,17.18656 -17.18656,17.18656c-9.48687,0 -17.18656,-7.69969 -17.18656,-17.18656zM161.62625,127.19938v36.77844c0,4.28656 -3.61469,7.91469 -7.90125,7.91469h-4.81062c-3.93719,0 -7.31,-3.06375 -7.83406,-6.88h-0.08063c0,-1.89469 -1.53187,-3.44 -3.44,-3.44h-17.24031l-0.33594,1.94844c-0.90031,4.99875 -5.02562,8.47906 -10.01094,8.47906c-0.61812,0 -1.24969,-0.06719 -1.89469,-0.17469c-2.72781,-0.49719 -5.09281,-1.98875 -6.63813,-4.21938c-1.23625,-1.77375 -1.8275,-3.87 -1.77375,-6.03344h-27.66781c0.06719,2.06938 -0.51063,4.21938 -1.78719,6.03344c-1.54531,2.23063 -3.89687,3.72219 -6.62469,4.21938c-5.76469,1.04812 -10.88437,-2.67406 -11.90562,-8.26406l-0.33594,-1.98875h-13.47781c-1.89469,0 -3.42656,1.54531 -3.42656,3.44h-0.08063c-0.52406,3.81625 -3.89687,6.88 -7.83406,6.88h-4.81063c-4.28656,0 -7.90125,-3.62812 -7.90125,-7.91469v-36.77844c0,-9.48688 7.69969,-17.18656 17.18656,-17.18656h12.60437c0.13438,-0.45688 0.29563,-0.91375 0.48375,-1.34375c0.09406,0.08062 0.17469,0.17469 0.26875,0.25531l0.57781,0.49719l0.67188,0.34937c3.68187,1.90813 6.58437,3.02344 9.70187,3.73563l29.60281,6.03344c1.11531,0.29563 2.27094,0.44344 3.42656,0.44344c2.49937,0 4.87781,-0.69875 6.92031,-1.94844l7.47125,-1.43781l10.06469,-1.935c4.23281,-0.91375 9.5675,-2.74125 9.7825,-2.80844l0.51062,-0.17469l0.47031,-0.25531c0.86,-0.45687 1.65281,-0.94062 2.40531,-1.49156c0.09406,0.12094 0.16125,0.25531 0.24187,0.37625c0.43,-0.18812 0.90031,-0.29562 1.3975,-0.29562h16.83719c9.47344,0 17.18656,7.69969 17.18656,17.18656zM50.17563,154.6925l-6.38281,-37.81312h-12.7925c-5.68406,0 -10.32,4.63594 -10.32,10.32v36.77844c0,0.51062 0.52406,1.03469 1.03469,1.03469h4.81063c0.51062,0 1.03469,-0.52406 1.03469,-1.03469h0.05375c0.51062,-5.20031 4.91812,-9.28531 10.25281,-9.28531zM68.41031,126.37969l2.91594,28.31281h28.98469l2.62031,-27.42594l-17.02531,-5.11969zM154.75969,127.19938c0,-5.68406 -4.63594,-10.32 -10.32,-10.32h-16.50125c-0.04031,0.22844 -0.01344,0.43 -0.05375,0.67187l-6.38281,37.14125h16.05781c5.34813,0 9.74219,4.085 10.26625,9.28531h0.05375c0,0.51062 0.52406,1.03469 1.03469,1.03469h4.81062c0.51063,0 1.03469,-0.52406 1.03469,-1.03469zM48.77813,103.67031c2.795,1.45125 5.2675,2.49937 8.04906,3.13094l29.71031,6.04688c0.59125,0.18812 1.19594,0.26875 1.80063,0.26875c2.86219,0 5.59,-1.94844 6.45,-5.07938l0.12094,-0.48375c0.63156,-3.72219 -1.73344,-7.02781 -5.06594,-7.72656c-4.52844,-1.02125 -24.89969,-5.72437 -24.89969,-5.72437c-1.80062,-0.41656 -2.94281,-2.16344 -2.60687,-3.9775l2.40531,-13.06125c0.34937,-1.86781 2.12312,-3.10406 4.00437,-2.75469c1.86781,0.33594 3.10406,2.13656 2.75469,4.00437l-1.80062,9.82281c4.86437,1.12875 14.06906,3.25187 19.08125,4.39406l13.94812,-3.27875l-2.84875,-10.66938c-0.49719,-1.84094 0.59125,-3.72219 2.41875,-4.21937c1.84094,-0.48375 3.72219,0.59125 4.21938,2.43219l3.77594,14.09594c0.24188,0.90031 0.1075,1.86781 -0.36281,2.64719c-0.47031,0.80625 -1.24969,1.37063 -2.16344,1.58563l-9.28531,2.19031c0.26875,0.30906 0.5375,0.60469 0.77938,0.92719c2.20375,3.01 3.07719,6.71875 2.45906,10.45437l-0.05375,0.30906l-0.08063,0.30906l-0.14781,0.5375l10.05125,-1.935c3.73563,-0.80625 8.85531,-2.56656 8.85531,-2.56656c2.02906,-1.075 3.64156,-2.44562 4.70313,-4.1925c1.70656,-2.75469 2.06937,-6.08719 1.10187,-9.72875c-1.30344,-6.18125 -6.90687,-30.38219 -8.72094,-35.86469c-2.4725,-6.90688 -7.91469,-10.87094 -14.92906,-10.87094h-33.68781c-4.90469,0 -11.42187,1.88125 -14.57969,10.8575c-0.63156,1.73344 -1.59906,5.95281 -3.25187,13.24937c-1.78719,7.8475 -4.00438,17.63 -5.73781,23.005c-0.92719,3.02344 -0.57781,6.19469 0.98094,8.90906c0.65844,1.14219 1.54531,2.10969 2.55313,2.95625z">
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>
+                        Terapia Presencial
+
+                    </h2>
 
                     <div class="card-body">
 
@@ -35,9 +135,10 @@
 
                                 <!-- Button -->
                                 <div class="text-center">
-                                    <a href="#!" class="btn btn-sm btn-pill btn-block btn-primary">
+                                    <button type="button" class="btn btn-sm btn-pill btn-block btn-primary"
+                                        data-toggle="modal" data-target="#presencial">
                                         Reservar
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
 
@@ -56,30 +157,41 @@
 
 
                                 <div class="text-center">
-                                    <a href="#!" class="btn btn-sm btn-pill btn-block btn-primary">
+                                    <button type="button" class="btn btn-sm btn-pill btn-block btn-primary"
+                                        data-toggle="modal" data-target="#presencialParejas">
                                         Reservar
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
                         </div>
-
-
-
-
-
-
 
                     </div>
                 </div>
             </div>
 
-            {{!-- Parejas --}}
+            {{!-- Online --}}
             <div class="col-12 col-md-6">
                 <div class="card shadow-lg lift">
 
                     {{!-- Header --}}
-                    <h3 class="card-header font-weight-bold text-center text-white bg-primary"><i
-                            class="fe fe-globe mr-2"></i>Online</h3>
+                    <h2 class="card-header text-center text-white bg-primary">
+                        {{!-- <i class="fe fe-video mr-4"></i> --}}
+                        <svg class="mr-3 mt-n3" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="42" height="42"
+                            viewBox="0 0 172 172" style=" fill:#000000;">
+                            <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                                stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                                font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                                style="mix-blend-mode: normal">
+                                <path d="M0,172v-172h172v172z" fill="none"></path>
+                                <g fill="#ffffff">
+                                    <path
+                                        d="M10.32,27.52c-1.89469,0 -3.44,1.54531 -3.44,3.44v103.2c0,1.90813 1.54531,3.44 3.44,3.44h151.36c1.90813,0 3.44,-1.53187 3.44,-3.44v-103.2c0,-1.89469 -1.53187,-3.44 -3.44,-3.44zM86,44.72c9.50031,0 17.2,7.69969 17.2,17.2c0,9.50031 -7.69969,17.2 -17.2,17.2c-9.50031,0 -17.2,-7.69969 -17.2,-17.2c0,-9.50031 7.69969,-17.2 17.2,-17.2zM75.68,86h20.64c9.50031,0 17.2,7.69969 17.2,17.2h-55.04c0,-9.50031 7.69969,-17.2 17.2,-17.2zM34.4,110.08h20.64v13.76h-20.64zM61.92,110.08h20.64v13.76h-20.64zM89.44,110.08h20.64v13.76h-20.64zM116.96,110.08h20.64v13.76h-20.64zM51.6,144.48c-1.23625,-0.01344 -2.39187,0.63156 -3.02344,1.70656c-0.61813,1.075 -0.61813,2.39187 0,3.46687c0.63156,1.075 1.78719,1.72 3.02344,1.70656h68.8c1.23625,0.01344 2.39188,-0.63156 3.02344,-1.70656c0.61813,-1.075 0.61813,-2.39187 0,-3.46687c-0.63156,-1.075 -1.78719,-1.72 -3.02344,-1.70656z">
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>
+                        Terapia Online
+                    </h2>
 
                     <div class="card-body">
 
@@ -99,9 +211,10 @@
 
                                 <!-- Button -->
                                 <div class="text-center">
-                                    <a href="#!" class="btn btn-sm btn-pill btn-block btn-primary">
+                                    <button type="button" class="btn btn-sm btn-pill btn-block btn-primary"
+                                        data-toggle="modal" data-target="#online">
                                         Reservar
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
 
@@ -119,9 +232,10 @@
                                 </div>
 
                                 <div class="text-center">
-                                    <a href="#!" class="btn btn-sm btn-pill btn-block btn-primary">
+                                    <button type="button" class="btn btn-sm btn-pill btn-block btn-primary"
+                                        data-toggle="modal" data-target="#onlineParejas">
                                         Reservar
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -136,7 +250,7 @@
             {{!-- Toggle --}}
             <div class="col-12 mt-7 text-center">
 
-                <h3 class="text-primary">Ahorra con nuestros bonos</h3>
+                <h5 class="text-primary text-uppercase font-size-sm font-weight-bold">Ahorra con nuestros bonos</h5>
 
                 <!-- Form -->
                 <form class="d-flex align-items-center justify-content-center mb-7 mb-md-9">
@@ -155,7 +269,7 @@
 
                     <!-- Label -->
                     <span class="font-size-lg">
-                        5 Sesiones
+                        Bono de 5 Sesiones
                     </span>
 
                 </form>
@@ -167,27 +281,377 @@
     </div>
 </section>
 
-<section class="bg-info">
-    <div class="container-fluid px-10">
+{{!-- Posibilidad de reembolso --}}
+<section class="pb-6" style="background-color: rgb(244, 255, 255);">
 
-        <div class="row align-items-center px-0 px-md-12 text-center">
+    <div class="container-fluid mb-8 px-4 px-md-6 px-lg-10 px-xl-12">
+
+        <div class="row align-items-center justify-content-center">
+
+            {{!-- Texto --}}
+            <div class="col-12 col-md-7 px-6">
+
+                <div class="text-center text-md-left">
+
+                    {{!-- Título --}}
+                    <h2 class="text-primary mb-0 display-4">
+                        Posibilidad de reembolso
+                    </h2>
+
+                    {{!-- Subtítulo --}}
+                    <p class="mb-7 font-size-lg">
+                        Si tienes seguro escolar o de salud privado, consulta la opción de reembolso.
+                    </p>
+                </div>
+
+                {{!-- Info --}}
+                <p class="font-size-lg mb-5">
+
+                    <span class="mt-1 mr-1">
+                        {{!-- Icono --}}
+                        <svg x="0px" y="0px" width="34" height="34" viewBox="0 0 172 172" style=" fill:#000000;">
+                            <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                                stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                                font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                                style="mix-blend-mode: normal">
+                                <path d="M0,172v-172h172v172z" fill="none"></path>
+                                <g fill="#649299">
+                                    <path
+                                        d="M108.93333,17.2l5.73333,40.13333l12.87761,-10.7388c9.75458,10.27126 15.78906,24.08642 15.78906,39.40547c0,31.73133 -25.60201,57.33333 -57.33333,57.33333c-31.73133,0 -57.33333,-25.60201 -57.33333,-57.33333c0.02924,-2.06765 -1.05709,-3.99087 -2.843,-5.03322c-1.78592,-1.04236 -3.99474,-1.04236 -5.78066,0c-1.78592,1.04236 -2.87225,2.96558 -2.843,5.03322c0,37.92867 30.87133,68.8 68.8,68.8c37.92867,0 68.8,-30.87133 68.8,-68.8c0,-18.04657 -7.04306,-34.4555 -18.44297,-46.7401l12.70964,-10.59323zM78.69896,17.59193l-0.55989,0.07838l-4.21042,2.95625l-0.14557,5.13984l4.03125,3.19141l2.01562,0.05599l0.5711,-0.07839l4.19921,-2.95625l0.14558,-5.13984l-4.02005,-3.19141zM56.20234,24.25469l-1.90365,0.68307l-0.49271,0.27995l-2.85547,4.2776l1.72448,4.8375l4.90469,1.52292l1.90364,-0.67187l0.50391,-0.29115l2.84427,-4.2776l-1.72448,-4.8375zM40.98438,39.03594l-5.12865,0.30234l-1.54531,1.31016l-0.35833,0.43672l-1.16458,5.00547l3.31458,3.93047l5.12865,-0.31354l1.54531,-1.29896l0.35833,-0.43672l1.16458,-5.00547zM80.26667,51.6v9.28308c-7.94067,1.76587 -12.92239,7.1302 -12.92239,14.65807c0,7.482 4.39272,12.13953 13.33672,14.0086l6.39401,1.36614c6.02,1.29573 8.46562,3.09564 8.46562,6.22604c0.00001,3.70947 -3.77737,6.29323 -9.1151,6.29323c-5.78493,0 -9.80382,-2.54945 -10.27969,-6.52839h-9.92136c0.3096,7.57373 5.60846,12.75093 14.04219,14.33333v9.15989h11.46667v-9.18229c8.78347,-1.66841 14.04219,-7.16488 14.04219,-15.36354c0,-7.61387 -4.24231,-11.87714 -14.10938,-13.95261l-5.9237,-1.25417c-5.75053,-1.2212 -8.08489,-2.96369 -8.08489,-5.99089c0,-3.74387 3.39574,-6.12526 8.53281,-6.12526c4.96507,0 8.57205,2.58546 9.04792,6.4612h9.6638c-0.25227,-7.12653 -5.42875,-12.40031 -13.16875,-14.13177v-9.26067zM27.03177,58.66589l-4.69193,2.10521l-0.97422,1.76927l-0.19036,0.5375l0.69427,5.09505l4.49036,2.48594l4.69193,-2.10521l0.97422,-1.76927l0.19036,-0.5375l-0.69427,-5.09505z">
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>
+                    </span>
+
+                    En muchas ocasiones, dentro de estos seguros existe la opción de reembolso, que te permite
+                    escoger profesionales privados fuera de su cuadro médico.
+                </p>
+
+                <p class="font-size-lg">
+
+                    <span class="mt-1 mr-1">
+                        {{!-- Icono --}}
+                        <svg x="0px" y="0px" width="34" height="34" viewBox="0 0 172 172" style=" fill:#000000;">
+                            <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                                stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                                font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                                style="mix-blend-mode: normal">
+                                <path d="M0,172v-172h172v172z" fill="none"></path>
+                                <g fill="#649299">
+                                    <path
+                                        d="M108.93333,17.2l5.73333,40.13333l12.87761,-10.7388c9.75458,10.27126 15.78906,24.08642 15.78906,39.40547c0,31.73133 -25.60201,57.33333 -57.33333,57.33333c-31.73133,0 -57.33333,-25.60201 -57.33333,-57.33333c0.02924,-2.06765 -1.05709,-3.99087 -2.843,-5.03322c-1.78592,-1.04236 -3.99474,-1.04236 -5.78066,0c-1.78592,1.04236 -2.87225,2.96558 -2.843,5.03322c0,37.92867 30.87133,68.8 68.8,68.8c37.92867,0 68.8,-30.87133 68.8,-68.8c0,-18.04657 -7.04306,-34.4555 -18.44297,-46.7401l12.70964,-10.59323zM78.69896,17.59193l-0.55989,0.07838l-4.21042,2.95625l-0.14557,5.13984l4.03125,3.19141l2.01562,0.05599l0.5711,-0.07839l4.19921,-2.95625l0.14558,-5.13984l-4.02005,-3.19141zM56.20234,24.25469l-1.90365,0.68307l-0.49271,0.27995l-2.85547,4.2776l1.72448,4.8375l4.90469,1.52292l1.90364,-0.67187l0.50391,-0.29115l2.84427,-4.2776l-1.72448,-4.8375zM40.98438,39.03594l-5.12865,0.30234l-1.54531,1.31016l-0.35833,0.43672l-1.16458,5.00547l3.31458,3.93047l5.12865,-0.31354l1.54531,-1.29896l0.35833,-0.43672l1.16458,-5.00547zM80.26667,51.6v9.28308c-7.94067,1.76587 -12.92239,7.1302 -12.92239,14.65807c0,7.482 4.39272,12.13953 13.33672,14.0086l6.39401,1.36614c6.02,1.29573 8.46562,3.09564 8.46562,6.22604c0.00001,3.70947 -3.77737,6.29323 -9.1151,6.29323c-5.78493,0 -9.80382,-2.54945 -10.27969,-6.52839h-9.92136c0.3096,7.57373 5.60846,12.75093 14.04219,14.33333v9.15989h11.46667v-9.18229c8.78347,-1.66841 14.04219,-7.16488 14.04219,-15.36354c0,-7.61387 -4.24231,-11.87714 -14.10938,-13.95261l-5.9237,-1.25417c-5.75053,-1.2212 -8.08489,-2.96369 -8.08489,-5.99089c0,-3.74387 3.39574,-6.12526 8.53281,-6.12526c4.96507,0 8.57205,2.58546 9.04792,6.4612h9.6638c-0.25227,-7.12653 -5.42875,-12.40031 -13.16875,-14.13177v-9.26067zM27.03177,58.66589l-4.69193,2.10521l-0.97422,1.76927l-0.19036,0.5375l0.69427,5.09505l4.49036,2.48594l4.69193,-2.10521l0.97422,-1.76927l0.19036,-0.5375l-0.69427,-5.09505z">
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>
+                    </span>
+
+                    Si presentas la factura
+                    correspondiente del servicio, te devuelven un porcentaje de cada sesión, diferente según el
+                    seguro y la aseguradora (hasta el 80%) con el que lo tengas contratado.
+                </p>
+
+
+
+
+            </div>
+
+            {{!-- Ilustración --}}
+            <div class="col-12 col-md-5 d-none d-md-block">
+                <img class="mt-n6" src="/img/illustrations/reloj.svg" alt="Munay - Psicología Clínica y Neuropsicología"
+                    style="max-width: 26.5rem;">
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+{{!-- Shape --}}
+<div class="position-relative">
+    <div class="shape shape-bottom shape-fluid-x svg-shim" style="color: rgb(253, 245, 239);">
+        <svg viewBox="0 0 2880 480" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M2160 0C1440 240 720 240 720 240H0V480H2880V0H2160Z"
+                fill="currentColor" />
+        </svg>
+    </div>
+</div>
+
+{{!-- Preguntas Frecuentes --}}
+<section class="py-9" style="background-color: rgb(253, 245, 239);">
+    <div class="container-fluid px-4 px-md-6 px-lg-10 px-xl-12">
+
+        <div class="row align-items-center justify-content-around">
+
+            <div class="col-12 mb-6">
+                <h2 class="text-center display-4">Dudas más comunes</h2>
+            </div>
 
             <div class="col-12 col-md-6">
-                <div class="card shadow-light">
-                    <div class="card-body">
-                        <h3 class="font-weight-bold text-primary">
-                            50% Descuento en la primera consulta
-                        </h3>
+                <div class="card shadow-light-lg accordion mb-5 mb-md-6" id="helpAccordionOne">
+                    <div class="list-group">
+
+                        <div class="list-group-item">
+
+                            <!-- Toggle -->
+                            <a class="d-flex align-items-center text-reset text-decoration-none" data-toggle="collapse"
+                                href="#helpOne" role="button" aria-expanded="false" aria-controls="helpOne">
+
+                                <!-- Title -->
+                                <span class="mr-4">
+                                    ¿Qué métodos de pago hay disponibles?
+                                </span>
+
+                                <!-- Metadata -->
+                                <div class="text-muted ml-auto">
+                                    <!-- Chevron -->
+                                    <span class="collapse-chevron" style="color: #E98F47;">
+                                        <i class="fe fe-lg fe-chevron-down"></i>
+                                    </span>
+
+                                </div>
+
+                            </a>
+
+                            <!-- Collapse -->
+                            <div class="collapse" id="helpOne" data-parent="#helpAccordionOne">
+                                <div class="py-5">
+
+                                    <p class="text-gray-700">
+                                        Puedes formalizar la reserva de forma inmediata pagando con cualquier tarjeta de
+                                        débito o crédito Visa, MasterCard o American
+                                        Express. No obstante, si lo prefieres también puedes efectuar el pago mediante
+                                        Bizum o transferencia bancaria.
+                                    </p>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="list-group-item">
+
+                            <!-- Toggle -->
+                            <a class="d-flex align-items-center text-reset text-decoration-none" data-toggle="collapse"
+                                href="#helpTwo" role="button" aria-expanded="false" aria-controls="helpTwo">
+
+                                <!-- Title -->
+                                <span class="mr-4">
+                                    ¿Qué ocurre si necesito
+                                    modificar o cancelar una sesión?
+                                </span>
+
+                                <!-- Metadata -->
+                                <div class="text-muted ml-auto">
+
+                                    <!-- Chevron -->
+                                    <span class="collapse-chevron" style="color: #E98F47;">
+                                        <i class="fe fe-lg fe-chevron-down"></i>
+                                    </span>
+
+                                </div>
+
+                            </a> <!-- / .row -->
+
+                            <!-- Collapse -->
+                            <div class="collapse" id="helpTwo" data-parent="#helpAccordionOne">
+                                <div class="py-3">
+
+                                    <!-- Text -->
+                                    <p class="text-gray-700">
+                                        Puedes modificar o cancelar una sesión en cualquier momento. Sin embargo,
+                                        necesitamos que nos avises con 24 horas de antelación para obtener el 100% del
+                                        reembolso o mantener esa sesión sin utilizar en tu bono.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="list-group-item">
+
+                            <!-- Toggle -->
+                            <a class="d-flex align-items-center text-reset text-decoration-none" data-toggle="collapse"
+                                href="#helpThree" role="button" aria-expanded="false" aria-controls="helpThree">
+
+                                <!-- Title -->
+                                <span class="mr-4">
+                                    ¿Cuánto duran las sesiones?
+                                </span>
+
+                                <!-- Metadata -->
+                                <div class="text-muted ml-auto">
+
+                                    <!-- Chevron -->
+                                    <span class="collapse-chevron" style="color: #E98F47;">
+                                        <i class="fe fe-lg fe-chevron-down"></i>
+                                    </span>
+
+                                </div>
+
+                            </a> <!-- / .row -->
+
+                            <!-- Collapse -->
+                            <div class="collapse" id="helpThree" data-parent="#helpAccordionOne">
+                                <div class="py-3">
+
+                                    <!-- Text -->
+                                    <p class="text-gray-700">
+                                        Las sesiones tienen una duración de 1 hora en la que resolvemos las dificultades
+                                        que hayan podido surgir en la semana a la par que vamos trabajando los objetivos
+                                        del tratamiento. Es una terapia activa por lo que es probable que salgas con
+                                        alguna tarea para poner en práctica fuera de sesión lo que hemos tratado en
+                                        ella.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
                     </div>
                 </div>
             </div>
 
+
             <div class="col-12 col-md-6">
-                <div class="card shadow-light">
-                    <div class="card-body">
-                        <h3 class="font-weight-bold text-primary">
-                            Posibilidad de reembolso
-                        </h3>
+                <div class="card shadow-light-lg accordion mb-5 mb-md-6" id="helpAccordionTwo">
+                    <div class="list-group">
+
+                        <div class="list-group-item">
+
+                            <!-- Toggle -->
+                            <a class="d-flex align-items-center text-reset text-decoration-none" data-toggle="collapse"
+                                href="#helpFour" role="button" aria-expanded="false" aria-controls="helpFour">
+
+                                <!-- Title -->
+                                <span class="mr-4">
+                                    ¿Con qué frecuencia se hacen las sesiones?
+                                </span>
+
+                                <!-- Metadata -->
+                                <div class="text-muted ml-auto">
+                                    <!-- Chevron -->
+                                    <span class="collapse-chevron" style="color: #E98F47;">
+                                        <i class="fe fe-lg fe-chevron-down"></i>
+                                    </span>
+
+                                </div>
+
+                            </a>
+
+                            <!-- Collapse -->
+                            <div class="collapse" id="helpFour" data-parent="#helpAccordionTwo">
+                                <div class="py-5">
+
+                                    <p class="text-gray-700">
+                                        La periodicidad de las sesiones se adapta según la disponibilidad de cada
+                                        persona. No obstante, en los momentos iniciales de la terapia es recomendable
+                                        hacerlas una vez a la semana para conseguir una continuidad en la evaluación,
+                                        generar alianza y generalizar aprendizajes. A medida que terapeuta y paciente
+                                        vean avances se irán espaciando quincenalmente.
+                                    </p>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="list-group-item">
+
+                            <!-- Toggle -->
+                            <a class="d-flex align-items-center text-reset text-decoration-none" data-toggle="collapse"
+                                href="#helpFive" role="button" aria-expanded="false" aria-controls="helpFive">
+
+                                <!-- Title -->
+                                <span class="mr-4">
+                                    ¿Puedo cambiar de modalidad en cualquier momento?
+                                </span>
+
+                                <!-- Metadata -->
+                                <div class="text-muted ml-auto">
+
+                                    <!-- Chevron -->
+                                    <span class="collapse-chevron" style="color: #E98F47;">
+                                        <i class="fe fe-lg fe-chevron-down"></i>
+                                    </span>
+
+                                </div>
+
+                            </a> <!-- / .row -->
+
+                            <!-- Collapse -->
+                            <div class="collapse" id="helpFive" data-parent="#helpAccordionTwo">
+                                <div class="py-3">
+
+                                    <!-- Text -->
+                                    <p class="text-gray-700">
+                                        Por supuesto. En el caso de que hayas cogido un bono en una modalidad y quieras
+                                        realizar una sesión en otra puedes coger esta última aparte o bien utilizar una
+                                        de tu bono. Por ejemplo, si has utilizado 3 sesiones de un bono de 5 presencial
+                                        y quieres realizar la siguiente vía online, puedes pagarla aparte o bien
+                                        utilizar
+                                        una del bono y te abonaríamos la diferencia mediante pago por móvil o
+                                        transferencia bancaria. En caso de que el cambio fuese de online a presencial
+                                        ocurriría lo mismo, abonándolo tú.
+
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="list-group-item">
+
+                            <!-- Toggle -->
+                            <a class="d-flex align-items-center text-reset text-decoration-none" data-toggle="collapse"
+                                href="#helpSix" role="button" aria-expanded="false" aria-controls="helpSix">
+
+                                <!-- Title -->
+                                <span class="mr-4">
+                                    ¿Puede un menor de edad solicitar asistencia psicológica?
+                                </span>
+
+                                <!-- Metadata -->
+                                <div class="text-muted ml-auto">
+
+                                    <!-- Chevron -->
+                                    <span class="collapse-chevron" style="color: #E98F47;">
+                                        <i class="fe fe-lg fe-chevron-down"></i>
+                                    </span>
+
+                                </div>
+
+                            </a> <!-- / .row -->
+
+                            <!-- Collapse -->
+                            <div class="collapse" id="helpSix" data-parent="#helpAccordionTwo">
+                                <div class="py-3">
+
+                                    <!-- Text -->
+                                    <p class="text-gray-700">
+                                        El código deontológico que regula el ejercicio de la psicología sanitaria
+                                        establece dos actuaciones en función de la edad:
+
+                                    <ul class="text-gray-700">
+                                        <li class="mb-3">
+                                            Aquellos menores de 16 años sólo pueden recibir asistencia psicológica bajo
+                                            el consentimiento de ambos progenitores.
+                                        </li>
+                                        <li>
+                                            En el caso de los adolescentes mayores de 16 años, éstos pueden recibir
+                                            evaluación o intervención psicológica siempre y cuando sean informados ambos
+                                            progenitores.
+                                        </li>
+                                    </ul>
+
+
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -197,24 +661,13 @@
     </div>
 </section>
 
-<section class="bg-info py-8">
-    <div class="container-fluid px-10">
-
-        <div class="row align-items-center justify-content-around text-center">
-
-            <div class="col-12">
-                <h2 class="text-primary">Preguntas frecuentes</h2>
-            </div>
-
-            <div class="col-12 col-md-6">
-                <p>hola</p>
-            </div>
-
-            <div class="col-12 col-md-6">
-                <p>hola</p>
-            </div>
-
-        </div>
-
+{{!-- Shape --}}
+<div class="position-relative">
+    <div class="shape shape-bottom shape-fluid-x svg-shim text-light">
+        <svg viewBox="0 0 2880 56" fill="none">
+            <path
+                d="M720 28H0V56H995.5H1639.5H2880V28H2160C2160 28 1874 -9.82909e-10 1440 0C1006 9.829e-10 720 28 720 28Z"
+                fill="currentColor" />
+        </svg>
     </div>
-</section>
+</div>

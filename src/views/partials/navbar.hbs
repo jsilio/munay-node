@@ -1,4 +1,4 @@
-<nav id="mainNavbar" class="navbar navbar-expand-lg px-0 px-md-7 fixed-top navbar-dark navbar-togglable @@classList">
+<nav id="mainNavbar" class="navbar navbar-expand-lg px-0 px-md-7 fixed-top navbar-dark navbar-togglable">
   <div class="container-fluid">
 
     {{!-- Logo --}}
@@ -22,7 +22,7 @@
       </button>
 
       {{!-- Navigation list --}}
-      <ul class="navbar-nav ml-auto font-size-lg pt-0 pt-md-2">
+      <ul class="navbar-nav ml-auto pt-0 pt-md-2 font-size-lg">
 
         {{!-- Especialidades --}}
         <li class="nav-item dropdown">
@@ -36,24 +36,26 @@
             <div class="list-group list-group-flush">
 
               {{!-- Adultos --}}
-              <a class="list-group-item" href="/especialidades#adultos">
+              <a class="list-group-item" href="/adultos">
 
-    
+                <img src="img/icons/adultos.png" style="max-width: 1.6rem">
 
                 <!-- Content -->
-                <div class="ml-4">
-                  <h6 class="font-weight-bold text-uppercase text-primary mb-0">
+                <div class="ml-3">
+                  <h6
+                    class="font-weight-bold text-uppercase text-primary                                                                                                               mb-0">
                     Adultos
                   </h6>
                 </div>
               </a>
 
               <!-- Infantojuvenil -->
-              <a class="list-group-item" href="/especialidades#infantojuvenil">
+              <a class="list-group-item" href="/infantojuvenil">
 
+                <img src="img/icons/infantojuvenil.png" style="max-width: 1.6rem">
 
                 <!-- Content -->
-                <div class="ml-4">
+                <div class="ml-3">
 
                   <!-- Heading -->
                   <h6 class="font-weight-bold text-uppercase text-primary mb-0">
@@ -67,8 +69,10 @@
               <!-- Tercera edad -->
               <a class="list-group-item" href="/especialidades#terceraEdad">
 
+                <img src="img/icons/terceraEdad.png" style="max-width: 1.6rem">
+
                 <!-- Content -->
-                <div class="ml-4">
+                <div class="ml-3">
 
                   <!-- Heading -->
                   <h6 class="font-weight-bold text-uppercase text-primary mb-0">
@@ -80,8 +84,12 @@
 
               <a class="list-group-item" href="/especialidades#parejas">
 
+
+                <img src="img/icons/parejas.png" style="max-width: 1.6rem">
+
+
                 <!-- Content -->
-                <div class="ml-4">
+                <div class="ml-3">
 
                   <!-- Heading -->
                   <h6 class="font-weight-bold text-uppercase text-primary mb-0">
@@ -94,6 +102,8 @@
 
             </div> <!-- ./list-group -->
           </div> <!-- ./dropdown-menu -->
+
+
         </li>
 
         {{!-- Tarifas --}}
@@ -110,26 +120,53 @@
           </a>
         </li>
 
-        {{!-- Comparte tu experiencia --}}
-        <li class="nav-item">
-          <a class="nav-link" href="/comparte-tu-experiencia">
-            Comparte tu experiencia
-          </a>
-        </li>
-
         {{!-- Contacto --}}
         <li class="nav-item">
           <a class="nav-link" href="/contacto">
             Contacto
           </a>
         </li>
+
       </ul>
 
-
-      <a class="navbar-btn btn btn-sm btn-primary-soft lift ml-auto" href="/reserva" target="_blank">
+      {{!-- Call to Action --}}
+      <a href="/reserva" class="navbar-btn btn btn-sm btn-primary-soft lift ml-auto font-size-lg">
         Reserva tu cita
       </a>
 
     </div> <!-- ./navbar-collapse -->
   </div> <!-- ./container -->
 </nav>
+
+<div class="modal fade" id="modalReserva" tabindex="-1" role="dialog" aria-labelledby="modalReservaTitulo"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="card card-row">
+        <div class="row no-gutters">
+          <div class="col-12">
+            <div class="card-body">
+
+              <!-- Close -->
+              <button type="button" class="modal-close close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+
+              <!-- Heading -->
+              <h2 class="mb-0 font-weight-bold text-center" id="modalReservaTitulo">
+                Reserva tu cita
+              </h2>
+
+              <div class="calendly-inline-widget mt-n6"
+                data-url="https://calendly.com/munay/presencial?hide_event_type_details=1?hide_landing_page_details=1&primary_color=228e6d"
+                style="min-width:40rem;height:25rem;"></div>
+              <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+
+            </div>
+          </div>
+
+        </div> <!-- / .row -->
+      </div>
+    </div>
+  </div>
+</div>

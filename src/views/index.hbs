@@ -1,32 +1,37 @@
 {{!-- << Hero >> --}}
-<section id="hero" class="py-md-12 pb-5 pb-md-6" style="background: rgb(122,183,182);
-background: linear-gradient(346deg, rgba(122,183,182,1) 0%, rgba(177,219,225,1) 35%, rgba(229,243,245,1) 100%);">
+<section id="hero" class="py-md-12 pb-5 pb-md-6" style="background: #E4F3F4 ">
 
   <div class="container-fluid">
     <div class="row align-items-center">
 
       {{!-- Ilustración principal --}}
       <div class="col-12 col-md-5 col-lg-6 order-md-2">
-        <img src="/img/illustrations/hero.svg" class="mb-3 mb-md-0 pr-8 img-fluid" alt="...">
+        <img src="/img/illustrations/hero.svg" class="mb-3 mb-md-0 pr-8 ml-n10 img-fluid d-none d-md-block"
+          style="max-width: 500rem;" alt="...">
       </div>
 
       {{!-- Bloque héroe --}}
       <div class="col-12 col-md-7 col-lg-6 order-md-1 px-0 px-md-12">
         {{!-- Título --}}
-        <h1 class="display-3 font-weight-bold text-center text-md-left mb-6 mb-lg-8">
+        <h1 class="display-2 text-center text-md-left mb-4 mb-md-6 mb-lg-8 mt-11 mt-md-0">
           Terapia psicológica <br> basada <span class="text-primary">en la evidencia</span>
         </h1>
 
+        <div class="d-block d-md-none text-center">
+          <img src="/img/illustrations/hero.svg" class="img-fluid mw-75" alt="">
+        </div>
+
         {{!-- Texto --}}
-        <p class="font-size-lg text-center text-md-left text-gray-800 mb-6 mb-lg-8">
+        <p class="font-size-lg text-center text-md-left text-gray-800 mb-6 mb-lg-8 px-8 px-md-0">
           ¡Bienvenido/a! Éste es un recurso de salud mental para ti. Munay es un espacio donde puedes explorar,
           preguntar, expresarte y exprimir nuestros servicios de psicología clínica y neuropsicología.
         </p>
 
         <!-- Botón CTA -->
         <div class="text-center text-md-left text-uppercase">
-          <a href="/reserva" class="btn btn-primary btn-lg shadow lift mr-1">
-            Reserva tu cita <i class="fe fe-arrow-right ml-3"></i>
+          <a href="/reserva" class="btn btn-primary btn-lg shadow lift mr-1" data-toggle="modal"
+            data-target="#modalReserva">
+            Reserva tu cita
           </a>
         </div>
       </div>
@@ -49,26 +54,31 @@ background: linear-gradient(346deg, rgba(122,183,182,1) 0%, rgba(177,219,225,1) 
 
 {{!-- << Información >> --}}
 <section class="pt-8 pt-md-11 pb-8 bg-white">
-  <div class="container-fluid">
+  <div class="container-fluid px-5 px-md-8">
     <div class="row align-items-center justify-content-between mb-3 mb-md-9">
 
       <!-- Vídeo -->
-      <div class="col-12 col-md-12 col-lg-5 mb-6 mb-md-4 ml-0 ml-md-2 ml-lg-8 " data-aos="fade-right">
+      <div class="col-12 col-lg-6 mb-6 mb-md-4">
 
 
-        <div class="embed-responsive embed-responsive-16by9 rounded">
-          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/t2jloGkXjPg" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="embed-responsive embed-responsive-16by9">
+          <video class="embed-responsive-item rounded-lg bg-light shadow-lg"
+            src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" controls
+            loop playsinline muted>
+            Sorry, your browser doesn't support embedded videos,
+            but don't worry, you can <a href="assets/video/video-1.mp4">download it</a>
+            and watch it with your favorite video player!
+          </video>
         </div>
 
 
       </div>
 
       <!-- Titulo y Descripcion -->
-      <div class="col-12 col-md-6 mr-9 px-8">
+      <div class="col-12 col-lg-6 px-4 px-md-8" data-aos="fade-left">
 
         <!-- Heading -->
-        <h2 class="display-5 font-weight-bold">
+        <h2 class="display-5">
           Acudir a terapia no debería ser motivo de vergüenza sino
           <span class="text-primary">un acto de <span data-toggle="typed"
               data-options='{"strings": ["valentía.", "responsabilidad.", "amor propio."]}'></span></span>
@@ -185,7 +195,7 @@ background: linear-gradient(346deg, rgba(122,183,182,1) 0%, rgba(177,219,225,1) 
       <div class="col-12 col-md-10 col-lg-8 text-center">
 
         <!-- Título -->
-        <h2 class="display-5 font-weight-bold">
+        <h2 class="display-4 mt-3">
           Especialidades
         </h2>
 
@@ -204,42 +214,43 @@ background: linear-gradient(346deg, rgba(122,183,182,1) 0%, rgba(177,219,225,1) 
       {{!-- Adultos --}}
       <div class="col-12 col-md-3 text-center" data-aos="fade-up">
 
-        <h3 class="font-weight-bold">Adultos</h3>
-
-        {{!-- Ilustración --}}
-        <img src="/img/illustrations/adultos.svg" alt="Terapia psicológica para Adultos" class="img-fluid mb-3">
+        <a href="/adultos">
+          <h2 class="text-primary">Adultos</h2>
+          <img src="/img/illustrations/adultos.svg" alt="Terapia psicológica para Adultos" class="mb-3">
+        </a>
 
       </div>
 
       {{!-- Infantojuvenil --}}
       <div class="col-12 col-md-3 text-center" data-aos="fade-up" data-aos-delay="50">
 
-        <h3 class="font-weight-bold">Infantojuvenil</h3>
-
-        {{!-- Ilustración --}}
-        <img src="/img/illustrations/infantojuvenil.svg" alt="Terapia psicológica para Niños y Adolescentes"
-          class="img-fluid mb-3">
+        <a href="/infantojuvenil">
+          <h2 class="text-primary text-decoration-none ">Infantojuvenil</h2>
+          <img src="/img/illustrations/infantojuvenil.svg" alt="Terapia psicológica para Niños y Adolescentes"
+            class="img-fluid mb-3">
+        </a>
 
       </div>
 
       {{!-- Tercera edad --}}
       <div class="col-12 col-md-3 text-center" data-aos="fade-up" data-aos-delay="100">
 
-        <h3 class="font-weight-bold">Tercera edad</h3>
-
-        {{!-- Ilustración --}}
-        <img src="/img/illustrations/tercera-edad.svg" alt="Terapia psicológica para la Tercera edad"
-          class="img-fluid mb-3">
+        <a href="/tercera-edad">
+          <h2 class="text-primary">Tercera Edad</h2>
+          <img src="/img/illustrations/tercera-edad.svg" alt="Terapia psicológica para la Tercera edad"
+            class="img-fluid mb-3">
+        </a>
 
       </div>
 
       {{!-- Parejas --}}
       <div class="col-12 col-md-3 text-center" data-aos="fade-up" data-aos-delay="100">
 
-        <h3 class="font-weight-bold">Parejas</h3>
+        <a href="/parejas">
+          <h2 class="text-primary">Parejas</h2>
+          <img src="/img/illustrations/parejas.svg" alt="Terapia psicológica Parejas" class="img-fluid mb-3">
+        </a>
 
-        {{!-- Ilustración --}}
-        <img src="/img/illustrations/parejas.svg" alt="Terapia psicológica Parejas" class="img-fluid mb-3">
       </div>
 
     </div> <!-- / .row -->
@@ -248,7 +259,7 @@ background: linear-gradient(346deg, rgba(122,183,182,1) 0%, rgba(177,219,225,1) 
 </section>
 
 {{!-- << Modalidades >> --}}
-<section id="modalidades" class="pt-7 pt-md-11 pb-8 bg-gray-200">
+<section id="modalidades" class="pt-7 pt-md-12 pb-8 bg-gray-200">
   <div class="container">
 
     <div class="row align-items-center justify-content-between mb-8 mb-md-11">
@@ -259,7 +270,7 @@ background: linear-gradient(346deg, rgba(122,183,182,1) 0%, rgba(177,219,225,1) 
         {{!-- Título y Descripción --}}
         <div class="text-center text-md-left">
 
-          <h2 class="font-weight-bold">Modalidades</h2>
+          <h2 class="display-4">Modalidades</h2>
 
           <p class="font-size-lg text-gray-700 mb-6">
             Atendemos las consultas en varias modalidades que puedes modificar a lo largo de la terapia sin ningún
@@ -297,11 +308,27 @@ background: linear-gradient(346deg, rgba(122,183,182,1) 0%, rgba(177,219,225,1) 
               {{!-- Presencial --}}
               <div class="list-group-item">
 
-                <div class="icon-circle bg-primary text-white mb-5">
-                  <i class="fe fe-map-pin"></i>
+                <div class="icon-circle bg-gray-200 mb-5">
+                  <div class="icon text-primary">
+                    <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+
+                      <g id="Stockholm-icons-/-Home-/-Armchair" stroke="none" stroke-width="1" fill="none"
+                        fill-rule="evenodd">
+                        <path
+                          d="M20,8 L18.173913,8 C17.0693435,8 16.173913,8.8954305 16.173913,10 L16.173913,12 C16.173913,12.5522847 15.7261978,13 15.173913,13 L8.86956522,13 C8.31728047,13 7.86956522,12.5522847 7.86956522,12 L7.86956522,10 C7.86956522,8.8954305 6.97413472,8 5.86956522,8 L4,8 L4,6 C4,4.34314575 5.34314575,3 7,3 L17,3 C18.6568542,3 20,4.34314575 20,6 L20,8 Z"
+                          id="Path" fill="#335EEA" opacity="0.3"></path>
+                        <path
+                          d="M6.15999985,21.0604779 L8.15999985,17.5963763 C8.43614222,17.1180837 9.04773263,16.9542085 9.52602525,17.2303509 C10.0043179,17.5064933 10.168193,18.1180837 9.89205065,18.5963763 L7.89205065,22.0604779 C7.61590828,22.5387706 7.00431787,22.7026457 6.52602525,22.4265033 C6.04773263,22.150361 5.88385747,21.5387706 6.15999985,21.0604779 Z M17.8320512,21.0301278 C18.1081936,21.5084204 17.9443184,22.1200108 17.4660258,22.3961532 C16.9877332,22.6722956 16.3761428,22.5084204 16.1000004,22.0301278 L14.1000004,18.5660262 C13.823858,18.0877335 13.9877332,17.4761431 14.4660258,17.2000008 C14.9443184,16.9238584 15.5559088,17.0877335 15.8320512,17.5660262 L17.8320512,21.0301278 Z"
+                          id="Combined-Shape" fill="#335EEA" opacity="0.3"></path>
+                        <path
+                          d="M20,10 L20,15 C20,16.6568542 18.6568542,18 17,18 L7,18 C5.34314575,18 4,16.6568542 4,15 L4,10 L5.86956522,10 L5.86956522,12 C5.86956522,13.6568542 7.21271097,15 8.86956522,15 L15.173913,15 C16.8307673,15 18.173913,13.6568542 18.173913,12 L18.173913,10 L20,10 Z"
+                          id="Combined-Shape" fill="#335EEA"></path>
+                      </g>
+                    </svg>
+                  </div>
                 </div>
 
-                <h3 class="font-weight-bold">Presencial</h3>
+                <h3>Presencial</h3>
 
                 <p class="text-gray-700 mb-5">
                   El despacho está situado en Madrid Centro. <br> Buena comunicación y accesibilidad.
@@ -311,25 +338,61 @@ background: linear-gradient(346deg, rgba(122,183,182,1) 0%, rgba(177,219,225,1) 
               {{!-- Vídeollamada --}}
               <div class="list-group-item">
 
-                <div class="icon-circle bg-primary text-white mb-5">
-                  <i class="fe fe-video"></i>
+                <div class="icon-circle bg-gray-200 mb-5">
+                  <div class="icon text-primary">
+                    <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+
+                      <g id="Stockholm-icons-/-Devices-/-Video-camera" stroke="none" stroke-width="1" fill="none"
+                        fill-rule="evenodd">
+                        <rect id="bound" x="0" y="0" width="24" height="24"></rect>
+                        <rect id="Combined-Shape" fill="#335EEA" x="2" y="6" width="13" height="12" rx="2"></rect>
+                        <path
+                          d="M22,8.4142119 L22,15.5857848 C22,16.1380695 21.5522847,16.5857848 21,16.5857848 C20.7347833,16.5857848 20.4804293,16.4804278 20.2928929,16.2928912 L16.7071064,12.7071013 C16.3165823,12.3165768 16.3165826,11.6834118 16.7071071,11.2928877 L20.2928936,7.70710477 C20.683418,7.31658067 21.316583,7.31658098 21.7071071,7.70710546 C21.8946433,7.89464181 22,8.14899558 22,8.4142119 Z"
+                          id="Path-2" fill="#335EEA" opacity="0.3"></path>
+                      </g>
+                    </svg>
+                  </div>
                 </div>
 
-                <h3 class="font-weight-bold">Vídeollamada</h3>
+                <h3>Vídeollamada</h3>
 
-                <p class="text-gray-700">
-                  Vía Skype o Whatsapp. <br> Gran flexibilidad y comodidad.
+                <span data-toggle="tooltip" data-placement="bottom" title="Skype">
+                  <img src="img/icons/social/skype.png" alt="Skype" style="width: 1.3rem;">
+                </span>
+                <span class="ml-2" data-toggle="tooltip" data-placement="bottom" title="WhatsApp">
+                  <img src="img/icons/social/whatsapp.png" alt="Whatsapp" style="width: 1.3rem;">
+                </span>
+                <span class="ml-2" data-toggle="tooltip" data-placement="bottom" title="Google Hangouts">
+                  <img src="img/icons/social/hangouts.png" alt="Hangouts" style="width: 1.4rem;">
+                </span>
+                <span class="ml-2" data-toggle="tooltip" data-placement="bottom" title="Zoom">
+                  <img src="img/icons/social/zoom.png" alt="Zoom" style="width: 1.4rem;">
+                </span>
+
+                <p class="text-gray-700 mt-2">
+                  Gran flexibilidad y comodidad.
                 </p>
               </div>
 
               {{!-- Teléfono --}}
               <div class="list-group-item">
 
-                <div class="icon-circle bg-primary text-white mb-5">
-                  <i class="fe fe-phone-call"></i>
+                <div class="icon-circle bg-gray-200 mb-5">
+                  <div class="icon text-primary">
+                    <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+
+                      <g id="Stockholm-icons-/-Communication-/-Call#1" stroke="none" stroke-width="1" fill="none"
+                        fill-rule="evenodd">
+                        <rect id="bound" x="0" y="0" width="24" height="24"></rect>
+                        <path
+                          d="M11.914857,14.1427403 L14.1188827,11.9387145 C14.7276032,11.329994 14.8785122,10.4000511 14.4935235,9.63007378 L14.3686433,9.38031323 C13.9836546,8.61033591 14.1345636,7.680393 14.7432841,7.07167248 L17.4760882,4.33886839 C17.6713503,4.14360624 17.9879328,4.14360624 18.183195,4.33886839 C18.2211956,4.37686904 18.2528214,4.42074752 18.2768552,4.46881498 L19.3808309,6.67676638 C20.2253855,8.3658756 19.8943345,10.4059034 18.5589765,11.7412615 L12.560151,17.740087 C11.1066115,19.1936265 8.95659008,19.7011777 7.00646221,19.0511351 L4.5919826,18.2463085 C4.33001094,18.1589846 4.18843095,17.8758246 4.27575484,17.613853 C4.30030124,17.5402138 4.34165566,17.4733009 4.39654309,17.4184135 L7.04781491,14.7671417 C7.65653544,14.1584211 8.58647835,14.0075122 9.35645567,14.3925008 L9.60621621,14.5173811 C10.3761935,14.9023698 11.3061364,14.7514608 11.914857,14.1427403 Z"
+                          id="Path-76" fill="#335EEA"></path>
+                      </g>
+                    </svg>
+                  </div>
                 </div>
 
-                <h3 class="font-weight-bold">Teléfono</h3>
+                <h3>Teléfono</h3>
 
                 <p class="text-gray-700">
                   Anonimato y amplia disponibilidad.
@@ -359,7 +422,6 @@ background: linear-gradient(346deg, rgba(122,183,182,1) 0%, rgba(177,219,225,1) 
 </div>
 
 
-
 {{!-- << Blog >> --}}
 <section id="blog" class="py-4 bg-light">
   <div class="container">
@@ -368,7 +430,7 @@ background: linear-gradient(346deg, rgba(122,183,182,1) 0%, rgba(177,219,225,1) 
     <div class="row justify-content-center">
       <div class="col-12 col-md-10 col-lg-8 text-center">
 
-        <h2 class="font-weight-bold">Últimas entradas en nuestro blog</h2>
+        <h2 class="display-4">Últimas entradas en nuestro blog</h2>
 
         <p class="font-size-lg text-gray-700 mb-7 mb-md-9">
           Explicamos de forma clara y sencilla conceptos de psicología útiles para tu día a día.
@@ -485,17 +547,20 @@ background: linear-gradient(346deg, rgba(122,183,182,1) 0%, rgba(177,219,225,1) 
           <div class="card-body">
             <blockquote class="blockquote mb-0 text-center">
 
-              <h2 class="font-weight-bold text-primary">Laura Marín Cuesta</h2>
+              <h2 class="display-4 mb-0 font-weight-bold text-primary">Laura Marín Cuesta</h2>
               <p class="text-primary">Colegiada M-35246.</p>
 
-              <p class="text-gray-700 mb-5 mb-md-7">
-                Graduada en Psicología (bilingüe) en la UCM.<br>
-                Máster en Psicología General Sanitaria en la UAH. <br>
-                Posgrado en Neuropsicología Clínica I en la UAL.
-              </p>
+              <p class="mb-0 mb-n1 mt-5">Graduada en Psicología (bilingüe)</p>
+              <p class="font-size-sm text-muted">Universidad Complutense de Madrid</p>
+
+              <p class="mb-0 mb-n1">Máster en Psicología General Sanitaria</p>
+              <p class="font-size-sm text-muted">Universidad Alcalá de Henares</p>
+
+              <p class="mb-0 mb-n1">Posgrado en Neuropsicología Clínica I</p>
+              <p class="font-size-sm text-muted">Universidad de Almería</p>
 
               {{!-- Contacto --}}
-              <div class="icon icon-xs text-primary">
+              <div class="icon icon-xs text-primary mt-6">
 
                 {{!-- Correo eléctronico --}}
                 <a href="/contacto"><i class="fe fe-mail mr-3"></i></a>
@@ -515,6 +580,7 @@ background: linear-gradient(346deg, rgba(122,183,182,1) 0%, rgba(177,219,225,1) 
     </div> {{!-- / .container --}}
 </section>
 
+
 {{!-- Shape --}}
 <div class="position-relative mt-n13">
   <div class="shape shape-bottom shape-fluid-x svg-shim" style="color: #D8EDF0;">
@@ -528,15 +594,15 @@ background: linear-gradient(346deg, rgba(122,183,182,1) 0%, rgba(177,219,225,1) 
 
 {{!-- Comparte tu experiencia --}}
 <section id="comparteTuExperiencia" class="pt-14 pb-8 pb-md-10" style="background-color: #D8EDF0;">
-  <div class="container">
+  <div class="container-fluid px-5 px-md-12">
 
     {{!-- Título y Descripción --}}
     <div class="row justify-content-center">
 
       <div class="col-12 col-md-10 text-center mb-7">
-        <h2 class="font-weight-bold">Comparte tu experiencia</h2>
+        <h2 class="display-4">Comparte tu experiencia</h2>
 
-        <p class="font-size-lg text-gray-800 mt-6 mb-7 mb-md-8">
+        <p class="font-size-lg text-gray-800 mt-6 px-0 px-md-10">
           ¡Esta sección es exclusivamente para ti! Sabemos que vivir un proceso terapéutico es un viaje emocional lleno
           de crecimiento personal. Por ello, queremos dar visibilidad a todas aquellas personas que les apetezca
           publicar su aprendizaje.
@@ -545,37 +611,273 @@ background: linear-gradient(346deg, rgba(122,183,182,1) 0%, rgba(177,219,225,1) 
 
     </div>
 
-    {{!-- Carrousel de imágenes --}}
-    <div class="flickity-button-white mb-4"
-      data-flickity='{"pageDots": false,"cellAlign": "left", "wrapAround": true, "imagesLoaded": true}'>
+    <div class="row align-items-center justify-content-center">
 
-      <div class="col-12 col-md-4 px-2">
-        <img src="img/photos/blog1.jpg" class="img-fluid rounded" alt="...">
+      <div class="col-12 col-lg-4">
+        <div class="card lift mb-5 mb-md-0">
+
+          <div class="card-body">
+            <div class="row">
+
+              {{!-- Icono --}}
+              <div class="col-auto">
+                <img src="img/icons/quote4.png" style="max-width: 3rem;">
+              </div>
+
+              {{!-- Nombre --}}
+              <div class="col ml-n5">
+                <h3>Paula</h3>
+
+                {{!-- Estrellas --}}
+                <div class="mt-n4">
+                  <div class="icon icon-xs text-primary">
+                    <svg width="24px" height="24px" viewBox="0 0 24 24">
+                      <g id="Stockholm-icons-/-General-/-Star" stroke="none" stroke-width="1" fill="none"
+                        fill-rule="evenodd">
+                        <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                        <path
+                          d="M12,18 L7.91561963,20.1472858 C7.42677504,20.4042866 6.82214789,20.2163401 6.56514708,19.7274955 C6.46280801,19.5328351 6.42749334,19.309867 6.46467018,19.0931094 L7.24471742,14.545085 L3.94038429,11.3241562 C3.54490071,10.938655 3.5368084,10.3055417 3.92230962,9.91005817 C4.07581822,9.75257453 4.27696063,9.65008735 4.49459766,9.61846284 L9.06107374,8.95491503 L11.1032639,4.81698575 C11.3476862,4.32173209 11.9473121,4.11839309 12.4425657,4.36281539 C12.6397783,4.46014562 12.7994058,4.61977315 12.8967361,4.81698575 L14.9389263,8.95491503 L19.5054023,9.61846284 C20.0519472,9.69788046 20.4306287,10.2053233 20.351211,10.7518682 C20.3195865,10.9695052 20.2170993,11.1706476 20.0596157,11.3241562 L16.7552826,14.545085 L17.5353298,19.0931094 C17.6286908,19.6374458 17.263103,20.1544017 16.7187666,20.2477627 C16.5020089,20.2849396 16.2790408,20.2496249 16.0843804,20.1472858 L12,18 Z"
+                          id="Star" fill="#335EEA"></path>
+                      </g>
+                    </svg>
+                    <svg class="ml-n1" width="24px" height="24px" viewBox="0 0 24 24">
+                      <g id="Stockholm-icons-/-General-/-Star" stroke="none" stroke-width="1" fill="none"
+                        fill-rule="evenodd">
+                        <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                        <path
+                          d="M12,18 L7.91561963,20.1472858 C7.42677504,20.4042866 6.82214789,20.2163401 6.56514708,19.7274955 C6.46280801,19.5328351 6.42749334,19.309867 6.46467018,19.0931094 L7.24471742,14.545085 L3.94038429,11.3241562 C3.54490071,10.938655 3.5368084,10.3055417 3.92230962,9.91005817 C4.07581822,9.75257453 4.27696063,9.65008735 4.49459766,9.61846284 L9.06107374,8.95491503 L11.1032639,4.81698575 C11.3476862,4.32173209 11.9473121,4.11839309 12.4425657,4.36281539 C12.6397783,4.46014562 12.7994058,4.61977315 12.8967361,4.81698575 L14.9389263,8.95491503 L19.5054023,9.61846284 C20.0519472,9.69788046 20.4306287,10.2053233 20.351211,10.7518682 C20.3195865,10.9695052 20.2170993,11.1706476 20.0596157,11.3241562 L16.7552826,14.545085 L17.5353298,19.0931094 C17.6286908,19.6374458 17.263103,20.1544017 16.7187666,20.2477627 C16.5020089,20.2849396 16.2790408,20.2496249 16.0843804,20.1472858 L12,18 Z"
+                          id="Star" fill="#335EEA"></path>
+                      </g>
+                    </svg>
+                    <svg class="ml-n1" width="24px" height="24px" viewBox="0 0 24 24">
+                      <g id="Stockholm-icons-/-General-/-Star" stroke="none" stroke-width="1" fill="none"
+                        fill-rule="evenodd">
+                        <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                        <path
+                          d="M12,18 L7.91561963,20.1472858 C7.42677504,20.4042866 6.82214789,20.2163401 6.56514708,19.7274955 C6.46280801,19.5328351 6.42749334,19.309867 6.46467018,19.0931094 L7.24471742,14.545085 L3.94038429,11.3241562 C3.54490071,10.938655 3.5368084,10.3055417 3.92230962,9.91005817 C4.07581822,9.75257453 4.27696063,9.65008735 4.49459766,9.61846284 L9.06107374,8.95491503 L11.1032639,4.81698575 C11.3476862,4.32173209 11.9473121,4.11839309 12.4425657,4.36281539 C12.6397783,4.46014562 12.7994058,4.61977315 12.8967361,4.81698575 L14.9389263,8.95491503 L19.5054023,9.61846284 C20.0519472,9.69788046 20.4306287,10.2053233 20.351211,10.7518682 C20.3195865,10.9695052 20.2170993,11.1706476 20.0596157,11.3241562 L16.7552826,14.545085 L17.5353298,19.0931094 C17.6286908,19.6374458 17.263103,20.1544017 16.7187666,20.2477627 C16.5020089,20.2849396 16.2790408,20.2496249 16.0843804,20.1472858 L12,18 Z"
+                          id="Star" fill="#335EEA"></path>
+                      </g>
+                    </svg>
+                    <svg class="ml-n1" width="24px" height="24px" viewBox="0 0 24 24">
+                      <g id="Stockholm-icons-/-General-/-Star" stroke="none" stroke-width="1" fill="none"
+                        fill-rule="evenodd">
+                        <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                        <path
+                          d="M12,18 L7.91561963,20.1472858 C7.42677504,20.4042866 6.82214789,20.2163401 6.56514708,19.7274955 C6.46280801,19.5328351 6.42749334,19.309867 6.46467018,19.0931094 L7.24471742,14.545085 L3.94038429,11.3241562 C3.54490071,10.938655 3.5368084,10.3055417 3.92230962,9.91005817 C4.07581822,9.75257453 4.27696063,9.65008735 4.49459766,9.61846284 L9.06107374,8.95491503 L11.1032639,4.81698575 C11.3476862,4.32173209 11.9473121,4.11839309 12.4425657,4.36281539 C12.6397783,4.46014562 12.7994058,4.61977315 12.8967361,4.81698575 L14.9389263,8.95491503 L19.5054023,9.61846284 C20.0519472,9.69788046 20.4306287,10.2053233 20.351211,10.7518682 C20.3195865,10.9695052 20.2170993,11.1706476 20.0596157,11.3241562 L16.7552826,14.545085 L17.5353298,19.0931094 C17.6286908,19.6374458 17.263103,20.1544017 16.7187666,20.2477627 C16.5020089,20.2849396 16.2790408,20.2496249 16.0843804,20.1472858 L12,18 Z"
+                          id="Star" fill="#335EEA"></path>
+                      </g>
+                    </svg>
+
+                    <span class="ml-n1 icon icon-xs text-gray-400">
+                      <svg width="24px" height="24px" viewBox="0 0 24 24">
+                        <g id="Stockholm-icons-/-General-/-Star" stroke="none" stroke-width="1" fill="none"
+                          fill-rule="evenodd">
+                          <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                          <path
+                            d="M12,18 L7.91561963,20.1472858 C7.42677504,20.4042866 6.82214789,20.2163401 6.56514708,19.7274955 C6.46280801,19.5328351 6.42749334,19.309867 6.46467018,19.0931094 L7.24471742,14.545085 L3.94038429,11.3241562 C3.54490071,10.938655 3.5368084,10.3055417 3.92230962,9.91005817 C4.07581822,9.75257453 4.27696063,9.65008735 4.49459766,9.61846284 L9.06107374,8.95491503 L11.1032639,4.81698575 C11.3476862,4.32173209 11.9473121,4.11839309 12.4425657,4.36281539 C12.6397783,4.46014562 12.7994058,4.61977315 12.8967361,4.81698575 L14.9389263,8.95491503 L19.5054023,9.61846284 C20.0519472,9.69788046 20.4306287,10.2053233 20.351211,10.7518682 C20.3195865,10.9695052 20.2170993,11.1706476 20.0596157,11.3241562 L16.7552826,14.545085 L17.5353298,19.0931094 C17.6286908,19.6374458 17.263103,20.1544017 16.7187666,20.2477627 C16.5020089,20.2849396 16.2790408,20.2496249 16.0843804,20.1472858 L12,18 Z"
+                            id="Star" fill="#335EEA"></path>
+                        </g>
+                      </svg>
+                    </span>
+                  </div>
+
+
+                </div>
+
+              </div>
+            </div>
+
+            <p class="my-4 text-gray-700">
+              Es increíble, como persona y como psicóloga. La verdad es que tenía miedo de pedir esa ayuda
+              que tanto necesitaba pero no se ella me transmitió seguridad y lo hice, lo intente, me puse en contacto
+              con ella. No me cuesta hablar con ella, me lo pone fácil y me siento súper cómoda, siento que puedo
+              confiar y eso me da valor para seguir hacia adelante.
+            </p>
+
+            <div class="mb-0 text-right">
+              <img src="img/logo-mundo.png" class="mw-50" alt="">
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="col-12 col-md-4 px-2">
-        <img src="img/photos/blog1.jpg" class="img-fluid rounded" alt="...">
+      <div class="col-12 col-lg-4">
+        <div class="card lift mb-5 mb-md-0">
+          <div class="card-body">
+            <div class="row">
+
+              {{!-- Icono --}}
+              <div class="col-auto">
+                <img src="img/icons/quote4.png" style="max-width: 3rem;">
+              </div>
+
+              {{!-- Nombre --}}
+              <div class="col ml-n5">
+                <h3>Bárbara</h3>
+
+                {{!-- Estrellas --}}
+                <div class="mt-n4">
+                  <div class="icon icon-xs text-primary">
+                    <svg width="24px" height="24px" viewBox="0 0 24 24">
+                      <g id="Stockholm-icons-/-General-/-Star" stroke="none" stroke-width="1" fill="none"
+                        fill-rule="evenodd">
+                        <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                        <path
+                          d="M12,18 L7.91561963,20.1472858 C7.42677504,20.4042866 6.82214789,20.2163401 6.56514708,19.7274955 C6.46280801,19.5328351 6.42749334,19.309867 6.46467018,19.0931094 L7.24471742,14.545085 L3.94038429,11.3241562 C3.54490071,10.938655 3.5368084,10.3055417 3.92230962,9.91005817 C4.07581822,9.75257453 4.27696063,9.65008735 4.49459766,9.61846284 L9.06107374,8.95491503 L11.1032639,4.81698575 C11.3476862,4.32173209 11.9473121,4.11839309 12.4425657,4.36281539 C12.6397783,4.46014562 12.7994058,4.61977315 12.8967361,4.81698575 L14.9389263,8.95491503 L19.5054023,9.61846284 C20.0519472,9.69788046 20.4306287,10.2053233 20.351211,10.7518682 C20.3195865,10.9695052 20.2170993,11.1706476 20.0596157,11.3241562 L16.7552826,14.545085 L17.5353298,19.0931094 C17.6286908,19.6374458 17.263103,20.1544017 16.7187666,20.2477627 C16.5020089,20.2849396 16.2790408,20.2496249 16.0843804,20.1472858 L12,18 Z"
+                          id="Star" fill="#335EEA"></path>
+                      </g>
+                    </svg>
+                    <svg class="ml-n1" width="24px" height="24px" viewBox="0 0 24 24">
+                      <g id="Stockholm-icons-/-General-/-Star" stroke="none" stroke-width="1" fill="none"
+                        fill-rule="evenodd">
+                        <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                        <path
+                          d="M12,18 L7.91561963,20.1472858 C7.42677504,20.4042866 6.82214789,20.2163401 6.56514708,19.7274955 C6.46280801,19.5328351 6.42749334,19.309867 6.46467018,19.0931094 L7.24471742,14.545085 L3.94038429,11.3241562 C3.54490071,10.938655 3.5368084,10.3055417 3.92230962,9.91005817 C4.07581822,9.75257453 4.27696063,9.65008735 4.49459766,9.61846284 L9.06107374,8.95491503 L11.1032639,4.81698575 C11.3476862,4.32173209 11.9473121,4.11839309 12.4425657,4.36281539 C12.6397783,4.46014562 12.7994058,4.61977315 12.8967361,4.81698575 L14.9389263,8.95491503 L19.5054023,9.61846284 C20.0519472,9.69788046 20.4306287,10.2053233 20.351211,10.7518682 C20.3195865,10.9695052 20.2170993,11.1706476 20.0596157,11.3241562 L16.7552826,14.545085 L17.5353298,19.0931094 C17.6286908,19.6374458 17.263103,20.1544017 16.7187666,20.2477627 C16.5020089,20.2849396 16.2790408,20.2496249 16.0843804,20.1472858 L12,18 Z"
+                          id="Star" fill="#335EEA"></path>
+                      </g>
+                    </svg>
+                    <svg class="ml-n1" width="24px" height="24px" viewBox="0 0 24 24">
+                      <g id="Stockholm-icons-/-General-/-Star" stroke="none" stroke-width="1" fill="none"
+                        fill-rule="evenodd">
+                        <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                        <path
+                          d="M12,18 L7.91561963,20.1472858 C7.42677504,20.4042866 6.82214789,20.2163401 6.56514708,19.7274955 C6.46280801,19.5328351 6.42749334,19.309867 6.46467018,19.0931094 L7.24471742,14.545085 L3.94038429,11.3241562 C3.54490071,10.938655 3.5368084,10.3055417 3.92230962,9.91005817 C4.07581822,9.75257453 4.27696063,9.65008735 4.49459766,9.61846284 L9.06107374,8.95491503 L11.1032639,4.81698575 C11.3476862,4.32173209 11.9473121,4.11839309 12.4425657,4.36281539 C12.6397783,4.46014562 12.7994058,4.61977315 12.8967361,4.81698575 L14.9389263,8.95491503 L19.5054023,9.61846284 C20.0519472,9.69788046 20.4306287,10.2053233 20.351211,10.7518682 C20.3195865,10.9695052 20.2170993,11.1706476 20.0596157,11.3241562 L16.7552826,14.545085 L17.5353298,19.0931094 C17.6286908,19.6374458 17.263103,20.1544017 16.7187666,20.2477627 C16.5020089,20.2849396 16.2790408,20.2496249 16.0843804,20.1472858 L12,18 Z"
+                          id="Star" fill="#335EEA"></path>
+                      </g>
+                    </svg>
+                    <svg class="ml-n1" width="24px" height="24px" viewBox="0 0 24 24">
+                      <g id="Stockholm-icons-/-General-/-Star" stroke="none" stroke-width="1" fill="none"
+                        fill-rule="evenodd">
+                        <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                        <path
+                          d="M12,18 L7.91561963,20.1472858 C7.42677504,20.4042866 6.82214789,20.2163401 6.56514708,19.7274955 C6.46280801,19.5328351 6.42749334,19.309867 6.46467018,19.0931094 L7.24471742,14.545085 L3.94038429,11.3241562 C3.54490071,10.938655 3.5368084,10.3055417 3.92230962,9.91005817 C4.07581822,9.75257453 4.27696063,9.65008735 4.49459766,9.61846284 L9.06107374,8.95491503 L11.1032639,4.81698575 C11.3476862,4.32173209 11.9473121,4.11839309 12.4425657,4.36281539 C12.6397783,4.46014562 12.7994058,4.61977315 12.8967361,4.81698575 L14.9389263,8.95491503 L19.5054023,9.61846284 C20.0519472,9.69788046 20.4306287,10.2053233 20.351211,10.7518682 C20.3195865,10.9695052 20.2170993,11.1706476 20.0596157,11.3241562 L16.7552826,14.545085 L17.5353298,19.0931094 C17.6286908,19.6374458 17.263103,20.1544017 16.7187666,20.2477627 C16.5020089,20.2849396 16.2790408,20.2496249 16.0843804,20.1472858 L12,18 Z"
+                          id="Star" fill="#335EEA"></path>
+                      </g>
+                    </svg>
+                    <svg class="ml-n1" width="24px" height="24px" viewBox="0 0 24 24">
+                      <g id="Stockholm-icons-/-General-/-Star" stroke="none" stroke-width="1" fill="none"
+                        fill-rule="evenodd">
+                        <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                        <path
+                          d="M12,18 L7.91561963,20.1472858 C7.42677504,20.4042866 6.82214789,20.2163401 6.56514708,19.7274955 C6.46280801,19.5328351 6.42749334,19.309867 6.46467018,19.0931094 L7.24471742,14.545085 L3.94038429,11.3241562 C3.54490071,10.938655 3.5368084,10.3055417 3.92230962,9.91005817 C4.07581822,9.75257453 4.27696063,9.65008735 4.49459766,9.61846284 L9.06107374,8.95491503 L11.1032639,4.81698575 C11.3476862,4.32173209 11.9473121,4.11839309 12.4425657,4.36281539 C12.6397783,4.46014562 12.7994058,4.61977315 12.8967361,4.81698575 L14.9389263,8.95491503 L19.5054023,9.61846284 C20.0519472,9.69788046 20.4306287,10.2053233 20.351211,10.7518682 C20.3195865,10.9695052 20.2170993,11.1706476 20.0596157,11.3241562 L16.7552826,14.545085 L17.5353298,19.0931094 C17.6286908,19.6374458 17.263103,20.1544017 16.7187666,20.2477627 C16.5020089,20.2849396 16.2790408,20.2496249 16.0843804,20.1472858 L12,18 Z"
+                          id="Star" fill="#335EEA"></path>
+                      </g>
+                    </svg>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+            <p class="my-4 text-gray-700">
+              Ha sido una de las mejores decisiones de mi vida el poder tener sesiones con vosotros. Me ha ayudado
+              mucho. Me he sentido muy cómoda, muy a gusto, segura de que nadie me iba a juzgar, sino que me ibais a
+              entender y a ayudar. Muchas gracias por ayudarme a crecer y mejorar.
+            </p>
+
+            <div class="mb-0 text-right">
+              <img src="img/logo-mundo.png" class="mw-50" alt="">
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="col-12 col-md-4 px-2">
-        <img src="img/photos/blog1.jpg" class="img-fluid rounded" alt="...">
+      <div class="col-12 col-lg-4">
+        <div class="card lift mb-5 mb-md-0">
+
+          <div class="card-body">
+            <div class="row">
+
+              {{!-- Icono --}}
+              <div class="col-auto">
+                <img src="img/icons/quote4.png" style="max-width: 3rem;">
+              </div>
+
+              {{!-- Nombre --}}
+              <div class="col ml-n5">
+                <h3>Salwa</h3>
+
+                {{!-- Estrellas --}}
+                <div class="mt-n4">
+                  <div class="icon icon-xs text-primary">
+                    <svg width="24px" height="24px" viewBox="0 0 24 24">
+                      <g id="Stockholm-icons-/-General-/-Star" stroke="none" stroke-width="1" fill="none"
+                        fill-rule="evenodd">
+                        <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                        <path
+                          d="M12,18 L7.91561963,20.1472858 C7.42677504,20.4042866 6.82214789,20.2163401 6.56514708,19.7274955 C6.46280801,19.5328351 6.42749334,19.309867 6.46467018,19.0931094 L7.24471742,14.545085 L3.94038429,11.3241562 C3.54490071,10.938655 3.5368084,10.3055417 3.92230962,9.91005817 C4.07581822,9.75257453 4.27696063,9.65008735 4.49459766,9.61846284 L9.06107374,8.95491503 L11.1032639,4.81698575 C11.3476862,4.32173209 11.9473121,4.11839309 12.4425657,4.36281539 C12.6397783,4.46014562 12.7994058,4.61977315 12.8967361,4.81698575 L14.9389263,8.95491503 L19.5054023,9.61846284 C20.0519472,9.69788046 20.4306287,10.2053233 20.351211,10.7518682 C20.3195865,10.9695052 20.2170993,11.1706476 20.0596157,11.3241562 L16.7552826,14.545085 L17.5353298,19.0931094 C17.6286908,19.6374458 17.263103,20.1544017 16.7187666,20.2477627 C16.5020089,20.2849396 16.2790408,20.2496249 16.0843804,20.1472858 L12,18 Z"
+                          id="Star" fill="#335EEA"></path>
+                      </g>
+                    </svg>
+                    <svg class="ml-n1" width="24px" height="24px" viewBox="0 0 24 24">
+                      <g id="Stockholm-icons-/-General-/-Star" stroke="none" stroke-width="1" fill="none"
+                        fill-rule="evenodd">
+                        <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                        <path
+                          d="M12,18 L7.91561963,20.1472858 C7.42677504,20.4042866 6.82214789,20.2163401 6.56514708,19.7274955 C6.46280801,19.5328351 6.42749334,19.309867 6.46467018,19.0931094 L7.24471742,14.545085 L3.94038429,11.3241562 C3.54490071,10.938655 3.5368084,10.3055417 3.92230962,9.91005817 C4.07581822,9.75257453 4.27696063,9.65008735 4.49459766,9.61846284 L9.06107374,8.95491503 L11.1032639,4.81698575 C11.3476862,4.32173209 11.9473121,4.11839309 12.4425657,4.36281539 C12.6397783,4.46014562 12.7994058,4.61977315 12.8967361,4.81698575 L14.9389263,8.95491503 L19.5054023,9.61846284 C20.0519472,9.69788046 20.4306287,10.2053233 20.351211,10.7518682 C20.3195865,10.9695052 20.2170993,11.1706476 20.0596157,11.3241562 L16.7552826,14.545085 L17.5353298,19.0931094 C17.6286908,19.6374458 17.263103,20.1544017 16.7187666,20.2477627 C16.5020089,20.2849396 16.2790408,20.2496249 16.0843804,20.1472858 L12,18 Z"
+                          id="Star" fill="#335EEA"></path>
+                      </g>
+                    </svg>
+                    <svg class="ml-n1" width="24px" height="24px" viewBox="0 0 24 24">
+                      <g id="Stockholm-icons-/-General-/-Star" stroke="none" stroke-width="1" fill="none"
+                        fill-rule="evenodd">
+                        <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                        <path
+                          d="M12,18 L7.91561963,20.1472858 C7.42677504,20.4042866 6.82214789,20.2163401 6.56514708,19.7274955 C6.46280801,19.5328351 6.42749334,19.309867 6.46467018,19.0931094 L7.24471742,14.545085 L3.94038429,11.3241562 C3.54490071,10.938655 3.5368084,10.3055417 3.92230962,9.91005817 C4.07581822,9.75257453 4.27696063,9.65008735 4.49459766,9.61846284 L9.06107374,8.95491503 L11.1032639,4.81698575 C11.3476862,4.32173209 11.9473121,4.11839309 12.4425657,4.36281539 C12.6397783,4.46014562 12.7994058,4.61977315 12.8967361,4.81698575 L14.9389263,8.95491503 L19.5054023,9.61846284 C20.0519472,9.69788046 20.4306287,10.2053233 20.351211,10.7518682 C20.3195865,10.9695052 20.2170993,11.1706476 20.0596157,11.3241562 L16.7552826,14.545085 L17.5353298,19.0931094 C17.6286908,19.6374458 17.263103,20.1544017 16.7187666,20.2477627 C16.5020089,20.2849396 16.2790408,20.2496249 16.0843804,20.1472858 L12,18 Z"
+                          id="Star" fill="#335EEA"></path>
+                      </g>
+                    </svg>
+                    <svg class="ml-n1" width="24px" height="24px" viewBox="0 0 24 24">
+                      <g id="Stockholm-icons-/-General-/-Star" stroke="none" stroke-width="1" fill="none"
+                        fill-rule="evenodd">
+                        <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                        <path
+                          d="M12,18 L7.91561963,20.1472858 C7.42677504,20.4042866 6.82214789,20.2163401 6.56514708,19.7274955 C6.46280801,19.5328351 6.42749334,19.309867 6.46467018,19.0931094 L7.24471742,14.545085 L3.94038429,11.3241562 C3.54490071,10.938655 3.5368084,10.3055417 3.92230962,9.91005817 C4.07581822,9.75257453 4.27696063,9.65008735 4.49459766,9.61846284 L9.06107374,8.95491503 L11.1032639,4.81698575 C11.3476862,4.32173209 11.9473121,4.11839309 12.4425657,4.36281539 C12.6397783,4.46014562 12.7994058,4.61977315 12.8967361,4.81698575 L14.9389263,8.95491503 L19.5054023,9.61846284 C20.0519472,9.69788046 20.4306287,10.2053233 20.351211,10.7518682 C20.3195865,10.9695052 20.2170993,11.1706476 20.0596157,11.3241562 L16.7552826,14.545085 L17.5353298,19.0931094 C17.6286908,19.6374458 17.263103,20.1544017 16.7187666,20.2477627 C16.5020089,20.2849396 16.2790408,20.2496249 16.0843804,20.1472858 L12,18 Z"
+                          id="Star" fill="#335EEA"></path>
+                      </g>
+                    </svg>
+                    <svg class="ml-n1" width="24px" height="24px" viewBox="0 0 24 24">
+                      <g id="Stockholm-icons-/-General-/-Star" stroke="none" stroke-width="1" fill="none"
+                        fill-rule="evenodd">
+                        <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                        <path
+                          d="M12,18 L7.91561963,20.1472858 C7.42677504,20.4042866 6.82214789,20.2163401 6.56514708,19.7274955 C6.46280801,19.5328351 6.42749334,19.309867 6.46467018,19.0931094 L7.24471742,14.545085 L3.94038429,11.3241562 C3.54490071,10.938655 3.5368084,10.3055417 3.92230962,9.91005817 C4.07581822,9.75257453 4.27696063,9.65008735 4.49459766,9.61846284 L9.06107374,8.95491503 L11.1032639,4.81698575 C11.3476862,4.32173209 11.9473121,4.11839309 12.4425657,4.36281539 C12.6397783,4.46014562 12.7994058,4.61977315 12.8967361,4.81698575 L14.9389263,8.95491503 L19.5054023,9.61846284 C20.0519472,9.69788046 20.4306287,10.2053233 20.351211,10.7518682 C20.3195865,10.9695052 20.2170993,11.1706476 20.0596157,11.3241562 L16.7552826,14.545085 L17.5353298,19.0931094 C17.6286908,19.6374458 17.263103,20.1544017 16.7187666,20.2477627 C16.5020089,20.2849396 16.2790408,20.2496249 16.0843804,20.1472858 L12,18 Z"
+                          id="Star" fill="#335EEA"></path>
+                      </g>
+                    </svg>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+            <p class="my-4 text-gray-700">
+              Me he sentido verdaderamente bien, empecé con Laura hace poco y cada vez que tenemos una sesión me siento
+              muy cómoda, me entiende en todos los ámbitos, sinceramente se merece todo un mundo por intentar entenderme
+              a mi..con lo difícil que es, me esta ayudando muchísimo y es muy cariñosa, maja y siempre está disponible
+              para cualquier persona a cualquier hora.
+            </p>
+
+            <div class="mb-0 text-right">
+              <img src="img/logo-mundo.png" class="mw-50" alt="">
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="col-12 col-md-4 px-2">
-        <a href="#">
-          <img src="img/photos/blog1.jpg" class="img-fluid rounded" alt="...">
-        </a>
-      </div>
     </div>
 
-    <div class="text-center text-primary mt-7">
-      <a href="#!" class="font-weight-bold text-decoration-none">
-        ÚNETE Y PARTICIPA<i class="fe fe-arrow-right ml-3"></i>
+    <div class="text-center text-primary mt-7" data-toggle="tooltip" data-placement="bottom" title="¡Próximamente! 😊">
+      <a href="#!" class="font-weight-bold text-uppercase text-decoration-none">
+        Únete y participa<i class="fe fe-arrow-right ml-3"></i>
       </a>
     </div>
 
   </div> <!-- / .container -->
 </section>
+
 
 {{!-- Shape --}}
 <div class="position-relative">
@@ -586,5 +888,3 @@ background: linear-gradient(346deg, rgba(122,183,182,1) 0%, rgba(177,219,225,1) 
     </svg>
   </div>
 </div>
-
-

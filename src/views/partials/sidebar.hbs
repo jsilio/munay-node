@@ -10,7 +10,7 @@
         <!-- Brand -->
         <a class="navbar-brand" href="/dashboard">
             <img src="/img/logomunay4.svg" class="navbar-brand-img 
-          mx-auto" alt="...">
+          mx-auto" alt="Munay">
         </a>
 
         <!-- User (xs) -->
@@ -20,20 +20,16 @@
             <div class="dropdown">
 
                 <!-- Toggle -->
-                <a href="#" id="sidebarIcon" class="dropdown-toggle" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    <div class="avatar avatar-sm avatar-online">
-                        <img src="./assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle"
-                            alt="...">
-                    </div>
-                </a>
+                  <a href="#" id="sidebarIcon" class="avatar avatar-sm  dropdown-toggle" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <img src="/img/photos/avatar-laura.jpg" alt="Laura Marín" class="avatar-img rounded-circle" />
+                    </a>
 
                 <!-- Menu -->
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="sidebarIcon">
-                    <a href="./profile-posts.html" class="dropdown-item">Profile</a>
-                    <a href="./settings.html" class="dropdown-item">Settings</a>
+                    <a href="/dashboard/perfil" class="dropdown-item">Perfil</a>
                     <hr class="dropdown-divider">
-                    <a href="./sign-in.html" class="dropdown-item">Logout</a>
+                    <a href="/dashboard/logout" class="dropdown-item">Cerrar sesión</a>
                 </div>
 
             </div>
@@ -47,7 +43,7 @@
             <form class="mt-4 mb-3 d-md-none">
                 <div class="input-group input-group-rounded input-group-merge">
                     <input type="search" class="form-control form-control-rounded form-control-prepended"
-                        placeholder="Search" aria-label="Search">
+                        placeholder="Buscar" aria-label="Search">
                     <div class="input-group-prepend">
                         <div class="input-group-text">
                             <span class="fe fe-search"></span>
@@ -57,22 +53,22 @@
             </form>
 
             <!-- Navigation -->
-            <ul class="navbar-nav">
+            <ul class="navbar-nav font-size-lg">
 
                 <li class="nav-item">
-                    <a class="nav-link " href="/dashboard">
+                    <a class="nav-link {{#if active.dashboard}} active {{/if}}" href="/dashboard">
                         <i class="fe fe-home"></i> Inicio
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link " href="/dashboard/blog">
+                    <a class="nav-link {{#if active.blog}} active {{/if}}" href="/dashboard/blog">
                         <i class="fe fe-file"></i> Blog
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link " href="/dashboard/pacientes">
+                    <a class="nav-link {{#if active.patients}} active {{/if}}" href="/dashboard/pacientes">
                         <i class="fe fe-users"></i> Pacientes
                     </a>
                 </li>
@@ -87,7 +83,7 @@
 
                 <li class="nav-item d-md-none">
                     <a class="nav-link" href="#sidebarModalActivity" data-toggle="modal">
-                        <span class="fe fe-bell"></span> Notifications
+                        <span class="fe fe-bell"></span> Notificaciones
                     </a>
                 </li>
 

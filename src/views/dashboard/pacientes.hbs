@@ -240,7 +240,7 @@
                           <span class="avatar-title rounded-circle">{{initial firstName}}{{initial lastName}}</span>
                         </div>
 
-                        <a class="item-name text-reset h4" href="profile-posts.html">
+                        <a class="item-name text-reset h4" href="/dashboard/pacientes/{{slug}}">
                           {{firstName}} {{lastName}}
                         </a>
 
@@ -285,9 +285,13 @@
                               <i class="fe fe-edit mr-2"></i> Editar
                             </a>
 
-                            <a href="#!" class="dropdown-item text-danger">
-                              <i class="fe fe-trash-2 mr-2"></i> Eliminar
-                            </a>
+                            {{!-- Eliminar --}}
+                            <form action="/dashboard/pacientes/eliminar/{{_id}}?_method=DELETE" method="POST">
+                              <input type="hidden" name="_method" value="DELETE">
+                              <button class="dropdown-item text-danger">
+                                <i class="fe fe-trash-2 mr-2"></i> Eliminar
+                              </button>
+                            </form>
 
                           </div>
                         </div>

@@ -1,0 +1,88 @@
+<div class="main-content pt-5">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12">
+
+                {{!-- Header   --}}
+                <div class="header">
+                    <div class="header-body">
+                        <div class="row align-items-center">
+
+                            {{!-- Título --}}
+                            <div class="col">
+
+                                <h5 class="header-pretitle">
+                                    <i class="fe fe-user mr-1"></i> Ficha de paciente
+                                </h5>
+
+                                <h1 class="header-title text-truncate">
+                                    {{patient.firstName}} {{patient.lastName}}
+                                </h1>
+
+                            </div>
+
+                            {{!-- Navegación entre Lista y Cartas --}}
+                            <div class="col-auto">
+
+                                <a href="#" class="btn btn-secondary">
+                                    <i class="fe fe-printer"></i>
+                                </a>
+
+                                {{!-- Botones --}}
+                                <a href="/dashboard/pacientes/nueva-ficha" class="btn btn-primary ml-2">
+                                    <i class="fe fe-edit mr-2"></i> Editar ficha
+                                </a>
+
+                            </div>
+                        </div> <!-- / .row -->
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-md-8">
+                        <div class="card card-fill">
+                            <div class="card-body">
+                                <h4>Datos del paciente</h4>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="card card-fill">
+                            <div class="card-body">
+                                <h4>Notas</h4>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-12 col-md-8">
+                        <div class="card card-fill">
+                            <div class="card-body">
+                                <h4>Próximas sesiones</h4>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="card card-fill">
+                            <div class="card-body">
+                                <h4>Documentos</h4>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
