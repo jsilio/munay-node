@@ -10,6 +10,18 @@
 // }
 
 
+body {
+    overflow: visible !important;
+  }
+
+// Card hover
+.card-hover:hover {
+    background-color: #edf7f8;
+}
+.card-hover-secondary:hover {
+    background-color: #fcf8f7;
+}
+
 // Botón de Whatsapp
 
 .WhatsAppButton__root {

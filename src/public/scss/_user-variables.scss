@@ -7,16 +7,17 @@
 // Remove the "//" to comment it in and see it in action!
 // $font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
 
-$primary: rgb(100, 146, 153) !default;
+$primary: rgb(100, 146, 153) !default; 
+// 649299
 $info: #F9FEFE;
-// $info: rgb(229, 243, 245) !default;
+$warning: #E98F47;
+$secondary: #fa9789;
 $dark: #cae7ed;
 
 
-
+// Navbar colors
 $navbar-dark-color: #1B2A4E !default;
 $navbar-dark-hover-color: $primary !default;
 $navbar-dark-active-color: $primary !default;
 $navbar-dark-toggler-border-color: transparent !default;
-
 $navbar-light-color: #1B2A4E !default;

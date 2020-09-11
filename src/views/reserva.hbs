@@ -1,19 +1,369 @@
-{{!-- Widget YouCanBookMe --}}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{{!-- Reserva --}}
 <section class="pt-12 bg-info">
+
+    <div class="container-fluid px-4 px-md-6 px-lg-10 px-xl-12">
+        <div class="row align-items-center justify-content-center">
+
+            {{!-- Título --}}
+            <div class="col-12 text-center mb-5">
+                <h1 class="display-3">Elige tu modalidad</h1>
+            </div>
+
+            {{!-- Carta Individual --}}
+            <div class="col-12 col-md-6 mb-6 mb-md-0">
+                <div class="card shadow-lg lift">
+
+                    {{!-- Header --}}
+                    <h2 class="card-header text-center text-white bg-primary">
+                        {{!-- <i class="fe fe-map-pin mr-4"></i>  --}}
+                        <svg class="mr-3 mt-n3" x="0px" y="0px" width="40" height="40" viewBox="0 0 172 172"
+                            style=" fill:#000000;">
+                            <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                                stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                                font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                                style="mix-blend-mode: normal">
+                                <path d="M0,172v-172h172v172z" fill="none"></path>
+                                <g fill="#ffffff">
+                                    <path
+                                        d="M68.81344,20.62656c0,-9.48688 7.69969,-17.18656 17.18656,-17.18656c9.48688,0 17.18656,7.69969 17.18656,17.18656c0,9.48687 -7.69969,17.18656 -17.18656,17.18656c-9.48687,0 -17.18656,-7.69969 -17.18656,-17.18656zM161.62625,127.19938v36.77844c0,4.28656 -3.61469,7.91469 -7.90125,7.91469h-4.81062c-3.93719,0 -7.31,-3.06375 -7.83406,-6.88h-0.08063c0,-1.89469 -1.53187,-3.44 -3.44,-3.44h-17.24031l-0.33594,1.94844c-0.90031,4.99875 -5.02562,8.47906 -10.01094,8.47906c-0.61812,0 -1.24969,-0.06719 -1.89469,-0.17469c-2.72781,-0.49719 -5.09281,-1.98875 -6.63813,-4.21938c-1.23625,-1.77375 -1.8275,-3.87 -1.77375,-6.03344h-27.66781c0.06719,2.06938 -0.51063,4.21938 -1.78719,6.03344c-1.54531,2.23063 -3.89687,3.72219 -6.62469,4.21938c-5.76469,1.04812 -10.88437,-2.67406 -11.90562,-8.26406l-0.33594,-1.98875h-13.47781c-1.89469,0 -3.42656,1.54531 -3.42656,3.44h-0.08063c-0.52406,3.81625 -3.89687,6.88 -7.83406,6.88h-4.81063c-4.28656,0 -7.90125,-3.62812 -7.90125,-7.91469v-36.77844c0,-9.48688 7.69969,-17.18656 17.18656,-17.18656h12.60437c0.13438,-0.45688 0.29563,-0.91375 0.48375,-1.34375c0.09406,0.08062 0.17469,0.17469 0.26875,0.25531l0.57781,0.49719l0.67188,0.34937c3.68187,1.90813 6.58437,3.02344 9.70187,3.73563l29.60281,6.03344c1.11531,0.29563 2.27094,0.44344 3.42656,0.44344c2.49937,0 4.87781,-0.69875 6.92031,-1.94844l7.47125,-1.43781l10.06469,-1.935c4.23281,-0.91375 9.5675,-2.74125 9.7825,-2.80844l0.51062,-0.17469l0.47031,-0.25531c0.86,-0.45687 1.65281,-0.94062 2.40531,-1.49156c0.09406,0.12094 0.16125,0.25531 0.24187,0.37625c0.43,-0.18812 0.90031,-0.29562 1.3975,-0.29562h16.83719c9.47344,0 17.18656,7.69969 17.18656,17.18656zM50.17563,154.6925l-6.38281,-37.81312h-12.7925c-5.68406,0 -10.32,4.63594 -10.32,10.32v36.77844c0,0.51062 0.52406,1.03469 1.03469,1.03469h4.81063c0.51062,0 1.03469,-0.52406 1.03469,-1.03469h0.05375c0.51062,-5.20031 4.91812,-9.28531 10.25281,-9.28531zM68.41031,126.37969l2.91594,28.31281h28.98469l2.62031,-27.42594l-17.02531,-5.11969zM154.75969,127.19938c0,-5.68406 -4.63594,-10.32 -10.32,-10.32h-16.50125c-0.04031,0.22844 -0.01344,0.43 -0.05375,0.67187l-6.38281,37.14125h16.05781c5.34813,0 9.74219,4.085 10.26625,9.28531h0.05375c0,0.51062 0.52406,1.03469 1.03469,1.03469h4.81062c0.51063,0 1.03469,-0.52406 1.03469,-1.03469zM48.77813,103.67031c2.795,1.45125 5.2675,2.49937 8.04906,3.13094l29.71031,6.04688c0.59125,0.18812 1.19594,0.26875 1.80063,0.26875c2.86219,0 5.59,-1.94844 6.45,-5.07938l0.12094,-0.48375c0.63156,-3.72219 -1.73344,-7.02781 -5.06594,-7.72656c-4.52844,-1.02125 -24.89969,-5.72437 -24.89969,-5.72437c-1.80062,-0.41656 -2.94281,-2.16344 -2.60687,-3.9775l2.40531,-13.06125c0.34937,-1.86781 2.12312,-3.10406 4.00437,-2.75469c1.86781,0.33594 3.10406,2.13656 2.75469,4.00437l-1.80062,9.82281c4.86437,1.12875 14.06906,3.25187 19.08125,4.39406l13.94812,-3.27875l-2.84875,-10.66938c-0.49719,-1.84094 0.59125,-3.72219 2.41875,-4.21937c1.84094,-0.48375 3.72219,0.59125 4.21938,2.43219l3.77594,14.09594c0.24188,0.90031 0.1075,1.86781 -0.36281,2.64719c-0.47031,0.80625 -1.24969,1.37063 -2.16344,1.58563l-9.28531,2.19031c0.26875,0.30906 0.5375,0.60469 0.77938,0.92719c2.20375,3.01 3.07719,6.71875 2.45906,10.45437l-0.05375,0.30906l-0.08063,0.30906l-0.14781,0.5375l10.05125,-1.935c3.73563,-0.80625 8.85531,-2.56656 8.85531,-2.56656c2.02906,-1.075 3.64156,-2.44562 4.70313,-4.1925c1.70656,-2.75469 2.06937,-6.08719 1.10187,-9.72875c-1.30344,-6.18125 -6.90687,-30.38219 -8.72094,-35.86469c-2.4725,-6.90688 -7.91469,-10.87094 -14.92906,-10.87094h-33.68781c-4.90469,0 -11.42187,1.88125 -14.57969,10.8575c-0.63156,1.73344 -1.59906,5.95281 -3.25187,13.24937c-1.78719,7.8475 -4.00438,17.63 -5.73781,23.005c-0.92719,3.02344 -0.57781,6.19469 0.98094,8.90906c0.65844,1.14219 1.54531,2.10969 2.55313,2.95625z">
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>
+                        Terapia Presencial
+
+                    </h2>
+
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-6">
+                                {{!-- Modalidad --}}
+                                <div class="text-center text-primary mb-3">
+                                    <h3 class="font-weight-bold">Individual</h3>
+                                </div>
+
+                                {{!-- Precio --}}
+                                <div class="d-flex justify-content-center mb-5">
+                                    <span class="price display-2 mb-0" data-annual="50" data-monthly="45">50</span>
+                                    <span class="h2 mb-0 mt-4">€</span>
+                                    <span class="h2 align-self-end mb-1 text-gray-400">/h</span>
+                                </div>
+
+                                <!-- Button -->
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-sm btn-pill btn-block btn-primary"
+                                        data-toggle="modal" data-target="#presencial"
+                                        onclick="Calendly.showPopupWidget('https://calendly.com/munay-psicologia/presencial?primary_color=649299');return false;">
+                                        Reservar
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                {{!-- Modalidad --}}
+                                <div class="text-center text-primary mb-3">
+                                    <h3 class="font-weight-bold">Parejas</h3>
+                                </div>
+
+                                {{!-- Precio --}}
+                                <div class="d-flex justify-content-center mb-5">
+                                    <span class="price display-2 mb-0" data-annual="70" data-monthly="65">70</span>
+                                    <span class="h2 mb-0 mt-4">€</span>
+                                    <span class="h2 align-self-end mb-1 text-gray-400">/h</span>
+                                </div>
+
+
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-sm btn-pill btn-block btn-primary"
+                                        data-toggle="modal" data-target="#presencialParejas"
+                                        onclick="Calendly.showPopupWidget('https://calendly.com/munay-psicologia/presencial-parejas?primary_color=649299');return false;">
+                                        Reservar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            {{!-- Online --}}
+            <div class="col-12 col-md-6">
+                <div class="card shadow-lg lift">
+
+                    {{!-- Header --}}
+                    <h2 class="card-header text-center text-white bg-primary">
+                        {{!-- <i class="fe fe-video mr-4"></i> --}}
+                        <svg class="mr-3 mt-n3" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="42"
+                            height="42" viewBox="0 0 172 172" style=" fill:#000000;">
+                            <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                                stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                                font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                                style="mix-blend-mode: normal">
+                                <path d="M0,172v-172h172v172z" fill="none"></path>
+                                <g fill="#ffffff">
+                                    <path
+                                        d="M10.32,27.52c-1.89469,0 -3.44,1.54531 -3.44,3.44v103.2c0,1.90813 1.54531,3.44 3.44,3.44h151.36c1.90813,0 3.44,-1.53187 3.44,-3.44v-103.2c0,-1.89469 -1.53187,-3.44 -3.44,-3.44zM86,44.72c9.50031,0 17.2,7.69969 17.2,17.2c0,9.50031 -7.69969,17.2 -17.2,17.2c-9.50031,0 -17.2,-7.69969 -17.2,-17.2c0,-9.50031 7.69969,-17.2 17.2,-17.2zM75.68,86h20.64c9.50031,0 17.2,7.69969 17.2,17.2h-55.04c0,-9.50031 7.69969,-17.2 17.2,-17.2zM34.4,110.08h20.64v13.76h-20.64zM61.92,110.08h20.64v13.76h-20.64zM89.44,110.08h20.64v13.76h-20.64zM116.96,110.08h20.64v13.76h-20.64zM51.6,144.48c-1.23625,-0.01344 -2.39187,0.63156 -3.02344,1.70656c-0.61813,1.075 -0.61813,2.39187 0,3.46687c0.63156,1.075 1.78719,1.72 3.02344,1.70656h68.8c1.23625,0.01344 2.39188,-0.63156 3.02344,-1.70656c0.61813,-1.075 0.61813,-2.39187 0,-3.46687c-0.63156,-1.075 -1.78719,-1.72 -3.02344,-1.70656z">
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>
+                        Terapia Online
+                    </h2>
+
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-6">
+                                {{!-- Modalidad --}}
+                                <div class="text-center text-primary mb-3">
+                                    <h3 class="font-weight-bold">Individual</h3>
+                                </div>
+
+                                {{!-- Precio --}}
+                                <div class="d-flex justify-content-center mb-5">
+                                    <span class="price display-2 mb-0" data-annual="40" data-monthly="35">40</span>
+                                    <span class="h2 mb-0 mt-4">€</span>
+                                    <span class="h2 align-self-end mb-1 text-gray-400">/h</span>
+                                </div>
+
+                                <!-- Button -->
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-sm btn-pill btn-block btn-primary"
+                                        data-toggle="modal" data-target="#online"
+                                        onclick="Calendly.showPopupWidget('https://calendly.com/munay-psicologia/online?primary_color=649299');return false;">
+                                        Reservar
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                {{!-- Modalidad --}}
+                                <div class="text-center text-primary mb-3">
+                                    <h3 class="font-weight-bold">Parejas</h3>
+                                </div>
+
+                                {{!-- Precio --}}
+                                <div class="d-flex justify-content-center mb-5">
+                                    <span class="price display-2 mb-0" data-annual="60" data-monthly="55">60</span>
+                                    <span class="h2 mb-0 mt-4">€</span>
+                                    <span class="h2 align-self-end mb-1 text-gray-400">/h</span>
+                                </div>
+
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-sm btn-pill btn-block btn-primary"
+                                        data-toggle="modal" data-target="#onlineParejas"
+                                        onclick="Calendly.showPopupWidget('https://calendly.com/munay-psicologia/online-parejas?primary_color=649299');return false;">
+                                        Reservar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+</section>
+
+{{!-- CÓMO RESERVAR --}}
+<section class="pt-10 bg-info">
     <div class="container-fluid">
         <div class="row align-items-center justify-content-center">
 
             <div class="col-12 text-center">
-                <h2 class="display-3">Reserva tu cita</h2>
+                <h2 class="display-3">¿Cómo puedes reservar tu cita?</h2>
             </div>
 
-            <!-- Principio del widget integrado de Calendly -->
-            <div class="calendly-inline-widget mt-n6"
-                data-url="https://calendly.com/munay?hide_landing_page_details=1&primary_color=228e6d"
-                style="min-width:115rem;height:65rem;"></div>
-            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
-            <!-- Final del widget integrado de Calendly -->
+            {{!-- Pasos --}}
+            <section class="py-4 py-md-8">
+                <div class="container">
+                    <div class="row">
+
+                        {{!-- Paso 1 --}}
+                        <div class="col-12 col-md-3">
+                            <div class="row">
+
+                                <div class="col-auto col-md-12">
+
+                                    <div class="row no-gutters align-items-center mb-md-5">
+                                        <div class="col-auto">
+
+                                            <a href="#!"
+                                                class="btn btn-sm btn-rounded-circle btn-primary disabled opacity-1">
+                                                <span>1</span>
+                                            </a>
+
+                                        </div>
+
+                                        <div class="col">
+
+                                            <hr class="d-none d-md-block mr-n7"
+                                                style="border-top: 0.25rem solid #EAF3F3;">
+
+                                        </div>
+                                    </div> <!-- / .row -->
+
+                                </div>
+                                <div class="col col-md-12 ml-n5 ml-md-0">
+
+                                    <!-- Heading -->
+                                    <h3>
+                                        Elige tu momento.
+                                    </h3>
+
+                                    <!-- Text -->
+                                    <p class="text-muted mb-6 mb-md-0">
+                                        Consulta todos los
+                                        horarios disponibles
+                                        en la modalidad que
+                                        quieres y selecciona
+                                        el que te venga bien.
+                                    </p>
+
+                                </div>
+                            </div> <!-- / .row -->
+                        </div>
+
+                        {{!-- Paso 2 --}}
+                        <div class="col-12 col-md-3">
+                            <div class="row">
+                                <div class="col-auto col-md-12">
+
+                                    <!-- Step -->
+                                    <div class="row no-gutters align-items-center mb-md-5">
+                                        <div class="col-auto">
+
+                                            <a href="#!"
+                                                class="btn btn-sm btn-rounded-circle btn-primary disabled opacity-1">
+                                                <span>2</span>
+                                            </a>
+
+                                        </div>
+                                        <div class="col">
+
+                                            <hr class="d-none d-md-block mr-n7"
+                                                style="border-top: 0.25rem solid #EAF3F3;">
+
+                                        </div>
+                                    </div> <!-- / .row -->
+
+                                </div>
+                                <div class="col col-md-12 ml-n5 ml-md-0">
+
+                                    <!-- Heading -->
+                                    <h3>
+                                        Confirma la sesión.
+                                    </h3>
+
+                                    <!-- Text -->
+                                    <p class="text-muted mb-6 mb-md-0">
+                                        Completa el proceso realizando el pago mediante tarjeta de crédito o debito.
+                                        Todos los datos proporcionados serán confidenciales.
+                                    </p>
+
+                                </div>
+                            </div> <!-- / .row -->
+                        </div>
+
+                        {{!-- Paso 3 --}}
+                        <div class="col-12 col-md-3">
+                            <div class="row">
+                                <div class="col-auto col-md-12">
+
+                                    <!-- Step -->
+                                    <div class="row no-gutters align-items-center mb-md-5">
+                                        <div class="col-auto">
+
+                                            <a href="#!"
+                                                class="btn btn-sm btn-rounded-circle btn-primary disabled opacity-1">
+                                                <span>3</span>
+                                            </a>
+
+                                        </div>
+
+                                        <div class="col">
+
+                                            <hr class="d-none d-md-block mr-n7"
+                                                style="border-top: 0.25rem solid #EAF3F3;">
+
+                                        </div>
+                                    </div> <!-- / .row -->
+
+                                </div>
+                                <div class="col col-md-12 ml-n5 ml-md-0">
+
+                                    <!-- Heading -->
+                                    <h3>
+                                        ¡Comienza tu proceso!
+                                    </h3>
+
+                                    <!-- Text -->
+                                    <p class="text-muted mb-0">
+                                        Escuchamos tu situación, recogemos tus dudas y te proponemos un plan adaptado a
+                                        tus intereses.
+                                    </p>
+
+                                </div>
+                            </div> <!-- / .row -->
+                        </div>
+
+                        {{!-- Paso 4 --}}
+                        <div class="col-12 col-md-3">
+                            <div class="row">
+                                <div class="col-auto col-md-12">
+
+                                    <!-- Step -->
+                                    <div class="row no-gutters align-items-center mb-md-5">
+                                        <div class="col-auto">
+
+                                            <a href="#!"
+                                                class="btn btn-sm btn-rounded-circle btn-primary disabled opacity-1">
+                                                <span>4</span>
+                                            </a>
+
+                                        </div>
+                                    </div> <!-- / .row -->
+
+                                </div>
+                                <div class="col col-md-12 ml-n5 ml-md-0">
+
+                                    <!-- Heading -->
+                                    <h3>
+                                        Seguimiento
+                                    </h3>
+
+                                    <!-- Text -->
+                                    <p class="text-muted mb-0">
+                                        Una vez finalizada la primera sesión y establecidos los objetivos,
+                                        puedes organizar tus sesiones cómodamente mediante este procedimiento.
+                                    </p>
+
+                                </div>
+                            </div> <!-- / .row -->
+                        </div>
+
+                    </div> <!-- / .row -->
+                </div> <!-- / .container -->
+            </section>
 
         </div>
     </div>
 </section>
+
+
+
+
+<!-- Calendly link widget begin -->
+<link href="https://calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://calendly.com/assets/external/widget.js" type="text/javascript"></script>
+<!-- Calendly link widget end -->

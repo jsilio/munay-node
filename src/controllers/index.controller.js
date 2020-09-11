@@ -110,8 +110,17 @@ indexCtrl.renderTarifas = (req, res) => {
 }
 
 indexCtrl.renderReserva = (req, res) => {
-    res.render("reserva");
+    res.render("reserva", {
+        title: "Reserva tu cita — Munay"
+    });
 }
+
+indexCtrl.renderAvisoLegal = (req, res) => {
+    res.render("aviso-legal", {
+        title: "Aviso Legal — Munay"
+    });
+}
+
 
 
 module.exports = indexCtrl;

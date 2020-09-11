@@ -10,7 +10,8 @@ const {
     renderTerceraEdad,
     renderParejas, 
     renderTarifas,
-    renderReserva, 
+    renderReserva,
+    renderAvisoLegal, 
 } = require("../controllers/index.controller");
 
 router.all("/*", (req, res, next) => {
@@ -48,6 +49,10 @@ router.post("/enviar-email", sendMail);
 // Reserva
 
 router.get("/reserva", renderReserva);
+
+// Aviso legal
+
+router.get("/aviso-legal", renderAvisoLegal);
 
 
 module.exports = router;
