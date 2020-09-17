@@ -151,7 +151,7 @@
             <ul class="list-unstyled text-muted mb-0">
               <li class="mb-3">
                 <a href="/aviso-legal" class="text-reset">
-                  Aviso legal 
+                  Aviso legal
                 </a>
               </li>
               <li class="mb-3">
@@ -178,7 +178,7 @@
       <img src="/img/logo-copmadrid.png" alt="Munay - Colegio Oficial de Psicólogos Madrid"
         class="footer-brand  my-3 mr-5 mr-md-6 mt-n4" style="max-width: 9rem;">
 
-      <a href="https://www.mundopsicologos.com/centros/munay" target="_blank">
+      <a href="https://www.mundopsicologos.com/centros/munay" target="_blank" rel="me noopener noreferrer nofollow">
         <img src="img/logomundo2.png" alt="Munay" border="0" class="footer-brand mb-5 rounded"
           style="max-width: 10rem;" />
       </a>
@@ -222,6 +222,7 @@
       button_root.setAttribute('href', `https://api.whatsapp.com/send?phone=${this.dialcode}${this.phone}&text=${this.text}`)
       button_root.setAttribute('style', 'text-decoration: none')
       button_root.setAttribute('target', '_blank')
+      button_root.setAttribute('rel', 'noopener noreferrer nofollow')
       root.appendChild(button_root)
 
       let button = document.createElement('button')

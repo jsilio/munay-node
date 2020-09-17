@@ -1,9 +1,10 @@
 <section class="pt-12">
+    <div class="container-fluid px-8 px-md-10">
 
-    <div class="container-fluid px-6 px-md-10">
         <div class="row align-items-center justify-content-center mb-8">
 
-            <div class="col-12 text-center pt-2 mb-7">
+            {{!-- Título --}}
+            <div class="col-12 text-center pt-2 pb-2 pb-md-7">
                 <h1 class="display-3 text-uppercase"> Terapia para
                     <span class="font-weight-bold">
                         TERCERA EDAD
@@ -11,22 +12,29 @@
                 </h1>
             </div>
 
-            {{!-- Feature 1 --}}
+            {{!-- Una etapa vital particular --}}
             <div class="col-12 col-md-7 px-0 px-md-9" style="font-size: 1.3rem;">
                 <div class="mb-4">
-                    <h2 class="display-4 text-primary">Una etapa vital particular.</h2>
-                    <p>
 
+                    <h2 class="display-4 text-primary text-center text-md-left">
+                        Una etapa vital particular.
+                    </h2>
+
+                    {{!-- Ilustración vista móvil --}}
+                    <div class="text-center d-block d-md-none mb-3">
+                        <img src="/img/services/tercera-edad2.png" class="img-fluid w-75 "
+                            alt="Una etapa vital particular">
+                    </div>
+
+                    <p>
                         El envejecimiento conlleva una serie de cambios físicos, cognitivos, emocionales y
                         sociales que varían según la persona y su historia de vida.
+                    </p>
 
-                        <br>
-                        <br>
-
+                    <p>
                         Nuestras estructuras mutan con el paso del tiempo en función de nuestra herencia y el estilo de
                         vida que llevamos (cuán estimulante a nivel cognitivo es la actividad diaria que realizamos, la
                         frecuencia con la que realizamos ejercicio o los hábitos de alimentación que tenemos).
-
                     </p>
 
                     <p>
@@ -45,17 +53,16 @@
             </div>
 
             {{!-- Ilustración --}}
-            <div class="col-12 col-md-5">
-                <img src="/img/services/tercera-edad2.png" class="" alt="Una etapa vital particular"
-                    style="max-width: 32rem;">
+            <div class="col-12 col-md-5 d-none d-md-block">
+                <img src="/img/services/tercera-edad2.png" class="img-fluid" alt="Una etapa vital particular">
             </div>
-
 
         </div>
 
     </div>
 </section>
 
+{{!-- Shape Waves --}}
 <div class="position-relative">
     <div class="shape shape-top shape-fluid-x svg-shim text-white">
         <svg viewBox="0 0 2880 72" fill="none">
@@ -67,7 +74,7 @@
 </div>
 
 {{!-- Áreas de mejora --}}
-<section class="py-6" style="background: #fdf7f2;">
+<section class="py-0 py-md-6" style="background: #fdf7f2;">
     <div class="container">
 
         <h2 class="display-4 text-warning text-center text-uppercase font-weight-bold pt-9 pb-6">
@@ -475,7 +482,7 @@
     </div>
 </section>
 
-
+{{!-- Shape Waves --}}
 <div class="position-relative">
     <div class="shape shape-top shape-fluid-x svg-shim" style="color: #fdf7f2;">
         <svg viewBox="0 0 2880 72" fill="none">
@@ -486,23 +493,30 @@
     </div>
 </div>
 
+<section class="pt-7 pt-md-11 pb-2 pb-md-7">
 
-<section class="pt-12">
-
-    <div class="container-fluid px-6 px-md-10">
-        <div class="row align-items-center justify-content-center mb-8">
+    <div class="container-fluid px-8 px-md-10">
+        <div class="row align-items-center justify-content-center">
 
             {{!-- Ilustración --}}
-            <div class="col-12 col-md-5">
-                <img src="/img/services/tercera-edad1.png" class="" alt="Una etapa v" style="max-width: 34rem;">
+            <div class="col-12 col-md-5 d-none d-md-block">
+                <img src="/img/services/tercera-edad1.png" class="img-fluid" alt="La importancia de llegar a acuerdos">
             </div>
 
             {{!-- Feature 2 --}}
             <div class="col-12 col-md-7 px-0 px-md-9" style="font-size: 1.3rem;">
                 <div class="mb-4">
-                    <h2 class="display-4 text-primary mb-7">La importancia de <br> <span data-toggle="typed"
+
+                    {{!-- Título --}}
+                    <h2 class="display-4 text-primary text-center text-md-left mb-md-7">La importancia de <br> <span data-toggle="typed"
                             data-options='{"strings": ["llegar a acuerdos.", "alargar la mejor calidad de vida posible.", "respetar sus deseos."]}'></span>
                     </h2>
+
+                    {{!-- Ilustración vista móvil --}}
+                    <div class="text-center d-block d-md-none mt-5 mb-4">
+                        <img src="/img/services/tercera-edad1.png" class="img-fluid"
+                            alt="La importancia de llegar a acuerdos">
+                    </div>
 
                     <p>
                         Cuando existe un <span class="font-weight-bold">deterioro cognitivo o físico</span> en nuestros
@@ -529,8 +543,8 @@
 
             </div>
 
-            <blockquote class="blockquote pt-8">
-                <p class="text-center text-warning mb-6" style="font-size: 2.0rem;">
+            <blockquote class="blockquote pt-5 pt-md-8">
+                <p class="text-center text-warning mb-6" style="font-size: 1.8rem;">
                     ¿Y si disfrutamos de lo que podemos hacer y aprendemos <br> a compensar aquello que más nos
                     cuesta?
                 </p>

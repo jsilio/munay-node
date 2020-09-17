@@ -14,15 +14,6 @@
 
   // Loads mask images so they don't lag on hover
 
-  &:after {
-    content: '';
-    position: absolute;
-    width: 0; height: 0;
-    background-image: url(#{$path-to-img}/masks/avatar-status.svg),
-                      url(#{$path-to-img}/masks/avatar-group.svg),
-                      url(#{$path-to-img}/masks/avatar-group-hover.svg),
-                      url(#{$path-to-img}/masks/avatar-group-hover-last.svg);
-  }
 }
 
 .avatar-img {
@@ -55,7 +46,6 @@
   }
 
   .avatar-img {
-    mask-image: url(#{$path-to-img}/masks/avatar-status.svg);
     mask-size: 100% 100%;
   }
 }
