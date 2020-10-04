@@ -1,4 +1,4 @@
-<footer class="py-8 pt-md-11 pb-md-4 bg-light">
+<footer class="pt-8 pb-2 pt-md-11 pb-md-4 bg-light">
   <div class="container">
     <div class="row">
 
@@ -35,15 +35,6 @@
             </a>
           </li>
 
-          <li class="list-inline-item list-social-item">
-            <a href="#" class="text-decoration-none">
-              <img src="/img/icons/social/twitter.svg" class="list-social-icon"
-                alt="Perfil de Twitter - Munay Psicología">
-            </a>
-          </li>
-
-
-
         </ul>
 
         <!-- Formas de contacto -->
@@ -64,7 +55,7 @@
 
           <li class="list-item">
             <i class="fe fe-map-pin mr-2"></i>
-            <p class="d-inline">Por informar. Madrid.</p>
+            <p class="d-inline">Madrid, España.</p>
           </li>
         </ul>
 
@@ -74,33 +65,43 @@
       </div>
 
       <div class="col-7">
-        <div class="row ml-auto mx-n15">
+        <div class="row ml-auto mx-n14">
 
-          <!-- Sección 1 -->
+          {{!-- Servicios --}}
           <div class="col-6 col-md-3">
 
-            <!-- Heading -->
+            {{!-- Título --}}
             <h4 class="font-weight-bold text-uppercase text-gray-700 mb-4">
               Servicios
             </h4>
 
-            <!-- List -->
+            {{!-- Lista --}}
             <ul class="list-unstyled text-muted mb-6 mb-md-8 mb-lg-0">
+
               <li class="mb-3">
-                <a href="#!" class="text-reset">
-                  Especialidades
+                <a href="/adultos" class="text-reset">
+                  Adultos
                 </a>
               </li>
+
               <li class="mb-3">
-                <a href="/tarifas" class="text-reset">
-                  Tarifas
+                <a href="/infantojuvenil" class="text-reset">
+                  Infantojuvenil
                 </a>
               </li>
+
               <li class="mb-3">
-                <a href="#!" class="text-reset">
-                  Recursos
+                <a href="/tercera-edad" class="text-reset">
+                  Tercera Edad
                 </a>
               </li>
+
+              <li class="mb-3">
+                <a href="/parejas" class="text-reset">
+                  Parejas
+                </a>
+              </li>
+
               <li class="mb-3">
                 <a href="/blog" class="text-reset">
                   Blog
@@ -121,12 +122,12 @@
             <!-- List -->
             <ul class="list-unstyled text-muted mb-6 mb-md-8 mb-lg-0">
               <li class="mb-3">
-                <a href="#!" class="text-reset">
-                  Sobre nosotros
+                <a href="/tarifas" class="text-reset">
+                  Tarifas
                 </a>
               </li>
               <li class="mb-3">
-                <a href="#!" class="text-reset">
+                <a href="/reserva" class="text-reset">
                   Reserva tu cita
                 </a>
               </li>
@@ -155,12 +156,12 @@
                 </a>
               </li>
               <li class="mb-3">
-                <a href="#!" class="text-reset">
+                <a href="/politica-privacidad" class="text-reset">
                   Política de privacidad
                 </a>
               </li>
               <li class="mb-3">
-                <a href="#!" class="text-reset">
+                <a href="/politica-cookies" class="text-reset">
                   Política de cookies
                 </a>
               </li>
@@ -174,15 +175,28 @@
 
     </div> <!-- / .row -->
 
-    <div class="row align-items-center justify-content-end mt-3 mt-md-0 mr-3 mr-md-0">
+    <div class="row align-items-center justify-content-end mt-5 mt-md-0 mr-3 mr-md-0">
+
       <img src="/img/logo-copmadrid.png" alt="Munay - Colegio Oficial de Psicólogos Madrid"
         class="footer-brand  my-3 mr-5 mr-md-6 mt-n4" style="max-width: 9rem;">
 
-      <a href="https://www.mundopsicologos.com/centros/munay" target="_blank" rel="me noopener noreferrer nofollow">
+      <a href="https://www.mundopsicologos.com/centros/munay-psicologia" target="_blank"
+        rel="me noopener noreferrer nofollow">
         <img src="img/logomundo2.png" alt="Munay" border="0" class="footer-brand mb-5 rounded"
           style="max-width: 10rem;" />
       </a>
 
+    </div>
+
+    <div class="text-center text-muted font-size-sm mt-3">
+      <p>
+        <span class="text-primary font-weight-bold">
+          Munay Psicología © 2020.
+        </span>
+        Todos los derechos reservados.
+      </p>
+
+      <p style="font-size: 0.93rem;">Made with <i class="fe fe-heart text-primary"></i> by Joan Silio</p>
     </div>
   </div> <!-- / .container -->
 </footer>
@@ -227,6 +241,7 @@
 
       let button = document.createElement('button')
       button.setAttribute('class', 'landbot-whatsapp__button')
+      button.setAttribute('aria-label', 'Envía un whatsapp')
       button_root.appendChild(button)
 
       let whatsappIcon = document.createElement('i')
@@ -242,7 +257,7 @@
   var whatsAppBtn = new WhatsAppBtn({
     dialcode: '34',
     phone: '676380984',
-    text: 'Hola. Me gustaría realizar realizar una consulta.',
+    text: '¡Hola! Me gustaría realizar una consulta.',
   });
   whatsAppBtn.renderButton()
 </script>

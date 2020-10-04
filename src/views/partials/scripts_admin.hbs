@@ -15,12 +15,17 @@
 <script src="/js/theme_admin.min.js"></script>
 <script src="/js/dashkit.min.js"></script>
 
-<script src="https://cdn.ckeditor.com/ckeditor5/19.0.0/classic/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/22.0.0/classic/ckeditor.js"></script>
 
 <script>
     ClassicEditor
-        .create( document.querySelector( '#editor' ) )
-        .catch( error => {
-            console.error( error );
-        } );
+        .create(document.querySelector('#editor'), {
+            cloudServices: {
+                tokenUrl: 'https://74882.cke-cs.com/token/dev/2615dab333a2d50ac4983af5fff4358744b45734525ec7b87ca0066fb4ed',
+                uploadUrl: 'https://74882.cke-cs.com/easyimage/upload/'
+            }
+        })
+        .catch(error => {
+            console.error(error);
+        });
 </script>

@@ -5,18 +5,13 @@ const BlogPost = require("../models/BlogPost");
 const User = require("../models/User");
 
 // Modules
-const cloudinary = require("cloudinary").v2;
 
-cloudinary.config({
-    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-    api_key: process.env.CLOUDINARY_API_KEY,
-    api_secret: process.env.CLOUDINARY_API_SECRET
+const AWS = require("aws-sdk");
+const s3 = new AWS.S3({
+    accessKeyId: process.env.ACCESS_KEY_ID,
+    secretAccessKey: process.env.SECRET_ACCESS_KEY,
+    region: process.env.REGION
 });
-
-const fs = require("fs-extra");
-
-
-
 
 // GET - Mostrar dashboard
 dashCtrl.renderDashboard = (req, res) => {
@@ -30,7 +25,7 @@ dashCtrl.renderDashboard = (req, res) => {
 dashCtrl.renderProfile = async (req, res) => {
 
     const user = await User.findOne({ username: req.user.username }).lean();
-
+    
     res.render("dashboard/editar-perfil", {
         user,
         title: "Editar perfil — Munay"
@@ -41,11 +36,12 @@ dashCtrl.renderProfile = async (req, res) => {
 dashCtrl.updateProfile = async (req, res) => {
 
     const { name, username, email, bio } = req.body;
+    
 
-    // Subir la imagen a Cloudinary
-    const uploadedImg = await cloudinary.uploader.upload(req.file.path);
+    const uploadedImg = req.file.location;
+    
 
-    const user = await User.findByIdAndUpdate(req.user.id, { name, username, email, avatar: uploadedImg.url, bio });
+    const user = await User.findByIdAndUpdate(req.user.id, { name, username, email, avatar: uploadedImg, bio });
 
     // Guardar datos en la db
     try {
@@ -61,6 +57,8 @@ dashCtrl.updateProfile = async (req, res) => {
             title: "Editar perfil — Munay"
         });
     }
+
+
 };
 
 // GET - Mostrar todos los posts 
@@ -101,42 +99,35 @@ dashCtrl.addNewPost = async (req, res) => {
         // Asignar el autor
         const author = await User.findOne({ username: req.user.username }).lean();
 
-        // Subir la imagen a Cloudinary
-        const uploadedImg = await cloudinary.uploader.upload(req.file.path);
+        // Datos de la imagen
+        const uploadedImg = req.file.location;
+        const key = req.file.key;
 
         // Crear un nuevo post como modelo
         const newBlogPost = new BlogPost({
             title,
             description,
             content,
-            coverURL: uploadedImg.url,
-            public_id: uploadedImg.public_id,
+            coverURL: uploadedImg,
+            key,
             author: author._id
         });
 
         // Guardar post en la db
         await newBlogPost.save();
 
-        // author.blogPosts.push(newBlogPost._id);
-
-        // // ARREGLAR - no me permite guardar los posts en el array del modelo de usuario
-        // await author.save()
-
-
-        // Borrar imagen del servidor
-        await fs.unlink(req.file.path);
-
         res.redirect("/dashboard/blog")
 
     } catch (err) {
         console.log(err)
         res.render("dashboard/nuevo-post", {
-            title: "Crear nueva entrada — Munay"
+            title: "Crear nueva entrada — Munay",
+            description: description
         });
     }
 };
 
-// Editar un post del Blog
+// GET - Renderizar vista de edición de entrada
 dashCtrl.renderEditPost = async (req, res) => {
     const blogPost = await BlogPost.findById(req.params.id).lean();
     res.render("dashboard/editar-post", {
@@ -145,11 +136,18 @@ dashCtrl.renderEditPost = async (req, res) => {
     });
 };
 
+// PUT - Editar entrada
 dashCtrl.updatePost = async (req, res) => {
 
     const { title, description, content } = req.body;
 
-    const blogPost = await BlogPost.findByIdAndUpdate(req.params.id, { title, description, content });
+    const uploadedImg = req.file.location;
+
+    const blogPost = await BlogPost.findByIdAndUpdate(req.params.id, { 
+        title, 
+        description, 
+        content,
+        coverURL: uploadedImg });
 
     // Guardar datos en la db
     try {
@@ -168,10 +166,26 @@ dashCtrl.updatePost = async (req, res) => {
 // Eliminar post
 
 dashCtrl.deletePost = async (req, res) => {
+    
+    const blogPost = await BlogPost.findById(req.params.id)
+    console.log(blogPost.key);
+    
+    // Elimina la imagen del bucket de S3
+    const params = {
+        Bucket: process.env.BUCKET_NAME,
+        Key: blogPost.key
+    }
 
-    // Encuentra post por id y lo elimina
-    const blogPost = await BlogPost.findByIdAndDelete(req.params.id);
-    await cloudinary.uploader.destroy(blogPost.public_id);
+    s3.deleteObject(params, (error) => {
+        if (error) {
+          console.log(error)
+        }
+      });
+
+
+    // Encuentra post por id y lo elimina de la base de datos
+    await BlogPost.findByIdAndDelete(req.params.id);
+
     res.redirect("/dashboard/blog")
 };
 

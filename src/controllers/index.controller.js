@@ -4,7 +4,9 @@ const Contact = require("../models/Contact");
 const BlogPost = require("../models/BlogPost");
 
 const nodemailer = require("nodemailer");
+const request = require("request");
 
+// Index
 indexCtrl.renderIndex = async (req, res) => {
 
     const blogPost = await BlogPost.find()
@@ -14,16 +16,19 @@ indexCtrl.renderIndex = async (req, res) => {
 
     res.render("index", {
         blogPost,
-        title: "Munay - Psicología Clínica y Neuropsicología"
+        title: "Munay - Psicología Clínica y Neuropsicología",
+        description:  "Servicio de psicología clínica y neuropsicología: realizamos evaluación y tratamiento. Terapia individual y de pareja. Madrid centro y Terapia online."
     });
 }
 
+// Contacto
 indexCtrl.renderContacto = (req, res) => {
     res.render("contacto", {
         title: "Contacto — Munay"
     });
 }
 
+//  Enviar mail
 indexCtrl.sendMail = async (req, res) => {
 
     const { name, email, message } = req.body;
@@ -35,30 +40,28 @@ indexCtrl.sendMail = async (req, res) => {
             <li>Nombre completo: ${name}</li>
             <li>Correo eléctronico: ${email}</li>
         </ul>
-        <p> ${message} </p>
+        <p> Mensaje: ${message} </p>
     `;
-
-    let testAccount = await nodemailer.createTestAccount();
 
     // Configuración del transporter
     let transporter = nodemailer.createTransport({
-        host: "smtp.ethereal.email",
-        port: 587,
-        secure: false,
+        host: "smtp.zoho.eu",
+        port: 465,
+        secure: true, // SSL
         auth: {
-            user: testAccount.user,
-            pass: testAccount.pass
+            user: "info@munay.es",
+            pass: process.env.ZOHO_PASSWORD
         },
         tls: {
-            rejectUnauthorized: false
+            rejectUnathorized: false
         }
     });
 
     // Envío de correo
-    let info = await transporter.sendMail({
-        from: '"Munay" <foo@example.com>',
-        to: "bar@example.com",
-        subject: "Nuevo mensaje de Contacto",
+    await transporter.sendMail({
+        from: '"Contacto a Munay" <info@munay.es>',
+        to: "info@munay.es",
+        subject: "Nuevo mensaje del formulario de Contacto",
         html: contentHTML
     });
 
@@ -67,11 +70,9 @@ indexCtrl.sendMail = async (req, res) => {
     // await newContact.save();
 
     // Enviar alerta de acción exitosa
-    req.flash("success_msg", "Tu mensaje ha sido enviado correctamente. Te contactaremos en un plazo estimado de 24h.");
+    req.flash("success_msg", "Tu mensaje ha sido enviado correctamente. Te contactaremos en un plazo máximo de 24h.");
 
-    console.log(contentHTML);
-    console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-
+    // Redirigir a contacto
     res.redirect("/contacto");
 }
 
@@ -89,7 +90,7 @@ indexCtrl.renderInfantojuvenil = (req, res) => {
     });
 }
 
-// Infantojuvenil
+// Tercera Edad
 indexCtrl.renderTerceraEdad = (req, res) => {
     res.render("especialidades/tercera-edad", {
         title: "Terapia para Tercera Edad — Munay"
@@ -103,24 +104,83 @@ indexCtrl.renderParejas = (req, res) => {
     });
 }
 
+// Tarifas
 indexCtrl.renderTarifas = (req, res) => {
     res.render("tarifas", {
         title: "Tarifas — Munay"
     });
 }
 
+// Reserva
 indexCtrl.renderReserva = (req, res) => {
     res.render("reserva", {
         title: "Reserva tu cita — Munay"
     });
 }
 
+// Aviso legal
 indexCtrl.renderAvisoLegal = (req, res) => {
     res.render("aviso-legal", {
         title: "Aviso Legal — Munay"
     });
 }
 
+// Política de privacidad
+indexCtrl.renderPoliticaPrivacidad = (req, res) => {
+    res.render("politica-privacidad", {
+        title: "Política de privacidad — Munay"
+    });
+}
+
+// Política de cookies
+indexCtrl.renderPoliticaCookies = (req, res) => {
+    res.render("politica-cookies", {
+        title: "Política de cookies — Munay"
+    });
+}
+
+// Suscripción newsletter
+// indexCtrl.subscribeNewsletter = (req, res) => {
+
+//     const { name, email } = req.body;
+
+//     // Construir datos del formulario
+//     const data = {
+//         members: [
+//             {
+//                 email_address: email,
+//                 status: "subscribed",
+//                 merge_fields: {
+//                     FNAME: name
+//                 }
+//             }
+//         ]
+//     }
+
+//     const postData = JSON.stringify(data);
+
+//     const options = {
+//         url: "https://us2.api.mailchimp.com/3.0/lists/90755ee9be",
+//         method: "POST",
+//         headers: {
+//             Authorization: "auth " + process.env.MAILCHIMP_API_KEY
+//         },
+//         body: postData
+//     }
+
+//     request(options, (err, response, body) => {
+//         if (err) {
+//             req.flash("error_msg", "Ha ocurrido un error. Por favor intentalo nuevamente.");
+//             res.redirect("/");
+//         } else {
+//             if (response.statusCode = 200) {
+//                 req.flash("success_msg", "¡Gracias por suscribirte!");
+//                 res.redirect("/");
+//             }
+//         }
+//     )};
+
+//     };
 
 
 module.exports = indexCtrl;

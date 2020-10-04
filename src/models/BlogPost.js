@@ -8,12 +8,13 @@ const BlogPostSchema = new Schema({
     slug: { type: String, required: true, unique: true },
     author: { type: Schema.Types.ObjectId, ref: "User" },
     coverURL: { type: String },
-    public_id: { type: String },
+    key: { type: String },
     category: { type: String },
     tags: [{ type: String }],
     comments: [{ type: Schema.Types.ObjectId, ref: "Comment" }],
     views: { type: Number, default: 0 },
-    likes: { type: Number, default: 0 }
+    likes: { type: Number, default: 0 },
+    top: { type: Boolean, default: false }
 }, {
     timestamps: true
 })

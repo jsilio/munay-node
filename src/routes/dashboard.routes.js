@@ -10,10 +10,11 @@ const {
     addNewPost, 
     renderEditPost, 
     updatePost, 
-    deletePost
+    deletePost,
 } = require("../controllers/dashboard.controller");
 
 const { isAuthenticated } = require("../helpers/auth");
+
 
 router.all("/*", (req, res, next) => {
 

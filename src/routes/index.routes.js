@@ -11,7 +11,10 @@ const {
     renderParejas, 
     renderTarifas,
     renderReserva,
-    renderAvisoLegal, 
+    renderAvisoLegal,
+    renderPoliticaPrivacidad, 
+    renderPoliticaCookies,
+    suscribeNewsletter
 } = require("../controllers/index.controller");
 
 router.all("/*", (req, res, next) => {
@@ -54,5 +57,16 @@ router.get("/reserva", renderReserva);
 
 router.get("/aviso-legal", renderAvisoLegal);
 
+// Política de privacidad
+
+router.get("/politica-privacidad", renderPoliticaPrivacidad);
+
+// Política de cookies
+
+router.get("/politica-cookies", renderPoliticaCookies);
+
+// Newsletter Sign Up
+
+// router.post("/suscribirse", suscribeNewsletter);
 
 module.exports = router;

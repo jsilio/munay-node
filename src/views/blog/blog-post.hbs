@@ -60,13 +60,6 @@
             {{!-- Lista de redes sociales --}}
             <ul class="d-inline list-unstyled list-inline list-social">
 
-              {{!-- Instagram --}}
-              <li class="list-inline-item list-social-item mr-3">
-                <a href="#!" class="text-decoration-none">
-                  <img src="/img/icons/social/instagram.svg" class="list-social-icon" alt="Instagram">
-                </a>
-              </li>
-
               {{!-- Facebook --}}
               <li class="list-inline-item list-social-item mr-3">
                 <a href="#!" class="text-decoration-none">
@@ -91,9 +84,10 @@
 
             </ul>
 
+            {{!-- Tiempo de lectura --}}
             <div class="mr-auto">
               <p class="font-size-sm text-muted mr-2 mb-0 mt-4">
-                <i class="fe fe-clock text-muted mr-2 mb-1"></i> 10 min.
+                <i class="fe fe-clock text-muted mr-2 mb-1"></i> {{readTime blogPost.content}} min. de lectura
               </p>
             </div>
 
@@ -112,7 +106,7 @@
 {{!-- Entradas --}}
 <section class="pt-6 pt-md-8">
   <div class="container">
-    <div class="row justify-content-center">
+    <div class="row align-items-center justify-content-center">
       <div class="col-12 col-md-10 col-lg-9">
 
         {{{blogPost.content}}}

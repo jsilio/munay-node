@@ -5,6 +5,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Description -->
+    <meta name="description" content="{{description}}">
     
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
@@ -12,12 +15,36 @@
     <!-- Libs CSS -->
     <link rel="stylesheet" href="/fonts/Feather/feather.css">
     <link rel="stylesheet" href="/libs/aos/dist/aos.css">
-    <link rel="stylesheet" href="/libs/highlightjs/styles/vs2015.css">
-    <link rel="stylesheet" href="/libs/@fancyapps/fancybox/dist/jquery.fancybox.min.css">
 
-
+    {{!-- CSS --}}
     <link rel="stylesheet" href="/css/theme.min.css">
-    
+
+    {{!-- Fonts --}}
+    <link rel="preload" as="font" href="/fonts/Brandon/Brandon_med.woff" type="font/woff" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/fonts/Brandon/Brandon_reg.woff" type="font/woff" crossorigin="anonymous">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178422375-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-178422375-1');
+    </script>
+
+    <!-- Hotjar Tracking Code for munay.es -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 2006170, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+
 
     <title>{{title}}</title>
 </head>

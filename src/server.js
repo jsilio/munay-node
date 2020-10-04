@@ -9,9 +9,20 @@ const methodOverride = require("method-override");
 const moment = require("moment");
 const morgan = require("morgan");
 const multer = require("multer");
+const multers3 = require("multer-S3");
 const passport = require("passport");
 const path = require("path");
 const session = require("express-session");
+const AWS = require("aws-sdk");
+const readingTime = require("reading-time");
+
+
+const s3 = new AWS.S3({
+    accessKeyId: process.env.ACCESS_KEY_ID,
+    secretAccessKey: process.env.SECRET_ACCESS_KEY,
+    region: process.env.REGION
+});
+
 
 // Initializations
 const app = express();
@@ -27,15 +38,20 @@ app.engine(".hbs", exphbs({ // Configuración del templating engine
     partialsDir: path.join(app.get("views"), "partials"),
     extname: ".hbs",
     helpers: {
+        readTime: function (content) {
+            const stats = readingTime(content);
+            return Math.ceil(stats.minutes.toFixed(2));
+        },
+
         date: function (date, format) {
             moment.locale("es");
-            return moment(date).format(format);
+            return moment(date).format(format); // MMM DD, YYYY
         },
-        
+
         initial: function (string) {
             return string.charAt(0).toUpperCase();
         }
-        // MMM DD, YYYY
+
     }
 }));
 app.set("view engine", ".hbs")
@@ -55,16 +71,29 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-const storage = multer.diskStorage({
-    destination: path.join(__dirname, "public/uploads"),
-    filename: (req, file, cb) => {
-        cb(null, new Date().getTime() + path.extname(file.originalname));
-    }
+// Multer Configuration
+// const storage = multer.diskStorage({
+//     destination: path.join(__dirname, "public/uploads"),
+//     filename: (req, file, cb) => {
+//         cb(null, new Date().getTime() + path.extname(file.originalname));
+//     }
+// });
+
+const uploadS3 = multer({
+    storage: multers3({
+        s3: s3,
+        acl: 'public-read',
+        bucket: process.env.BUCKET_NAME,
+        metadata: (req, file, cb) => {
+            cb(null, { fieldName: file.fieldname })
+        },
+        key: (req, file, cb) => {
+            cb(null, Date.now().toString() + '-' + file.originalname)
+        }
+    })
 });
 
-app.use(multer({ storage }).single("file"));
-
-
+app.use(uploadS3.single("file"));
 
 
 // Global Variables
