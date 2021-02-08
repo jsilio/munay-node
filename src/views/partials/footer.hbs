@@ -5,7 +5,7 @@
       <div class="col-12 col-md-5 ml-5 ml-md-0 mb-2">
 
         <!-- Brand -->
-        <img src="/img/logomunay5.svg" alt="Munay - Centro de Psicología Aplicada"
+        <img src="/img/munay-logo-lg.svg" alt="Munay - Centro de Psicología Aplicada"
           class="footer-brand img-fluid mw-75 mw-md-100 mb-4">
 
         <!-- Social -->
@@ -177,13 +177,24 @@
 
     <div class="row align-items-center justify-content-end mt-5 mt-md-0 mr-3 mr-md-0">
 
-      <img src="/img/logo-copmadrid.png" alt="Munay - Colegio Oficial de Psicólogos Madrid"
-        class="footer-brand  my-3 mr-5 mr-md-6 mt-n4" style="max-width: 9rem;">
+      {{!-- Logo COP --}}
+      <picture>
+        <source type="image/webp" srcset="/img/copmadrid-logo.webp">
+        <source type="image/png" srcset="/img/copmadrid-logo.png">
+        <img src="/img/copmadrid-logo.png" alt="Munay - Colegio Oficial de Psicólogos Madrid"
+          class="footer-brand  my-3 mr-5 mr-md-6 mt-n4" style="max-width: 9rem;">
+      </picture>
 
+      {{!-- Logo MundoPsicólogos --}}
       <a href="https://www.mundopsicologos.com/centros/munay-psicologia" target="_blank"
         rel="me noopener noreferrer nofollow">
-        <img src="img/logomundo2.png" alt="Munay" border="0" class="footer-brand mb-5 rounded"
-          style="max-width: 10rem;" />
+        <picture>
+          <source type="image/webp" srcset="/img/mundopsicologos-footer.webp">
+          <source type="image/png" srcset="/img/mundopsicologos-footer.png">
+
+          <img src="img/mundopsicologos-footer.png" alt="Munay Centro Colaborador con MundoPsicólogos" border="0" class="footer-brand mb-5 rounded"
+            style="max-width: 10rem;" />
+        </picture>
       </a>
 
     </div>
@@ -196,7 +207,7 @@
         Todos los derechos reservados.
       </p>
 
-      <p style="font-size: 0.93rem;">Made with <i class="fe fe-heart text-primary"></i> by Joan Silio</p>
+      <p>Made with <i class="fe fe-heart text-primary"></i> by Joan Silio</p>
     </div>
   </div> <!-- / .container -->
 </footer>

@@ -1,4 +1,4 @@
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV == 'production') {
     require('dotenv').config();
 }
 
@@ -9,7 +9,7 @@ const methodOverride = require("method-override");
 const moment = require("moment");
 const morgan = require("morgan");
 const multer = require("multer");
-const multers3 = require("multer-S3");
+const multers3 = require("multer-s3");
 const passport = require("passport");
 const path = require("path");
 const session = require("express-session");
@@ -114,6 +114,12 @@ app.use(require("./routes/patients.routes"));
 
 // Static files
 app.use(express.static(path.join(__dirname, "public")));
+
+// Error 404
+app.use(function (req, res, next) {
+    req.app.locals.layout = "main";
+    res.status(404).render('error404.hbs');
+});
 
 
 module.exports = app;

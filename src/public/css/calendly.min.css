@@ -11,8 +11,6 @@
 .calendly-badge-widget iframe,
 .calendly-overlay iframe {
     display: inline;
-    width: 100%;
-    height: 100%;
 }
 .calendly-popup-content {
     position: relative;
@@ -72,19 +70,19 @@
 }
 .calendly-overlay .calendly-popup-close {
     position: absolute;
-    top: 25px;
-    right: 25px;
+    top: 35px;
+    right: 45px;
     color: #fff;
-    width: 19px;
-    height: 19px;
+    width: 55px;
+    height: 55px;
     cursor: pointer;
-    background: url(/assets/external/close-icon.svg) no-repeat;
+    background: url(../fonts/Feather/x-circle.svg) no-repeat;
     background-size: contain;
 }
 @media (max-width: 975px) {
     .calendly-overlay .calendly-popup {
-        top: 15px;
-        right: 15px;
+        top: 75px;
+        right: 35px;
     }
 }
 .calendly-badge-widget {

@@ -8,11 +8,11 @@
       <div class="col-12 col-md-10">
         <div class="container text-center">
 
-          <h1 class="display-4 text-primary font-weight-bold mb-4">
+          <h1 class="display-4 text-primary font-weight-bold mb-4 mt-8 mt-md-2">
             {{blogPost.title}}
           </h1>
 
-          <p class="mb-7 font-size-lg text-gray-700 px-4">
+          <p class="mb-7 text-gray-700 px-4" style="font-size: 1.3rem;">
             {{blogPost.description}}
           </p>
 
@@ -193,48 +193,49 @@
   </div>
 </div>
 
-{{!-- Newsletter --}}
+{{!-- Suscripción Newsletter --}}
 <section class="pt-7 pt-md-10 bg-light">
 
-  <div class="container py-6 py-md-8 border-top border-bottom border-gray-300">
-    <div class="row align-items-center">
-      <div class="col-12 col-md">
+    <div class="container py-6 py-md-8 border-bottom border-gray-300">
+        <div class="row align-items-center">
 
-        <!-- Heading -->
-        <h3 class="mb-1 font-weight-bold" style="font-size: 1.80rem;">
-          Recibe nuestras historias
-        </h3>
+            <div class="col-12 col-md">
+            
+                <!-- Heading -->
+                <h3 class="mb-1 font-weight-bold" style="font-size: 1.80rem;">
+                     Suscríbete a nuestro newsletter
+                </h3>
 
-        <!-- Text -->
-        <p class="font-size-lg text-muted mb-6 mb-md-0">
-          Suscríbete a nuestro newsletter
-        </p>
-
-      </div>
-      <div class="col-12 col-md-5">
-
-        <!-- Form -->
-        <form>
-          <div class="row">
-            <div class="col">
-
-              <!-- Input -->
-              <input type="email" class="form-control" placeholder="Tu correo eléctronico">
+                <!-- Text -->
+                <p class="font-size-lg text-muted mb-6 mb-md-0">
+                     Prometemos informate de las novedades que te interesen  <i class="fa fa-smile text-primary ml-2"></i>
+                </p>
 
             </div>
-            <div class="col-auto ml-n5">
+            <div class="col-12 col-md-5">
 
-              <!-- Button -->
-              <button class="btn btn-primary" type="submit">
-                Suscribirse
-              </button>
+                <!-- Form -->
+                <form action="/subscribirse" method="POST">
+                    <div class="row">
+                        <div class="col">
+
+                            <!-- Input -->
+                            <input type="email" name="email" class="form-control" placeholder="Tu correo eléctronico" required>
+
+                        </div>
+                        <div class="col-auto ml-n5">
+
+                            <!-- Button -->
+                            <button class="btn btn-primary lift" type="submit">
+                                Suscribirse
+                            </button>
+
+                        </div>
+                    </div> <!-- / .row -->
+                </form>
 
             </div>
-          </div> <!-- / .row -->
-        </form>
 
-      </div>
-
-    </div> <!-- / .row -->
-  </div> <!-- / .container -->
+        </div> <!-- / .row -->
+    </div> <!-- / .container -->
 </section>

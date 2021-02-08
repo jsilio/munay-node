@@ -4,27 +4,26 @@
 <script src="/libs/aos/dist/aos.js"></script>
 <script src="/libs/smooth-scroll/dist/smooth-scroll.min.js"></script>
 <script src="/libs/typed.js/lib/typed.min.js"></script>
-<script src="/libs/countup.js/dist/countUp.min.js"></script>
 <script async charset="utf-8" src="//cdn.embedly.com/widgets/platform.js"></script>
 
 {{!-- <!-- Theme JS --> --}}
 <script src="/js/theme.min.js"></script>
 
 <script>
-    document.querySelectorAll('oembed[url]').forEach(element => {
-        // Create the <a href="..." class="embedly-card"></a> element that Embedly uses
-        // to discover the media.
-        const anchor = document.createElement('a');
 
-        anchor.setAttribute('href', element.getAttribute('url'));
-        anchor.className = 'embedly-card';
+    // Figures and images text-center and img-fluid from ckeditor
+    let image = document.getElementsByClassName('image');
 
-        element.appendChild(anchor);
-    });
+    for (let i = 0; i < image.length; i++) {
+        image[i].classList.add('img-fluid');
+        image[i].classList.add('mb-2');
+    }
 
-    document.getElementsByTagName('figure')[0].classList.add('text-center');
-    document.getElementsByClassName('image')[0].classList.add('img-fluid');
+     let figure = document.getElementsByTagName('figure');
 
+    for (let i = 0; i < figure.length; i++) {
+        figure[i].classList.add('text-center');
+    }
 
 </script>
 

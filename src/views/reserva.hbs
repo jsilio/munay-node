@@ -11,7 +11,7 @@
                 <h1 class="display-3">Elige tu modalidad</h1>
             </div>
 
-            {{!-- Carta Individual --}}
+            {{!-- Carta Presencial --}}
             <div class="col-12 col-md-6 mb-6 mb-md-0">
                 <div class="card shadow-lg lift">
 
@@ -39,38 +39,42 @@
                     <div class="card-body">
 
                         <div class="row">
+
+                            {{!-- INDIVIDUAL --}}
                             <div class="col-6">
-                                {{!-- Modalidad --}}
+                                
                                 <div class="text-center text-primary mb-3">
                                     <h3 class="font-weight-bold">Individual</h3>
                                 </div>
 
                                 {{!-- Precio --}}
                                 <div class="d-flex justify-content-center mb-5">
-                                    <span class="price display-2 mb-0" data-annual="50" data-monthly="45">50</span>
+                                    <span id="individual" class="price display-2 mb-0" data-annual="50" data-monthly="45">50</span>
                                     <span class="h2 mb-0 mt-4">€</span>
                                     <span class="h2 align-self-end mb-1 text-gray-400">/h</span>
                                 </div>
 
-                                <!-- Button -->
+                                {{!-- Botón de reservar --}}
                                 <div class="text-center">
                                     <button type="button" class="btn btn-sm btn-pill btn-block btn-primary"
-                                        data-toggle="modal" data-target="#presencial"
-                                        onclick="Calendly.showPopupWidget('https://calendly.com/munay-psicologia/presencial?primary_color=649299');return false;">
+                                        onclick="individual()">
                                         Reservar
                                     </button>
                                 </div>
                             </div>
 
+                            {{!-- PAREJAS --}}
                             <div class="col-6">
-                                {{!-- Modalidad --}}
+
                                 <div class="text-center text-primary mb-3">
-                                    <h3 class="font-weight-bold">Parejas</h3>
+                                    <h3 class="font-weight-bold">
+                                        Parejas
+                                    </h3>
                                 </div>
 
                                 {{!-- Precio --}}
                                 <div class="d-flex justify-content-center mb-5">
-                                    <span class="price display-2 mb-0" data-annual="70" data-monthly="65">70</span>
+                                    <span id="pareja" class="price display-2 mb-0" data-annual="70" data-monthly="65">70</span>
                                     <span class="h2 mb-0 mt-4">€</span>
                                     <span class="h2 align-self-end mb-1 text-gray-400">/h</span>
                                 </div>
@@ -78,8 +82,7 @@
 
                                 <div class="text-center">
                                     <button type="button" class="btn btn-sm btn-pill btn-block btn-primary"
-                                        data-toggle="modal" data-target="#presencialParejas"
-                                        onclick="Calendly.showPopupWidget('https://calendly.com/munay-psicologia/presencial-parejas?primary_color=649299');return false;">
+                                        onclick="pareja()">
                                         Reservar
                                     </button>
                                 </div>
@@ -90,7 +93,7 @@
                 </div>
             </div>
 
-            {{!-- Online --}}
+            {{!-- Carta Online --}}
             <div class="col-12 col-md-6">
                 <div class="card shadow-lg lift">
 
@@ -117,15 +120,18 @@
                     <div class="card-body">
 
                         <div class="row">
+
+                            {{!-- INDIVIDUAL --}}
                             <div class="col-6">
-                                {{!-- Modalidad --}}
                                 <div class="text-center text-primary mb-3">
-                                    <h3 class="font-weight-bold">Individual</h3>
+                                    <h3 class="font-weight-bold">
+                                        Individual
+                                    </h3>
                                 </div>
 
                                 {{!-- Precio --}}
                                 <div class="d-flex justify-content-center mb-5">
-                                    <span class="price display-2 mb-0" data-annual="40" data-monthly="35">40</span>
+                                    <span id="individualOnline" class="price display-2 mb-0" data-annual="40" data-monthly="35">40</span>
                                     <span class="h2 mb-0 mt-4">€</span>
                                     <span class="h2 align-self-end mb-1 text-gray-400">/h</span>
                                 </div>
@@ -133,8 +139,7 @@
                                 <!-- Button -->
                                 <div class="text-center">
                                     <button type="button" class="btn btn-sm btn-pill btn-block btn-primary"
-                                        data-toggle="modal" data-target="#online"
-                                        onclick="Calendly.showPopupWidget('https://calendly.com/munay-psicologia/online?primary_color=649299');return false;">
+                                        onclick="individualOnline()">
                                         Reservar
                                     </button>
                                 </div>
@@ -148,15 +153,15 @@
 
                                 {{!-- Precio --}}
                                 <div class="d-flex justify-content-center mb-5">
-                                    <span class="price display-2 mb-0" data-annual="60" data-monthly="55">60</span>
+                                    <span id="parejaOnline" class="price display-2 mb-0" data-annual="60"
+                                        data-monthly="55">60</span>
                                     <span class="h2 mb-0 mt-4">€</span>
                                     <span class="h2 align-self-end mb-1 text-gray-400">/h</span>
                                 </div>
 
                                 <div class="text-center">
                                     <button type="button" class="btn btn-sm btn-pill btn-block btn-primary"
-                                        data-toggle="modal" data-target="#onlineParejas"
-                                        onclick="Calendly.showPopupWidget('https://calendly.com/munay-psicologia/online-parejas?primary_color=649299');return false;">
+                                        onclick="parejaOnline()">
                                         Reservar
                                     </button>
                                 </div>
@@ -168,10 +173,39 @@
                 </div>
             </div>
 
+            {{!-- Toggle --}}
+            <div class="col-12 pt-9 text-center">
+
+                <h2 class="text-primary text-uppercase font-weight-bold h3 mb-2">Ahorra con nuestros bonos</h5>
+
+                <!-- Form -->
+                <form class="d-flex align-items-center justify-content-center mb-4">
+
+                    <!-- Label -->
+                    <span style="font-size: 1.45rem;">
+                        Estándar
+                    </span>
+
+                    <!-- Switch -->
+                    <div class="custom-control custom-switch  mx-3">
+                        <input type="checkbox" class="custom-control-input" id="billingSwitch" data-toggle="price"
+                            data-target=".price">
+                        <label class="custom-control-label" for="billingSwitch"></label>
+                    </div>
+
+                    <!-- Label -->
+                    <span style="font-size: 1.45rem;">
+                        Bono de 5 Sesiones
+                    </span>
+
+                </form>
+
+
+            </div>
+
 
         </div>
     </div>
-
 
 </section>
 
@@ -308,7 +342,7 @@
                                     </h3>
 
                                     <!-- Text -->
-                                    <p class="text-muted mb-0">
+                                    <p class="text-muted mb-6">
                                         Escuchamos tu situación, recogemos tus dudas y te proponemos un plan adaptado a
                                         tus intereses.
                                     </p>
@@ -367,3 +401,38 @@
 <link href="/css/calendly.min.css" rel="stylesheet">
 <script src="https://calendly.com/assets/external/widget.js" type="text/javascript"></script>
 <!-- Calendly link widget end -->
+
+
+<script>
+    function parejaOnline() {
+        if (document.getElementById("parejaOnline").innerHTML == "60") {
+            Calendly.showPopupWidget('https://calendly.com/munay-psicologia/online-parejas?primary_color=649299'); return false;
+        } else {
+            Calendly.showPopupWidget('https://calendly.com/munay-psicologia/bono-5-sesiones-online-de-pareja?primary_color=649299'); return false;
+        }
+    }
+
+    function pareja() {
+        if (document.getElementById("pareja").innerHTML == "70") {
+            Calendly.showPopupWidget('https://calendly.com/munay-psicologia/presencial-parejas?primary_color=649299'); return false;
+        } else {
+            Calendly.showPopupWidget('https://calendly.com/munay-psicologia/bono-5-sesiones-presencial-de-pareja?primary_color=649299'); return false;
+        }
+    }
+
+    function individualOnline() {
+        if (document.getElementById("individualOnline").innerHTML == "40") {
+            Calendly.showPopupWidget('https://calendly.com/munay-psicologia/online?primary_color=649299'); return false;
+        } else {
+            Calendly.showPopupWidget('https://calendly.com/munay-psicologia/bono-de-5-sesiones-online-individual?primary_color=649299'); return false;
+        }
+    }
+
+    function individual() {
+        if (document.getElementById("individual").innerHTML == "50") {
+            Calendly.showPopupWidget('https://calendly.com/munay-psicologia/presencial?primary_color=649299'); return false;
+        } else {
+            Calendly.showPopupWidget('https://calendly.com/munay-psicologia/bono-5-sesiones-presenciales-individual?primary_color=649299'); return false;
+        }
+    }
+</script>

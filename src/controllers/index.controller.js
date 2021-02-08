@@ -4,7 +4,7 @@ const Contact = require("../models/Contact");
 const BlogPost = require("../models/BlogPost");
 
 const nodemailer = require("nodemailer");
-const request = require("request");
+const fetch = require("node-fetch");
 
 // Index
 indexCtrl.renderIndex = async (req, res) => {
@@ -140,47 +140,57 @@ indexCtrl.renderPoliticaCookies = (req, res) => {
 }
 
 // Suscripción newsletter
-// indexCtrl.subscribeNewsletter = (req, res) => {
+indexCtrl.subscribeNewsletter = (req, res) => {
 
-//     const { name, email } = req.body;
+    const { name, email } = req.body;
 
-//     // Construir datos del formulario
-//     const data = {
-//         members: [
-//             {
-//                 email_address: email,
-//                 status: "subscribed",
-//                 merge_fields: {
-//                     FNAME: name
-//                 }
-//             }
-//         ]
-//     }
+    if (!email) {
+        req.flash("error_msg", "Debe introducir un correo electrónico para recibir nuestra newsletter.");
+        res.redirect("/blog");
+    }
 
-//     const postData = JSON.stringify(data);
+    // Construir datos del formulario
+    const data = {
+        members: [
+            {
+                email_address: email,
+                status: "subscribed",
+                merge_fields: {
+                    FNAME: name
+                }
+            }
+        ]
+    }
 
-//     const options = {
-//         url: "https://us2.api.mailchimp.com/3.0/lists/90755ee9be",
-//         method: "POST",
-//         headers: {
-//             Authorization: "auth " + process.env.MAILCHIMP_API_KEY
-//         },
-//         body: postData
-//     }
+    const postData = JSON.stringify(data);
 
-//     request(options, (err, response, body) => {
-//         if (err) {
-//             req.flash("error_msg", "Ha ocurrido un error. Por favor intentalo nuevamente.");
-//             res.redirect("/");
-//         } else {
-//             if (response.statusCode = 200) {
-//                 req.flash("success_msg", "¡Gracias por suscribirte!");
-//                 res.redirect("/");
-//             }
-//         }
-//     )};
+    fetch('https://us2.api.mailchimp.com/3.0/lists/90755ee9be', {
+        method: 'POST',
+        headers: {
+          Authorization: 'auth ' + process.env.MAILCHIMP_API_KEY
+        },
+        body: postData
+      })
+        .then(res.statusCode === 200 ?
+          res.redirect('/confirmacion-newsletter') :
+          res.redirect('/blog'))
+        .catch(err => console.log(err))
 
-//     };
+}
+
+indexCtrl.confirmNewsletterSignUp = async (req, res) => {
+
+    const blogPost = await BlogPost.find()
+    .lean()
+    .sort({ createdAt: "desc" })
+    .limit(3);
+
+    res.render("newsletter", {
+        blogPost,
+        title: "Confirmación de Newsletter — Munay Psicología"
+    });
+}
+
 
 
 module.exports = indexCtrl;

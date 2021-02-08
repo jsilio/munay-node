@@ -1,24 +1,36 @@
 {{!-- << Hero >> --}}
-<section id="hero" class="py-md-12 pb-5 pb-md-6" style="background: #E4F3F4">
+<section id="hero" class="py-md-13 pb-5 pb-md-6" style="background: #E4F3F4">
 
   <div class="container-fluid">
     <div class="row align-items-center">
 
       {{!-- Ilustración principal --}}
-      <div class="col-12 col-md-5 col-lg-6 order-md-2">
-        <img src="/img/illustrations/hero.svg" class="mb-3 mb-md-0 pr-8 ml-n10 img-fluid d-none d-md-block"
-          style="max-width: 500rem;" alt="...">
+      <div class="col-12 col-md-5 col-lg-5 col-xl-6 order-md-2">
+
+        <picture>
+          <source type="image/webp" srcset="/img/illustrations/hero.webp">
+          <source type="image/png" srcset="/img/illustrations/hero.png">
+          <img src="/img/illustrations/hero.png" class="mb-3 mb-md-0 pr-2 img-fluid d-none d-md-block" alt="Terapia psicología clínica y neuropsicología en madrid y online">
+        </picture>
+        
       </div>
 
       {{!-- Bloque héroe --}}
-      <div class="col-12 col-md-7 col-lg-6 order-md-1 px-0 px-md-12">
+      <div class="col-12 col-md-7 col-lg-7 col-xl-6 order-md-1 px-0 px-md-11">
         {{!-- Título --}}
         <h1 class="display-2 text-center text-md-left mb-4 mb-md-6 mb-lg-8 mt-11 mt-md-0">
           Terapia psicológica <br> basada <span class="text-primary">en la evidencia</span>
         </h1>
 
+        {{!-- Ilustración vista móvil --}}
         <div class="d-block d-md-none text-center">
-          <img src="/img/illustrations/hero.svg" class="img-fluid mw-75" alt="">
+
+          <picture>
+            <source type="image/webp" srcset="/img/illustrations/hero.webp">
+            <source type="image/png" srcset="/img/illustrations/hero.png">
+            <img src="/img/illustrations/hero.png" class="img-fluid mw-75" alt="Terapia psicología clínica y neuropsicología en madrid y online">
+          </picture>
+
         </div>
 
         {{!-- Texto --}}
@@ -210,7 +222,12 @@
 
         <a href="/adultos">
           <h2 class="text-primary display-4">Adultos</h2>
-          <img src="/img/illustrations/adultos.svg" alt="Terapia psicológica para Adultos" class="mb-3">
+
+          <picture>
+            <source type="image/webp" srcset="/img/illustrations/adultos.webp">
+            <source type="image/png" srcset="/img/illustrations/adutos.png">
+            <img src="/img/illustrations/adultos.png" alt="Terapia psicológica para Adultos" class="img-fluid mb-3">
+          </picture>
         </a>
 
       </div>
@@ -220,8 +237,13 @@
 
         <a href="/infantojuvenil">
           <h2 class="text-primary display-4">Infantojuvenil</h2>
-          <img src="/img/illustrations/infantojuvenil.svg" alt="Terapia psicológica para Niños y Adolescentes"
-            class="img-fluid mb-3">
+
+          <picture>
+            <source type="image/webp" srcset="/img/illustrations/infantojuvenil.webp">
+            <source type="image/png" srcset="/img/illustrations/infantojuvenil.png">
+            <img src="/img/illustrations/infantojuvenil.png" alt="Terapia psicológica para Niños y Adolescentes"
+              class="img-fluid mb-3">
+          </picture>
         </a>
 
       </div>
@@ -231,8 +253,13 @@
 
         <a href="/tercera-edad">
           <h2 class="text-primary display-4">Tercera Edad</h2>
-          <img src="/img/illustrations/tercera-edad.svg" alt="Terapia psicológica para la Tercera edad"
-            class="img-fluid mb-3">
+
+          <picture>
+            <source type="image/webp" srcset="/img/illustrations/tercera-edad.webp">
+            <source type="image/png" srcset="/img/illustrations/tercera-edad.png">
+            <img src="/img/illustrations/tercera-edad.png" alt="Terapia psicológica para la Tercera edad"
+              class="img-fluid mb-3">
+          </picture>
         </a>
 
       </div>
@@ -242,7 +269,12 @@
 
         <a href="/parejas">
           <h2 class="text-primary display-4">Parejas</h2>
-          <img src="/img/illustrations/parejas.svg" alt="Terapia psicológica Parejas" class="img-fluid mb-3">
+
+          <picture>
+            <source type="image/webp" srcset="/img/illustrations/parejas.webp">
+            <source type="image/png" srcset="/img/illustrations/parejas.png">
+            <img src="/img/illustrations/parejas.png" alt="Terapia psicológica Parejas" class="img-fluid mb-3">
+          </picture>
         </a>
 
       </div>
@@ -281,8 +313,14 @@
 
         {{!-- Ilustración --}}
         <div class="position-relative ml-7 mt-6 mb-n14">
-          <img src="/img/illustrations/diente-de-leon.svg" class="img-fluid w-75 d-none d-md-block"
+
+          <picture>
+            <source type="image/webp" srcset="/img/illustrations/dientes.webp">
+            <source type="image/png" srcset="/img/illustrations/dientes.png">
+            <img src="/img/illustrations/dientes.png" class="img-fluid w-75 d-none d-md-block"
             alt="Precios psicológocos online madrid">
+          </picture>
+
         </div>
 
       </div> <!-- ./col -->
@@ -482,8 +520,15 @@
 
             <!-- Avatar -->
             <div class="avatar avatar-sm mr-2">
-              <img src="/img/photos/laurita.jpg" alt="Laura Marín Psicóloga Clínica Munay"
-                class="avatar-img rounded-circle">
+              <picture>
+
+              <source type="image/webp" srcset="img/photos/avatar-laura.webp">
+              <source type="image/jpeg" srcset="img/photos/avatar-laura.jpg">
+              <img src="img/photos/avatar-laura.jpg" alt="Laura Marín Cuesta - Psicóloga Clínica Colegiada en Madrid y Neuropsicóloga"
+              class="avatar-img rounded-circle">
+
+              </picture>
+           
             </div>
 
             <!-- Autor -->
@@ -491,7 +536,7 @@
 
             <!-- Fecha -->
             <p class="h6 text-uppercase text-muted mb-0 ml-auto">
-              {{date createdAt "L"}}
+              {{date createdAt "DD, MMM"}}
             </p>
 
             <i class="fe fe-calendar text-muted ml-2 mb-1"></i>
@@ -517,12 +562,19 @@
       <div class="row no-gutters">
 
         {{!-- Foto --}}
-        <a class="col-12 col-md-6 card-zoom bg-cover card-img-left rounded"
-          style="background-image: url(img/photos/laurita.jpg);" href="/sobre-nosotros">
+        <div class="col-12 col-md-6 card-zoom bg-cover card-img-left rounded"
+          style="background-image: url(img/photos/laura-marin.jpg);">
 
           {{!-- Foto versión móvil --}}
-          <img src="img/photos/laurita.jpg" alt="Laura Marín Cuesta - Psicóloga"
+           <picture>
+
+            <source type="image/webp" srcset="img/photos/laura-marin.webp">
+            <source type="image/jpeg" srcset="img/photos/laura-marin.jpg">
+            <img src="img/photos/laura-marin.jpg" alt="Laura Marín Cuesta - Psicóloga Clínica Colegiada en Madrid y Neuropsicóloga"
             class="img-fluid w-75 d-md-none invisible rounded">
+
+          </picture>
+
 
           {{!-- Shape --}}
           <div class="shape shape-right shape-fluid-y svg-shim text-white d-none d-md-block">
@@ -530,7 +582,7 @@
               <path d="M116 0H51V172C76 384 0 517 0 517V690H116V0Z" fill="currentColor" />
             </svg>
           </div>
-        </a>
+        </div>
 
         {{!-- Descripción --}}
         <div class="col-12 col-md-6 order-md-1">
@@ -553,11 +605,11 @@
               <div class="icon icon-xs text-primary mt-6">
 
                 {{!-- Correo eléctronico --}}
-                <a href="/contacto"><i class="fe fe-mail mr-3"></i></a>
+                <a href="/contacto" aria-label="Contacto"><i class="fe fe-mail mr-3"></i></a>
 
                 {{!-- Linkedin --}}
                 <a href="https://es.linkedin.com/in/laura-mar%C3%ADn-cuesta-940034116"
-                  rel="me noopener noreferrer nofollow" target="_blank">
+                  rel="me noopener noreferrer nofollow" target="_blank" aria-label="Linkedin">
                   <i class="fe fe-linkedin"></i>
                 </a>
 
@@ -686,7 +738,12 @@
             </p>
 
             <div class="mb-0 text-right">
-              <img src="img/logo-mundo.png" class="mw-50" alt="">
+              <picture>
+                <source type="image/webp" srcset="img/mundopsicologos-logo.webp">
+                <source type="image/png" srcset="img/mundopsicologos-logo.png">
+
+                <img src="img/mundopsicologos-logo.png" class="mw-50" alt="Munay Centro Colaborador con MundoPsicólogos">
+              </picture>
             </div>
           </div>
         </div>
@@ -768,7 +825,12 @@
             </p>
 
             <div class="mb-0 text-right">
-              <img src="img/logo-mundo.png" class="mw-50" alt="">
+              <picture>
+                <source type="image/webp" srcset="img/mundopsicologos-logo.webp">
+                <source type="image/png" srcset="img/mundopsicologos-logo.png">
+
+                <img src="img/mundopsicologos-logo.png" class="mw-50" alt="Munay Centro Colaborador con MundoPsicólogos">
+              </picture>
             </div>
           </div>
         </div>
@@ -852,7 +914,12 @@
             </p>
 
             <div class="mb-0 text-right">
-              <img src="img/logo-mundo.png" class="mw-50" alt="">
+              <picture>
+                <source type="image/webp" srcset="img/mundopsicologos-logo.webp">
+                <source type="image/png" srcset="img/mundopsicologos-logo.png">
+
+                <img src="img/mundopsicologos-logo.png" class="mw-50" alt="Munay Centro Colaborador con MundoPsicólogos">
+              </picture>
             </div>
           </div>
         </div>

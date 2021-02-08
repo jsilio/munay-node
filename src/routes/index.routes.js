@@ -14,7 +14,8 @@ const {
     renderAvisoLegal,
     renderPoliticaPrivacidad, 
     renderPoliticaCookies,
-    suscribeNewsletter
+    subscribeNewsletter,
+    confirmNewsletterSignUp
 } = require("../controllers/index.controller");
 
 router.all("/*", (req, res, next) => {
@@ -65,8 +66,11 @@ router.get("/politica-privacidad", renderPoliticaPrivacidad);
 
 router.get("/politica-cookies", renderPoliticaCookies);
 
-// Newsletter Sign Up
+// Newsletter 
 
-// router.post("/suscribirse", suscribeNewsletter);
+router.post("/subscribirse", subscribeNewsletter);
+
+router.get("/confirmacion-newsletter", confirmNewsletterSignUp);
+
 
 module.exports = router;
